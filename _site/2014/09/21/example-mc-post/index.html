@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Monte Carlo Example Post &middot; Joel Carlson
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A place for thoughts and projects</p>
+  </div>
+
+<!--  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/blog/">Blog</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+    
+      
+     -->
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/research/">Research</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/publications/">Publications</a>    
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/cv/">Curriculum Vitae</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/blog/">Blog</a>
+    
+   <!-- <a class="sidebar-nav-item" href="https://github.com/joelcarlson/archive/v2.0.0.zip">Download</a>  
+    <span class="sidebar-nav-item"></span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2014. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Joel Carlson</a>
+            <small>A graduate student with a website</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Monte Carlo Example Post</h1>
+  <p>This is just an example to see if a more complicated .rmd file can survive conversion from .rmd to .md</p>
+
+<h3>Question 2 a)</h3>
+
+<p>Calculate the area encompassed by \(x^2 + 4y^2 = 4\)</p>
+
+<p>The x intercept:<br>
+\(x^2 + 4y^2 = 4\) 
+\(x^2 + 4(0)^2 = 4\)<br>
+\(x = \sqrt{4} = 2\)  </p>
+
+<p>And y intercept:<br>
+\((0)^2 + 4y^2 = 4\)<br>
+\(y = \sqrt{4/4} = 1\)  </p>
+
+<p>So we will choose random numbers from \(0 \leq x \leq 2\) and \(0 \leq y \leq 1\) and test whether or not fall inside or outside of our function.</p>
+
+<p>Below is a function which has three steps:</p>
+
+<ul>
+<li><p>Create a data frame of a given size with random $x$ and $y$ values within our defined intercept bounds</p></li>
+<li><p>Create a column of the function evaluated using the $x$ and $y$ values</p></li>
+<li><p>Create a new column that is <code>1</code> if the $x$ and $y$ values are below our function</p></li>
+</ul>
+
+<div class="highlight"><pre><code class="r">valueCalc <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>iterations<span class="p">){</span>
+    <span class="c1">#Create data frame</span>
+    values <span class="o">&lt;-</span> data.frame<span class="p">(</span>x<span class="o">=</span>runif<span class="p">(</span>iterations<span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> y<span class="o">=</span>runif<span class="p">(</span>iterations<span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+    <span class="c1">#Calculations</span>
+    values<span class="o">$</span>calc <span class="o">&lt;-</span> values<span class="o">$</span>x<span class="o">^</span><span class="m">2</span> <span class="o">+</span> <span class="p">(</span><span class="m">4</span> <span class="o">*</span> values<span class="o">$</span>y<span class="o">^</span><span class="m">2</span><span class="p">)</span>
+    <span class="c1">#Create counting column </span>
+    values<span class="o">$</span>inside <span class="o">&lt;-</span> ifelse<span class="p">(</span>values<span class="o">$</span>calc <span class="o">&lt;</span> <span class="m">4</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+    
+    values
+<span class="p">}</span> 
+</code></pre></div>
+
+<p>Let&#39;s look at a quick example with only 5 iterations:</p>
+
+<div class="highlight"><pre><code class="r">valueCalc<span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">##       x       y  calc inside
+## 1 1.830 0.01203 3.351      1
+## 2 1.527 0.75843 4.632      0
+## 3 1.611 0.49895 3.592      1
+## 4 1.468 0.46611 3.023      1
+## 5 1.364 0.90101 5.108      0
+</code></pre></div>
+
+<p>Lets look at a plot of the given function, and 10 random points, and 100 random points:</p>
+
+<p><img src="/figs/Example%20Post%20-%20MC.rmd/unnamed-chunk-5.png" alt="center"> </p>
+
+<p>To calculate the area of the defined shape we note that the area of the square is \(2 * 1 = 2\), and a certain proportion of that area is taken up by the defined shape (area below the function). By looking at the proportion of the random points that fall inside <em>vs</em> outside the shape (that is, the sum of our <code>inside</code> column), we can guess its area.</p>
+
+<div class="highlight"><pre><code class="r"><span class="c1">#100 iterations</span>
+hundred <span class="o">&lt;-</span> valueCalc<span class="p">(</span><span class="m">100</span><span class="p">)</span>
+sum<span class="p">(</span>hundred<span class="o">$</span>inside<span class="p">)</span><span class="o">/</span><span class="m">100</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">## [1] 0.82
+</code></pre></div>
+
+<div class="highlight"><pre><code class="r"><span class="c1">#10000 iterations</span>
+tenthousand <span class="o">&lt;-</span> valueCalc<span class="p">(</span><span class="m">10000</span><span class="p">)</span>
+sum<span class="p">(</span>tenthousand<span class="o">$</span>inside<span class="p">)</span><span class="o">/</span><span class="m">10000</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">## [1] 0.7807
+</code></pre></div>
+
+<div class="highlight"><pre><code class="r"><span class="c1">#1000000 iterations</span>
+million <span class="o">&lt;-</span> valueCalc<span class="p">(</span><span class="m">1000000</span><span class="p">)</span>
+sum<span class="p">(</span>million<span class="o">$</span>inside<span class="p">)</span><span class="o">/</span><span class="m">1000000</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">## [1] 0.7849
+</code></pre></div>
+
+<p>This is just \(\frac{1}{4}\) of the shape, however.  The shape is symmetrical, so the proportion of points inside <em>vs</em> outside of the function will remain constant. In an area \(4\) times as large, or \(4 * 2 = 8 m^2\), \(78.49\%\) of the area is taken up by the shape.  That is \(0.7849 * 8m^2 = 6.2792m^2\) is the area. </p>
+
+<p>We can confirm this with an integral:
+\(2\int_{-2}^{2}\sqrt{\frac{4-x^2}{4}}\,dx = 2pi \approx 6.28\)</p>
+
+<h3>Question 2 b)</h3>
+
+<p>A similar procedure as <em>Question 2 a)</em> is followed.  This time we want the relative area of the shape defined by: \((x-1)^2 + y^2 = 1\).</p>
+
+<p>This is a circle shifted by \(1\) to the right on the \(x-axis\).  Thus the intercepts are \(x = 0, 2\) and \(y = 0\)</p>
+
+<p>The shift moving the center of the cicle won&#39;t change our boundaries in this case, we will just have to be more careful at the end when we are talking about relative proportions.</p>
+
+<p>We will define a similar function:</p>
+
+<div class="highlight"><pre><code class="r">valueCalcb <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>iterations<span class="p">){</span>
+    <span class="c1">#Create data frame</span>
+    values <span class="o">&lt;-</span> data.frame<span class="p">(</span>x<span class="o">=</span>runif<span class="p">(</span>iterations<span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">),</span> y<span class="o">=</span>runif<span class="p">(</span>iterations<span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">))</span>
+    <span class="c1">#Calculations</span>
+    values<span class="o">$</span>calc <span class="o">&lt;-</span> <span class="p">(</span>values<span class="o">$</span>x <span class="o">-</span> <span class="m">1</span><span class="p">)</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> values<span class="o">$</span>y<span class="o">^</span><span class="m">2</span>
+    <span class="c1">#Create counting column </span>
+    values<span class="o">$</span>inside <span class="o">&lt;-</span> ifelse<span class="p">(</span>values<span class="o">$</span>calc <span class="o">&lt;</span> <span class="m">1</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0</span><span class="p">)</span>
+    
+    values
+<span class="p">}</span> 
+</code></pre></div>
+
+<div class="highlight"><pre><code class="r">valueCalcb<span class="p">(</span><span class="m">5</span><span class="p">)</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">##        x        y    calc inside
+## 1 1.4803 0.504945 0.48562      1
+## 2 0.7941 0.001354 0.04239      1
+## 3 0.8626 0.776546 0.62190      1
+## 4 1.1135 0.325987 0.11916      1
+## 5 0.4893 0.990583 1.24206      0
+</code></pre></div>
+
+<p>And plotted:</p>
+
+<p><img src="/figs/Example%20Post%20-%20MC.rmd/unnamed-chunk-10.png" alt="center"> </p>
+
+<p>With proportions:</p>
+
+<div class="highlight"><pre><code class="r"><span class="c1">#1000000 iterations</span>
+millionb <span class="o">&lt;-</span> valueCalcb<span class="p">(</span><span class="m">1000000</span><span class="p">)</span>
+sum<span class="p">(</span>millionb<span class="o">$</span>inside<span class="p">)</span><span class="o">/</span><span class="m">1000000</span>
+</code></pre></div>
+
+<div class="highlight"><pre><code class="text">## [1] 0.7863
+</code></pre></div>
+
+<p>This time our square area is of size \(2 * 2 = 4m^2\) and the proportion of hits inside the shape is \(78.63\%\) thus the area is \(0.7863 * 4m^2 = 3.1452 \approx pi\).  This makes sense, as it is a circle of \(radius = 1\), merely shifted to the side. </p>
+
+</div>
+
+      </div>
+    </div>
+
+  </body>
+</html>

@@ -1,0 +1,31 @@
+# Dependencies
+markdown:         redcarpet
+pygments:         true
+
+# Permalinks
+permalink:        pretty
+
+# Setup
+title:            Joel Carlson
+tagline:          'A graduate student with a website'
+description:      'A place for thoughts and projects'
+url:              http://joelcarlson.github.io
+
+author:
+  name:           'Joel Carlson'
+  url:            http://joelcarlson.github.io
+
+paginate:         5
+
+# Custom vars
+version:          2.0.0
+
+github:
+  repo:           https://github.com/joelcarlson
+
+about:            'About'
+research:         'Research'
+publications:     'Publications'
+cv:               'Curriculum Vitae'
+projects:         'Projects'  
+blog:             'Blog'
