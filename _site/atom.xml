@@ -4,7 +4,7 @@
  <title>Joel Carlson</title>
  <link href="http://joelcarlson.github.io/atom.xml" rel="self"/>
  <link href="http://joelcarlson.github.io/"/>
- <updated>2014-09-24T09:59:04+09:00</updated>
+ <updated>2014-10-08T22:40:14+09:00</updated>
  <id>http://joelcarlson.github.io</id>
  <author>
    <name>Joel Carlson</name>
@@ -29,18 +29,207 @@ WhoIsBest &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=
 WhoIsBest&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Rhia&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+
+
+
+
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] TRUE
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Could someone else be the best?&lt;/p&gt;
+
+
+Could someone else be the best?
+
 
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;WhoIsBest&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Someone Other Than Rhia&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
+
+
+
+
 &lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] FALSE
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 
-&lt;p&gt;Well, I suppose that settles it! Rhia is best!&lt;/p&gt;
+
+Well, I suppose that settles it! Rhia is best!
+
+Test embedding of a shiny app:
+&lt;iframe src=&quot;https://joelcarlson.shinyapps.io/campep&quot; style=&quot;border: none; width: 900px; height: 900px&quot;&gt;&lt;/iframe&gt;
+
+Lets test to see if I can put a direct copy of googleVis output into an md!:
+
+&lt;!-- MotionChart generated in R 3.1.1 by googleVis 0.5.5 package --&gt;
+&lt;!-- Tue Oct 07 12:49:39 2014 --&gt;
+
+
+&lt;!-- jsHeader --&gt;
+&lt;script type=&quot;text/javascript&quot;&gt;
+ 
+// jsData 
+function gvisDataMotionChartID119c2aa0b2f () {
+var data = new google.visualization.DataTable();
+var datajson =
+[
+ [
+ &quot;Apples&quot;,
+2008,
+&quot;West&quot;,
+98,
+78,
+20,
+&quot;2008-12-31&quot; 
+],
+[
+ &quot;Apples&quot;,
+2009,
+&quot;West&quot;,
+111,
+79,
+32,
+&quot;2009-12-31&quot; 
+],
+[
+ &quot;Apples&quot;,
+2010,
+&quot;West&quot;,
+89,
+76,
+13,
+&quot;2010-12-31&quot; 
+],
+[
+ &quot;Oranges&quot;,
+2008,
+&quot;East&quot;,
+96,
+81,
+15,
+&quot;2008-12-31&quot; 
+],
+[
+ &quot;Bananas&quot;,
+2008,
+&quot;East&quot;,
+85,
+76,
+9,
+&quot;2008-12-31&quot; 
+],
+[
+ &quot;Oranges&quot;,
+2009,
+&quot;East&quot;,
+93,
+80,
+13,
+&quot;2009-12-31&quot; 
+],
+[
+ &quot;Bananas&quot;,
+2009,
+&quot;East&quot;,
+94,
+78,
+16,
+&quot;2009-12-31&quot; 
+],
+[
+ &quot;Oranges&quot;,
+2010,
+&quot;East&quot;,
+98,
+91,
+7,
+&quot;2010-12-31&quot; 
+],
+[
+ &quot;Bananas&quot;,
+2010,
+&quot;East&quot;,
+81,
+71,
+10,
+&quot;2010-12-31&quot; 
+] 
+];
+data.addColumn(&#39;string&#39;,&#39;Fruit&#39;);
+data.addColumn(&#39;number&#39;,&#39;Year&#39;);
+data.addColumn(&#39;string&#39;,&#39;Location&#39;);
+data.addColumn(&#39;number&#39;,&#39;Sales&#39;);
+data.addColumn(&#39;number&#39;,&#39;Expenses&#39;);
+data.addColumn(&#39;number&#39;,&#39;Profit&#39;);
+data.addColumn(&#39;string&#39;,&#39;Date&#39;);
+data.addRows(datajson);
+return(data);
+}
+ 
+// jsDrawChart
+function drawChartMotionChartID119c2aa0b2f() {
+var data = gvisDataMotionChartID119c2aa0b2f();
+var options = {};
+options[&quot;width&quot;] =    600;
+options[&quot;height&quot;] =    400;
+
+
+    var chart = new google.visualization.MotionChart(
+    document.getElementById(&#39;MotionChartID119c2aa0b2f&#39;)
+    );
+    chart.draw(data,options);
+    
+
+}
+  
+ 
+// jsDisplayChart
+(function() {
+var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+var chartid = &quot;motionchart&quot;;
+  
+// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
+var i, newPackage = true;
+for (i = 0; newPackage &amp;&amp; i &lt; pkgs.length; i++) {
+if (pkgs[i] === chartid)
+newPackage = false;
+}
+if (newPackage)
+  pkgs.push(chartid);
+  
+// Add the drawChart function to the global list of callbacks
+callbacks.push(drawChartMotionChartID119c2aa0b2f);
+})();
+function displayChartMotionChartID119c2aa0b2f() {
+  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
+  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
+  window.clearTimeout(window.__gvisLoad);
+  // The timeout is set to 100 because otherwise the container div we are
+  // targeting might not be part of the document yet
+  window.__gvisLoad = setTimeout(function() {
+  var pkgCount = pkgs.length;
+  google.load(&quot;visualization&quot;, &quot;1&quot;, { packages:pkgs, callback: function() {
+  if (pkgCount != pkgs.length) {
+  // Race condition where another setTimeout call snuck in after us; if
+  // that call added a package, we must not shift its callback
+  return;
+}
+while (callbacks.length &gt; 0)
+callbacks.shift()();
+} });
+}, 100);
+}
+ 
+// jsFooter
+&lt;/script&gt;
+ 
+&lt;!-- jsChart --&gt;  
+&lt;script type=&quot;text/javascript&quot; src=&quot;https://www.google.com/jsapi?callback=displayChartMotionChartID119c2aa0b2f&quot;&gt;&lt;/script&gt;
+ 
+&lt;!-- divChart --&gt;
+  
+&lt;div id=&quot;MotionChartID119c2aa0b2f&quot; 
+  style=&quot;width: 600; height: 400;&quot;&gt;
+&lt;/div&gt;
 </content>
  </entry>
  

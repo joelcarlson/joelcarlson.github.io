@@ -18,5 +18,8 @@ Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and 
 *"Dosimetric Effects of Roll Rotational Setup Errors on Lung Stereotactic Ablative Radiotherapy Using Volumetric Modulated Arc Therapy"*  (Acta Oncologica)<br>
 Jaegi Lee, Sung-Joon Ye, Hak Jae Kim, **Joel Carlson**, and Jong Min Park
 
+*"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*<br>
+Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
+
 
 

@@ -95,8 +95,8 @@ h1, h2, h3, h4, h5, h6 {
 
 .masthead {
   padding-top:    1rem;
-  padding-bottom: 1rem;
-  margin-bottom: 3rem;
+  padding-bottom: 0.7rem;
+  margin-bottom: 1rem;
   border-bottom: 1px solid #eee;
 }
 .masthead-title {
@@ -550,4 +550,9 @@ a.pagination-item:hover {
 /* Only one tweak for a reverse layout */
 .layout-reverse.sidebar-overlay #sidebar-checkbox:checked ~ .sidebar {
   box-shadow: -.25rem 0 .5rem rgba(0,0,0,.1);
+}
+
+.MathJax .mo,
+.MathJax .mi {
+  color: inherit;
 }
