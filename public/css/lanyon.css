@@ -44,10 +44,17 @@ html {
   font-family: "PT Serif", Georgia, "Times New Roman", serif;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   font-family: "PT Sans", Helvetica, Arial, sans-serif;
   font-weight: 400;
   color: #313131;
+  letter-spacing: -.025rem;
+}
+
+h1 {
+  font-family: "PT Sans", Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  color: #0099CC;
   letter-spacing: -.025rem;
 }
 
@@ -299,13 +306,16 @@ a.sidebar-nav-item:focus {
 
 .page,
 .post {
-  margin-bottom: 4em;
+  margin-bottom: 2em;
 }
 
 /* Blog post or page title */
-.page-title,
+.page-title{
+color: #0099CC;
+}
 .post-title,
 .post-title a {
+  font-size: 120%;
   color: #303030;
 }
 .page-title,
@@ -317,7 +327,7 @@ a.sidebar-nav-item:focus {
 .post-date {
   display: block;
   margin-top: -.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   color: #9a9a9a;
 }
 

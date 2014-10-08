@@ -1,10 +1,10 @@
 ---
 layout: page
-title: Blog
+title: Projects and Posts
 permalink: /blog/
 ---
 <p class="message">
-  This is where I will post..well...blog related stuff.  Will it be different from my "Research" page? Hard to say!
+     &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;  A cross section of things I've been working on...
 </p>
 
 <div class="posts">
