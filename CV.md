@@ -5,5 +5,9 @@ permalink: /cv/
 ---
 
 <p class="message">
-  Future location of CV
+  Oops! Nothing here yet! CV coming soon.
 </p>
+
+<div>
+  <img src="/figs/Canon.jpg" alt="Woohoo!" title="Very Cute" width="750px"/>
+</div>
