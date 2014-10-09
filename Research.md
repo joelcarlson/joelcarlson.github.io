@@ -30,6 +30,6 @@ distribution should look like, and the plan then is physically delivered to a me
 
 Gamma analysis is one way of interpreting the results of the comparison.  By way of example, if the institution wants a gamma passing rate of 90% for 2%/2mm, then 90% of the 2mm by 2mm voxels must be within 2% of each other. 
 
-The process of physically delivering and measuring the distribution is time consuming, and laborious for Medical Physicists. Thus to spare valuable clinical resources, for my MSc thesis project I am looking to find a way to *predict* gamma passing rates using only information available in the calculated plan, thus obviating the need for the measurement step in certain cases.
+The process of physically delivering and measuring the distribution is time consuming and laborious for Medical Physicists. Thus to spare valuable clinical resources, for my MSc thesis project I am looking to find a way to *predict* gamma passing rates using only information available in the calculated plan, obviating the need for the measurement step in certain cases.
 
 Reproducible research is important to me, so the progress of this project can be tracked at my [Thesis Project](http://joelcarlson.github.io/thesis) page.
