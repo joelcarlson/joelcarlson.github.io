@@ -21,5 +21,8 @@ Jaegi Lee, Sung-Joon Ye, Hak Jae Kim, **Joel Carlson**, and Jong Min Park
 *"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*<br>
 Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
 
+*"The Effect of Beam Interruption during VMAT Delivery on the Delivered Dose Distribution"*<br>
+Taemin Heo, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
+
 
 
