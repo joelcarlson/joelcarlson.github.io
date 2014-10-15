@@ -24,5 +24,9 @@ Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
 *"The Effect of Beam Interruption during VMAT Delivery on the Delivered Dose Distribution"*<br>
 Taemin Heo, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
+*"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
+Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
+*"Modulation indices for volumetric modulated arc therapy"*<br>
+Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, Sung-Joon Ye
 
