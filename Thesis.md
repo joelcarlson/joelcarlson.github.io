@@ -9,7 +9,7 @@ permalink: /thesis/
 
 For my thesis project I am looking to use machine learning algorithms and concepts to predict gamma analysis results from fluence maps produced by radiotherapy treatment planning systems.
 
-When a patient is to receive a treatment they must first have several x-ray figs taken of them, and based on these figs a plan is developed to deliver as much radiation to the tumor
+When a patient is to receive a treatment they must first have several x-ray images taken of them, and based on these images a plan is developed to deliver as much radiation to the tumor
 as possible while sparing the surrounding tissues and any susceptible organs.  This is a complicated process, and the treatment planning system is occasionally over ambitious, creating
 a plan so complicated that the linear accelerator cannot physically deliver it.
 
@@ -27,7 +27,7 @@ It is my hypothesis that there are ways to combine more conventional modulation 
 
 
 #Introduction
-Gamma analysis is used in Radiotherapy to guage the accuracy of calculated vs measured dose distributions.  When a patient is to undergo a radiation treatment , several figs are taken for simulation using CT.  These figs are then used to create a treatment plan.  The treatment planning system (TPS) generates what it believes the dose distribution will be as delivered.  This distribution is not always accurate due to 'real world' considerations such as the mechanical operation of the linear accelerator.  To assess the deliverability Gamma analysis is utilized.
+Gamma analysis is used in Radiotherapy to gauge the accuracy of calculated vs measured dose distributions.  When a patient is to undergo a radiation treatment , several images are taken for simulation using CT.  These images are then used to create a treatment plan.  The treatment planning system (TPS) generates what it believes the dose distribution will be as delivered.  This distribution is not always accurate due to 'real world' considerations such as the mechanical operation of the linear accelerator.  To assess the deliverability Gamma analysis is utilized.
 
 A quantitative method of assessing deliverability considers the planar dose as a collection of point doses, and then to find the percent difference between calculated and measured at each point.  The percentage of points passing a predetermined criterion (eg. \\(3\%\\), \\(2\%\\), \\(1\%\\)) is reported.
 This method is straightforward, but may be differentially reliable in regions of high and low dose gradients.
@@ -35,11 +35,11 @@ This method is straightforward, but may be differentially reliable in regions of
 #Gamma Analysis
 A method put forth by Low et al (1998) and Low and Dempsey (2003) is known as Gamma Analysis.  Consider two dose distributions, a reference and an evaluated distribution.  The Gamma at each point is given by
 
-![Gamma formula](figs/gammanalysis.png)
+![Gamma formula](/figs/gammanalysis.png)
 
 The delta terms are the DTA and dose difference criteria.  The other terms:
 
-![Gamma formula terms](figs/gammanalysisterms.png)
+![Gamma formula terms](/figs/gammanalysisterms.png)
 
 Are the distance and dose difference between the reference and evaluated points. \\(D_r (r_r)\\) and \\(D_e (r_e)\\) are the reference and evaluated doses at points \\(r_r\\) and \\(r_e\\). Gamma is found for each point in the evaluated distribution, and the smallest of these values becomes the gamma at that reference point, this is repeated for each reference point.
 
@@ -53,7 +53,7 @@ The major modulation indices form the literature are Masi et al's \\(MCS_v\\), \
 Let's examine these in turn:
 
 #LTMCS, MCSv
-In the 2013 [paper](figs/Masi.pdf) Impact of plan parameters on the dosimetric accuracy of volumetric modulated arc
+In the 2013 [paper](/figs/Masi.pdf) Impact of plan parameters on the dosimetric accuracy of volumetric modulated arc
 therapy, Masi et al proposed two modulation indices: LTMCS, MCSv.
 
 An attempt was made to determine if there was a correlation between several plan parameters and results obtained by patient-specific QA results for VMAT. 
@@ -61,7 +61,7 @@ An attempt was made to determine if there was a correlation between several plan
 Parameters taken into account included:
 
  - Average leaf travel
- - Adapted version of MCS from [McNiven](figs/Mcniven.pdf)
+ - Adapted version of MCS from [McNiven](/figs/Mcniven.pdf)
  - Impact of CP angular separation
  
 The hypothesis in this paper being that if MLC shapes change significantly between adjacent CPs there is a large amount of leaf travel, and this may lead to disprepancies between calculated and delivered dose. Values greater than \\(5mm/deg\\) were found to lead, in some cases, to less accurate delivery.
@@ -79,7 +79,7 @@ In this study a selection of the 40 plans of the 142 which had \\(2\%/2mm\\) pas
 For each leaf, the entire travel over the VMAT arc was computed, and averaged over all in-field moving leaves of the considered plan.  Closed leaves were not considered. (*This doesn't seem like a very good method...totally lacking in granularity.  averaged over the entire arc??*)
 
 ####MCSv
-As stated above, MCS was defined for IMRT plans and discussed in [Mcniven](figs/Mcniven.pdf).  To modify this index to apply to VMAT, the authors considered controls of the arc rather than segments. **The values of MCSv range from 0 to 1** with 1 meaning no modulation, as exemplified by an arc with a fixed aperture and no leaf movements.  As modulation increases, the score decreases. 
+As stated above, MCS was defined for IMRT plans and discussed in [Mcniven](/figs/Mcniven.pdf).  To modify this index to apply to VMAT, the authors considered controls of the arc rather than segments. **The values of MCSv range from 0 to 1** with 1 meaning no modulation, as exemplified by an arc with a fixed aperture and no leaf movements.  As modulation increases, the score decreases. 
 
 ####LTi: LT and MCSv combined
 The combined action of LT and MCSv was calculated as \\(LTi = (1000 - LT)/1000\\).  The values in this case range between 0 and 1, where 0 is obtained for \\(LT = 1000\\), and 1 when \\(LT = 0\\). That is to say, LTi values are higher for lower values of leaf travel.
@@ -106,19 +106,19 @@ Correlations were then found between dosimetric accuracy (as calcualted with pas
 
 :
 
-![MasiPass](figs/Masipassrates.png)
+![MasiPass](/figs/Masipassrates.png)
 
 ####Plan Parameters
 
 : 
 
-![Masiparams](figs/Masiparams.png)
+![Masiparams](/figs/Masiparams.png)
 
 ####Correlations
 
 :
 
-![Masicorr](figs/Masicorr.png)
+![Masicorr](/figs/Masicorr.png)
 
 A moderate correlation was observed between every parameter and gamma passing rates, with higher values for MCSv and LTMCS compared to MU. For leaf travel, negative correlation is observed, indicating that for higher LT values, lower pass rates are more frequent, as intuition would dictate.  Plans with very high LT values (greater than 500mm) mostly had pass rates below \\(90\%\\) and almost half had pass rates below \\(80\%\\).
 
@@ -131,22 +131,22 @@ Once the plan is developed, LTMCS values are calculated.  Since all plans with a
 
 #MIsport
 
-The next index we will investigate is the \\(MI_sport\\) created by Xing and Li in the 2013 [paper](figs/Xing.pdf) "An adaptive planning strategy for station parameter optimized radiation therapy (SPORT): Segmentally boosted VMAT".
+The next index we will investigate is the \\(MI_sport\\) created by Xing and Li in the 2013 [paper](/figs/Xing.pdf) "An adaptive planning strategy for station parameter optimized radiation therapy (SPORT): Segmentally boosted VMAT".
 
 This paper set out to propose a novel method for altering the rotations of VMAT treatment to spend extra time in certain positions based on priorities.  In the paper, however, they specify a new modulation index to quanitfy the accuracy of their results, and this modulation index will be of use.
 
 From the paper: "To quantify the level of intensity modulation of a station point, we introduce a demand metric called modulation index (MI) as follows:"
 
-![XingMI](figs/XingMI.png)
+![XingMI](/figs/XingMI.png)
 
 The MI is therefore given per angle, with results for a representative plan:
 
-![Xingrep](figs/Xingrep.png)
+![Xingrep](/figs/Xingrep.png)
 
 For this modulation index, large values indicate increased modulation, and therefore decreased deliverability.
 
 #Miura
 
-In the 2014 [paper](figs/Miura.pdf) "DICOM-RT Plan Complexity Verification for Volumetric Modulated Arc Therapy" Miura et al. investigated the relationship between several plan parameters and dosimetric results for VMAT.
+In the 2014 [paper](/figs/Miura.pdf) "DICOM-RT Plan Complexity Verification for Volumetric Modulated Arc Therapy" Miura et al. investigated the relationship between several plan parameters and dosimetric results for VMAT.
 
 
