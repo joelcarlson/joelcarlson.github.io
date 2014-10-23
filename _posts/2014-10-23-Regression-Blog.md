@@ -68,7 +68,7 @@ As a visual aid, this diagram describes the same information:
 
 To illustrate, would anyone ever imagine there being a causal relationship between *avalanches* and the *number of internships at banks*?
 
-![rut](/figs/Regression Blog/avalanche.png)
+![rut](/figs/Regression Blog/avalanche.PNG)
 
 Of course, both of these are seasonal occurrences, and have no causal relationship. Therefore observed effects may be completely, or partly spurious.  In the GPA and earnings example, perhaps there is another variable.  A possibility is innate IQ, those with a high IQ would presumably have a better GPA, and also be able to find higher earnings later in life.  In this case, the direction of the arrow for \\(\theta\\) would change in our diagram, and leads to the equations:
 
@@ -104,7 +104,8 @@ In the absence of confounder we can estimate the slope of the regression for \\(
 
 If the true model is linear, and the error term is uncorrelated with \\(x\\), then the slope is equal to the causal effect of \\(x\\) on \\(y\\). However, in a more realistic situation with confounders, where \\(x\\) and the error term are correlated, the slope measure both the effect of the confounder, and the effect of \\(x\\) on \\(y\\).  In this case, the slope from above is measuring the following:
 
-\\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} = \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\\]
+\\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} \\]
+\\[= \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\\]
 
 
 
