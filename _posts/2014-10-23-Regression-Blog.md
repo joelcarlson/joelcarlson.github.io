@@ -5,9 +5,9 @@ layout: page
 excerpt: Some methods for regression modeling with explanations of mediators and confounders
 ---
 
-This post will examine multivariate regressions.  I have been taking a coursera course about making causal inferences in the social sciences, and while I am not directly involved in social science, the methods are broadly applicable to my own field.  Concurrent with this class, I have been taking a course called *Epidemiology with R* through Seoul National University which also deals with regression methods.  
+This post will examine multivariate regressions.  I have been taking a coursera course about making causal inferences in the social sciences, and while I am not directly involved in social science, the methods are broadly applicable to my own field.  
 
-Often times variables within a dataset are related to eachother in some way.  One possible relationship between variables in the linear relationship, as shown by `mpg` vs `disp` in the `mtcars` dataset:
+One way to explore the relationships of variables within a dataset is through regressions. One possible relationship between variables is the linear relationship, as shown by `mpg` vs `disp` in the `mtcars` dataset:
 
 ![center](/figs/Regression Blog/unnamed-chunk-1.png) 
 
