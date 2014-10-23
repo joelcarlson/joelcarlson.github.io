@@ -41,19 +41,19 @@ The delta terms are the DTA and dose difference criteria.  The other terms:
 
 ![Gamma formula terms](/figs/Thesis/gammanalysisterms.png)
 
-Are the distance and dose difference between the reference and evaluated points. \\( D_r (r_r) \\) and \\( D_e (r_e) \\) are the reference and evaluated doses at points \\( r_r \\) and \\( r_e \\). Gamma is found for each point in the evaluated distribution, and the smallest of these values becomes the gamma at that reference point, this is repeated for each reference point.
+Are the distance and dose difference between the reference and evaluated points. D<sub>r</sub>(r<sub>r</sub>) and D<sub>e</sub>(r<sub>e</sub>) are the reference and evaluated doses at points r<sub>r</sub> and r<sub>e</sub>. Gamma is found for each point in the evaluated distribution, and the smallest of these values becomes the gamma at that reference point, this is repeated for each reference point.
 
 A point is said to pass gamma if the gamma value at that point is less than one.  For gamma analysis a plan for which passing rate remains above \\(90\%\\) with strict tolerance, such as \\((2/2)\\) can be considered dosimetrically robust.
 
 #VMAT Modulation Indices
 In VMAT plans excessive modulation may lead to errors in delivery.  Gamma pass rates are one way to quanitfy the errors.  A further method is to calculate an index based on the DICOM files from the TPS that may capture the features that make a plan undeliverable.  If these features can be discovered it would save the medical physicist the trouble of physically measuring for gamma analysis.  Although gamma analysis is not a ground truth for plan deliverability, it will be used as a surrogate in this study.  Other patential indicators are DVHs and log files, to be investigated at some point.
 
-The major modulation indices form the literature are Masi et al's \\(MCS_{v} \\), \\( LTMCS \\), Li and Xing's \\( MI_{SPORT} \\), and Park et al's \\(LIST Jong Mins indices\\), and Park et al's \\(ASM\\), \\(IDM\\), \\(Contrast\\), \\(Variance\\), \\(Correlation\\) and \\(Entropy\\).
+The major modulation indices form the literature are Masi et al's *MCS<sub>v</sub>*, *LTMCS*, Li and Xing's *MI<sub>SPORT</sub>*, and Park et al's (pile of MIs), and Park et al's *ASM*, *IDM*, *Contrast*, *Variance*, *Correlation* and *Entropy*.
 
 Let's examine these in turn:
 
 #LTMCS, MCSv
-In the 2013 [paper](http://www.ncbi.nlm.nih.gov/pubmed/23822422) "Impact of plan parameters on the dosimetric accuracy of volumetric modulated arc therapy", Masi et al proposed two modulation indices: LTMCS, MCSv.
+In the 2013 [paper](http://www.ncbi.nlm.nih.gov/pubmed/23822422) "Impact of plan parameters on the dosimetric accuracy of volumetric modulated arc therapy", Masi et al proposed two modulation indices: LTMCS, MCS<sub>v</sub>.
 
 An attempt was made to determine if there was a correlation between several plan parameters and results obtained by patient-specific QA results for VMAT. 
 
@@ -77,17 +77,17 @@ In this study a selection of the 40 plans of the 142 which had \\(2\%/2mm\\) pas
 ####Leaf Travel
 For each leaf, the entire travel over the VMAT arc was computed, and averaged over all in-field moving leaves of the considered plan.  Closed leaves were not considered. (*This doesn't seem like a very good method...totally lacking in granularity.  averaged over the entire arc??*)
 
-####MCSv
+####MCS<sub>v</sub>
 As stated above, MCS was defined for IMRT plans and discussed in [Mcniven](http://www.ncbi.nlm.nih.gov/pubmed/20229859).  To modify this index to apply to VMAT, the authors considered controls of the arc rather than segments. **The values of MCSv range from 0 to 1** with 1 meaning no modulation, as exemplified by an arc with a fixed aperture and no leaf movements.  As modulation increases, the score decreases. 
 
-####LTi: LT and MCSv combined
-The combined action of LT and MCSv was calculated as \\(LTi = (1000 - LT)/1000\\).  The values in this case range between 0 and 1, where 0 is obtained for \\(LT = 1000\\), and 1 when \\(LT = 0\\). That is to say, LTi values are higher for lower values of leaf travel.
+####LTi: LT and MCS<sub>v</sub> combined
+The combined action of LT and MCS<sub>v</sub> was calculated as \\(LTi = (1000 - LT)/1000\\).  The values in this case range between 0 and 1, where 0 is obtained for \\(LT = 1000\\), and 1 when \\(LT = 0\\). That is to say, LTi values are higher for lower values of leaf travel.
 
 ####LTMCS
-The LTMCS index is derived by multiplying LTi by MCSv, which with both parameters has **values in the range of 0 to 1**, and goes to 0 for increasing modulation and leaf motion.
+The LTMCS index is derived by multiplying LTi by MCS<sub>v</sub>, which with both parameters has **values in the range of 0 to 1**, and goes to 0 for increasing modulation and leaf motion.
 
 ####Data Analysis
-For analysis, CP spacing was reduced to 2 or 3 degrees and the plans re-optimized.  Of the 40 plans used, \\(LT\\), \\(MCS\\), \\(LTMCS\\) and \\(MU\\) were averaged and compared to the respective values of the original plans. The purpose of this was to examine whether the complexity of the new group of plans with smaller spacing was comparable to the original 4 degree spacing. The Student's *t*-test was used to analyze differences in means.
+For analysis, CP spacing was reduced to 2 or 3 degrees and the plans re-optimized.  Of the 40 plans used, *LT*, *MCS*, *LTMCS* and *MU* were averaged and compared to the respective values of the original plans. The purpose of this was to examine whether the complexity of the new group of plans with smaller spacing was comparable to the original 4 degree spacing. The Student's *t*-test was used to analyze differences in means.
 
 The initial 142 plans created with 4 degree sampling constituted a starting point for analysis.  Descriptive statistics were calculated for the examined parameters (LT, MCS, LTMCS, MU) and for gamma pass rates at each tolerance level (\\(3/3\\), \\(2/2\\)).
 
@@ -113,9 +113,9 @@ Correlations were then found between dosimetric accuracy (as calcualted with pas
 
 ![Masicorr](/figs/Thesis/Masicorr.png)
 
-A moderate correlation was observed between every parameter and gamma passing rates, with higher values for MCSv and LTMCS compared to MU. For leaf travel, negative correlation is observed, indicating that for higher LT values, lower pass rates are more frequent, as intuition would dictate.  Plans with very high LT values (greater than 500mm) mostly had pass rates below \\(90\%\\) and almost half had pass rates below \\(80\%\\).
+A moderate correlation was observed between every parameter and gamma passing rates, with higher values for MCS<sub>v</sub> and LTMCS compared to MU. For leaf travel, negative correlation is observed, indicating that for higher LT values, lower pass rates are more frequent, as intuition would dictate.  Plans with very high LT values (greater than 500mm) mostly had pass rates below \\(90\%\\) and almost half had pass rates below \\(80\%\\).
 
-All plans, with the exception of two, with MCSv values greater than 0.5 yielded pass rates above \\(90\%\\). For plans with MCSv below 0.3 more than half had passing rates below \\(90\%\\). All plans with LTMCS above 0.48 had (\\(2/2\\)) pass rates above \\(90\%\\), and \\(70\%\\) of plans with LTMCS below 0.2 had pass rates below \\(90\%\\).
+All plans, with the exception of two, with MCS<sub>v</sub> values greater than 0.5 yielded pass rates above \\(90\%\\). For plans with MCS<sub>v</sub> below 0.3 more than half had passing rates below \\(90\%\\). All plans with LTMCS above 0.48 had (\\(2/2\\)) pass rates above \\(90\%\\), and \\(70\%\\) of plans with LTMCS below 0.2 had pass rates below \\(90\%\\).
 
 ##Implementation of Results in VMAT creation workflow
 When planning a treatment, average LT is calculated.  If the value is above 450mm or leaf motion is greater than \\(5mm/deg\\) then CP sampling is decreased from 4 to 2 or 2 degrees to ensure accurate calculation.
@@ -124,7 +124,7 @@ Once the plan is developed, LTMCS values are calculated.  Since all plans with a
 
 #MIsport
 
-The next index we will investigate is the \\(MI_{sport}\\) created by Xing and Li in the 2013 [paper](http://www.ncbi.nlm.nih.gov/pubmed/23635247) "An adaptive planning strategy for station parameter optimized radiation therapy (SPORT): Segmentally boosted VMAT".
+The next index we will investigate is the *MI<sub>SPORT</sub>* created by Xing and Li in the 2013 [paper](http://www.ncbi.nlm.nih.gov/pubmed/23635247) "An adaptive planning strategy for station parameter optimized radiation therapy (SPORT): Segmentally boosted VMAT".
 
 This paper set out to propose a novel method for altering the rotations of VMAT treatment to spend extra time in certain positions based on priorities.  In the paper, however, they specify a new modulation index to quanitfy the accuracy of their results, and this modulation index will be of use.
 
