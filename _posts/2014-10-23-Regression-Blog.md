@@ -13,13 +13,13 @@ One way to explore the relationships of variables within a dataset is through re
 
 The formula given is extremely simple:
 \\[y = a + bx + e\\]
-Where \\(y\\) is the dependent variable (in this case `mpg`), and \\(x\\) is the independent (`displacement`).  The relationship between the two is expressed by the slope term, \\(b\\), which is interpreted as the change in \\(y\\) per unit of \\(x\\), in this case, \\(-0.041\\) mpg per cubic inch of displacement).  The \\(a\\) term gives the \\(y\\)-intercept, that is, the value of \\(y\\) when \\(x\\) is \\(0\\), which for the cars data gives the theoretical `mpg` of a vehicle with \\(0\\) `displacement`.
+Where \\(y\\) is the dependent variable (in this case `mpg`), and \\(x\\) is the independent (`displacement`).  The relationship between the two is expressed by the slope term, \\(b\\), which is interpreted as the change in \\(y\\) per unit of \\(x\\), in this case, \\(-0.041\\) mpg per cubic inch of displacement.  The \\(a\\) term gives the \\(y\\)-intercept, that is, the value of \\(y\\) when \\(x\\) is \\(0\\), which for the cars data gives the theoretical `mpg` of a vehicle with \\(0\\) `displacement`. The error term is not displayed on the graph.
 
 ### Multivariate Regressions
 
 Theoretically there is no limit to how many independent variables we wish to include in the model. Let's consider a different example, perhaps more relatable than technical specs of old cars: The relationship between a students GPA, the years the student spends in school, and their estimated earnings later in life.  
 
-In our theoretical model, a student with a higher GPA will generally earn more than a student who had a lower GPA.  Also, a student who has spent more years studying will have higher earnings than a student who has spent fewer years studying.  With these assumption it is implied that a student with a high GPA, who has spent many years in school will have the highest earnings of all.  The converse is also implied, a student who did not study for long, and had a low GPA will have the lowest earnings. Given more than one independent variable, our equation becomes:
+In our theoretical model, a student with a higher GPA will generally earn more than a student with a lower GPA.  Also, a student who has spent more years studying will have higher earnings than a student who has spent fewer years studying.  With these assumptions it is implied that a student with a high GPA, who has spent many years in school will have the highest earnings of all.  The converse is also implied, a student who did not study for long, and had a low GPA will have the lowest earnings. Given more than one independent variable, our equation becomes:
 
 \\[
 y = a + \beta x + \gamma z + \mu
@@ -29,19 +29,29 @@ In reality this relationship is not so clear cut as the explanation.  In a given
 
 There is also the question of how the independent variables are related to each other.  For example, it stands to reason that student who have higher GPAs may go on to study for more years than do their low GPA counterparts.
 
-One way to capture this potential correlation is to look at:
+One way to capture this potential correlation is to look at the relationship between \\(x\\) and \\(z\\).  In this case again assumed to be linear:
 
 \\[
-z = \delta + \theta x + \nu \rightarrow cov(z,x) \neq 0
+z = \delta + \theta x + \nu 
 \\]
 
-That is, if the covariance of \\(x\\) and \\(z\\) are not equal to \\(0\\) then there is evidence that they are related to each other in some way. Rearranging and substituting the covariance equation into the regression model returns a linear relationship:
+If the covariance of \\(x\\) and \\(z\\) is not equal to \\(0\\) then there is evidence that they are related to each other in some way.
 
 \\[
-y = a + \beta x + \gamma (\delta + \theta x + \nu) + \mu \rightarrow a + \gamma \delta + (\beta + \gamma \theta)x + \gamma \nu +  \mu
+cov(z,x) \neq 0
+\\]
+
+Rearranging and substituting the covariance equation into the regression model returns a linear relationship:
+
+\\[
+y = a + \beta x + \gamma (\delta + \theta x + \nu) + \mu  
 \\]
 
 Rearranging and collecting like terms gives: 
+
+\\[
+y = a + \gamma \delta + (\beta + \gamma \theta)x + \gamma \nu +  \mu
+\\]
 
 \\[
 y = a + bx + e
@@ -106,6 +116,5 @@ If the true model is linear, and the error term is uncorrelated with \\(x\\), th
 
 \\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} \\]
 \\[= \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\\]
-
 
 
