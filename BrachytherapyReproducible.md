@@ -1,7 +1,7 @@
 ---
-title: "Brachytherapy Reproducible Research"
 layout: page
-permalink: /brachytherapyRepro
+title: "Brachytherapy Reproducible Research"
+permalink: /brachytherapyRepro/
 ---
 ##Introduction
 
