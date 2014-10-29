@@ -62,7 +62,8 @@ Dose rate constant is calculated as:
 
 ![drc](/figs/BrachyReproducible/DRC.png)
 
-In the TG-43 formalism, \\(r_0\\) is 1 cm and \\(\theta_0=90^{\circ}\\).
+
+In the TG-43 formalism,\\(r_0\\) is 1 cm and \\(\theta_0=90^{\circ}\\).
 
 Given the output file we define a function to extract the cell tally values and use them to calculate the dose rate constant of the seed:
 
@@ -180,9 +181,7 @@ RadialDoseFunction()
 
 The next and final calculation is of the **2D anisotropy function**.  The formula for the 2D anisotropy function is:
 
-\\[
-F(r, \theta) = \frac{\dot{D}(r,\theta)}{\dot{D}(r, \theta_0)} \frac{G_L(r, \theta_0)}{G_L(r, \theta)}
-\\]
+![ani](/figs/BrachyReproducible/aniso.png)
 
 For this function, the data is stored across several different output files in the folder `AnisoOutFiles`.  There exists one output file every \\(10^{\circ}\\) for a total of 10 files (for publication quality it is recommended that every \\(5^{\circ}\\) be sampled.)
 
