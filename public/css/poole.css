@@ -1,4 +1,4 @@
-/*
+﻿/*
  *                        ___
  *                       /\_ \
  *  _____     ___     ___\//\ \      __
@@ -263,7 +263,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 38rem;
+  max-width: 41rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;

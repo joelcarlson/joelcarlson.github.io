@@ -62,9 +62,6 @@ Dose rate constant is calculated as:
 
 ![drc](/figs/BrachyReproducible/DRC.png)
 
-
-In the TG-43 formalism,\\(r_0\\) is 1 cm and \\(\theta_0=90^{\circ}\\).
-
 Given the output file we define a function to extract the cell tally values and use them to calculate the dose rate constant of the seed:
 
 {% highlight r %}
