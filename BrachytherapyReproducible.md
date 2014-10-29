@@ -54,17 +54,15 @@ All measured quantities are "measured" using Monte Carlo simulation.  In this ca
 
 The output file should look like this: [MCNP output file](https://raw.githubusercontent.com/joelcarlson/Reproducible-TG43-Brachytherapy/master/Aug28KAERIFA.txt).
 
-This output file contains the detector element surfaces relevant to calculating 2D anistropy, hence the many warnings, however they do not alter the output in any way. A function must be written to extract the relevant detector cell tallies described in this diagram, where F6 indicates the track length estimator tally in MCNPX:
+This output file contains the detector element surfaces relevant to calculating 2D anisotropy, hence the many warnings, however they do not alter the output in any way. A function must be written to extract the relevant detector cell tallies described in this diagram, where F6 indicates the track length estimator tally in MCNPX:
 
 ![AirKerm](/figs/BrachyReproducible/AirKerma.png)
 
 Dose rate constant is calculated as:
 
-$$\Delta = \frac{\dot{D}(r_0,\theta_0)}{\dot{K}_{\delta}(d)d^2}$$
+![drc](/figs/BrachyReproducible/DRC.png)
 
-\\[\Delta = \frac{802_{F6}}{803_{F6}*r^2}\\]
-
-In the TG-43 formalism, \\(r_{0}=1\\\)cm and \\(\theta_0=90^{\circ}\\).
+In the TG-43 formalism, \\(r_0\\) is 1 cm and \\(\theta_0=90^{\circ}\\).
 
 Given the output file we define a function to extract the cell tally values and use them to calculate the dose rate constant of the seed:
 
@@ -104,9 +102,7 @@ doseRC()
 
 The next quantity of interest to calculate is the **Radial Dose Function**, \\(g_L(r)\\).  The formula is as follows:
 
-\\[
-g_L(r) = \frac{\dot{D}(r,\theta_0)}{\dot{D}(r_0, \theta_0)} \frac{G_L(r_0, \theta_0)}{G_L(r, \theta_0)}
-\\]
+![drc](/figs/BrachyReproducible/radial.png)
 
 Therefore we need to access the tally values from our output from the simulation with the detectors on the transverse plane (ie. \\(\theta_0\\)). The output file should look like this: [example output file](https://raw.githubusercontent.com/joelcarlson/Reproducible-TG43-Brachytherapy/master/KAERI_90_out.txt).
 
@@ -251,31 +247,31 @@ Aniso <- function(){
 
 
 {% highlight text %}
-##        r      0     10     20     30     40     50     60     70     80 90
-## 1   0.25 0.1986 0.4946 0.9368 1.0475 1.0754 1.0714 0.9742 0.9893 0.9969  1
-## 2   0.30 0.1928 0.4591 0.8155 0.9989 1.0514 1.0685 1.0149 0.9873 0.9971  1
-## 3   0.40 0.2106 0.4653 0.7456 0.9393 1.0206 1.0547 1.0664 0.9853 0.9958  1
-## 4   0.50 0.2249 0.4849 0.7340 0.9072 1.0040 1.0439 1.0637 1.0644 0.9962  1
-## 5   0.60 0.2449 0.5053 0.7327 0.8939 0.9948 1.0377 1.0605 1.0658 0.9964  1
-## 6   0.70 0.2641 0.5227 0.7373 0.8870 0.9867 1.0336 1.0570 1.0648 0.9975  1
-## 7   0.80 0.2806 0.5380 0.7412 0.8839 0.9800 1.0286 1.0538 1.0634 0.9974  1
-## 8   0.90 0.2936 0.5512 0.7467 0.8823 0.9762 1.0260 1.0515 1.0623 1.0484  1
-## 9   1.00 0.3109 0.5643 0.7516 0.8817 0.9722 1.0234 1.0488 1.0611 1.0570  1
-## 10  1.25 0.3465 0.5894 0.7635 0.8829 0.9671 1.0182 1.0437 1.0567 1.0563  1
-## 11  1.50 0.3765 0.6099 0.7725 0.8847 0.9643 1.0152 1.0406 1.0539 1.0546  1
-## 12  1.75 0.4103 0.6263 0.7812 0.8875 0.9627 1.0130 1.0374 1.0510 1.0537  1
-## 13  2.00 0.4194 0.6412 0.7871 0.8884 0.9607 1.0096 1.0340 1.0473 1.0504  1
-## 14  2.50 0.4630 0.6640 0.7988 0.8922 0.9593 1.0056 1.0298 1.0431 1.0461  1
-## 15  3.00 0.4920 0.6805 0.8067 0.8954 0.9578 1.0027 1.0263 1.0386 1.0425  1
-## 16  3.50 0.5306 0.6976 0.8142 0.8985 0.9575 1.0009 1.0240 1.0371 1.0400  1
-## 17  4.00 0.5697 0.7093 0.8212 0.8996 0.9566 0.9978 1.0206 1.0330 1.0364  1
-## 18  4.50 0.5874 0.7180 0.8253 0.9012 0.9562 0.9958 1.0189 1.0308 1.0342  1
-## 19  5.00 0.6269 0.7283 0.8303 0.9017 0.9539 0.9949 1.0155 1.0286 1.0322  1
-## 20  6.00 0.6481 0.7399 0.8366 0.9041 0.9538 0.9913 1.0112 1.0233 1.0275  1
-## 21  7.00 0.6817 0.7551 0.8398 0.9044 0.9525 0.9895 1.0091 1.0216 1.0244  1
-## 22  8.00 0.6950 0.7603 0.8460 0.9088 0.9545 0.9865 1.0069 1.0186 1.0234  1
-## 23  9.00 0.7173 0.7687 0.8500 0.9104 0.9525 0.9862 1.0060 1.0159 1.0210  1
-## 24 10.00 0.7418 0.7780 0.8484 0.9097 0.9501 0.9821 1.0007 1.0116 1.0192  1
+##        r    0   10   20   30   40   50   60   70   80 90
+## 1   0.25 0.20 0.49 0.94 1.05 1.08 1.07 0.97 0.99 1.00  1
+## 2   0.30 0.19 0.46 0.82 1.00 1.05 1.07 1.01 0.99 1.00  1
+## 3   0.40 0.21 0.47 0.75 0.94 1.02 1.05 1.07 0.99 1.00  1
+## 4   0.50 0.22 0.48 0.73 0.91 1.00 1.04 1.06 1.06 1.00  1
+## 5   0.60 0.24 0.51 0.73 0.89 0.99 1.04 1.06 1.07 1.00  1
+## 6   0.70 0.26 0.52 0.74 0.89 0.99 1.03 1.06 1.06 1.00  1
+## 7   0.80 0.28 0.54 0.74 0.88 0.98 1.03 1.05 1.06 1.00  1
+## 8   0.90 0.29 0.55 0.75 0.88 0.98 1.03 1.05 1.06 1.05  1
+## 9   1.00 0.31 0.56 0.75 0.88 0.97 1.02 1.05 1.06 1.06  1
+## 10  1.25 0.35 0.59 0.76 0.88 0.97 1.02 1.04 1.06 1.06  1
+## 11  1.50 0.38 0.61 0.77 0.88 0.96 1.02 1.04 1.05 1.05  1
+## 12  1.75 0.41 0.63 0.78 0.89 0.96 1.01 1.04 1.05 1.05  1
+## 13  2.00 0.42 0.64 0.79 0.89 0.96 1.01 1.03 1.05 1.05  1
+## 14  2.50 0.46 0.66 0.80 0.89 0.96 1.01 1.03 1.04 1.05  1
+## 15  3.00 0.49 0.68 0.81 0.90 0.96 1.00 1.03 1.04 1.04  1
+## 16  3.50 0.53 0.70 0.81 0.90 0.96 1.00 1.02 1.04 1.04  1
+## 17  4.00 0.57 0.71 0.82 0.90 0.96 1.00 1.02 1.03 1.04  1
+## 18  4.50 0.59 0.72 0.83 0.90 0.96 1.00 1.02 1.03 1.03  1
+## 19  5.00 0.63 0.73 0.83 0.90 0.95 0.99 1.02 1.03 1.03  1
+## 20  6.00 0.65 0.74 0.84 0.90 0.95 0.99 1.01 1.02 1.03  1
+## 21  7.00 0.68 0.76 0.84 0.90 0.95 0.99 1.01 1.02 1.02  1
+## 22  8.00 0.69 0.76 0.85 0.91 0.95 0.99 1.01 1.02 1.02  1
+## 23  9.00 0.72 0.77 0.85 0.91 0.95 0.99 1.01 1.02 1.02  1
+## 24 10.00 0.74 0.78 0.85 0.91 0.95 0.98 1.00 1.01 1.02  1
 {% endhighlight %}
 
 ##Plots
