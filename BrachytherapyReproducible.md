@@ -1,7 +1,7 @@
 ---
 title: "Brachytherapy Reproducible Research"
 layout: page
-permalink: /brachytherapy/2
+permalink: /brachytherapyRepro
 ---
 ##Introduction
 
@@ -13,11 +13,11 @@ In this document I will explain the calculations required to obtain TG-43 parame
 
 The first required quantity is the **Geometry Function**.  The purpose of the geometry function is to improve the accuracy with which dose rates can be estimated through interpolation. The line source model is recommended in [TG-43](https://www.aapm.org/pubs/reports/rpt_84.pdf), with geometry as in this diagram:
 
-![geom1](figs/Geom1.png)
+![geom1](/figs/BrachyReproducible/Geom1.png)
 
 The equation for the Geometry function is as follows:
 
-![geom2](figs/Geom2.png)
+![geom2](/figs/BrachyReproducible/Geom2.png)
 
 To calculate the geometry function we define several function.  The equations for each side of the diagram, and \\(\beta\\), and use the outputs from these functions to calculate the geometry function:
 
@@ -48,7 +48,7 @@ GeomFunction(pi/18, 10,0.3)
 ##Measured Quantities
 
 All measured quantities are "measured" using Monte Carlo simulation.  In this case, MCNPX was used for calculation.  The rest of the document will assume that the Mone Carlo calculations are complete, and the output files are organized in a directory structure such as this:
-![dirStruct](figs/DirStructure.png)
+![dirStruct](/figs/BrachyReproducible/DirStructure.png)
 
 ###Dose Rate Constant
 
@@ -56,7 +56,7 @@ The output file should look like this: [MCNP output file](https://raw.githubuser
 
 This output file contains the detector element surfaces relevant to calculating 2D anistropy, hence the many warnings, however they do not alter the output in any way. A function must be written to extract the relevant detector cell tallies described in this diagram, where F6 indicates the track length estimator tally in MCNPX:
 
-![AirKerm](figs/AirKerma.png)
+![AirKerm](/figs/BrachyReproducible/AirKerma.png)
 
 Dose rate constant is calculated as:
 \\[
@@ -291,7 +291,7 @@ Here is the radial dose function plotted against several other published seed re
 radialPlot()
 {% endhighlight %}
 
-![center](/figs/Calculations Markdown.rmd/unnamed-chunk-7.png) 
+![center](/figs/BrachyReproducible/unnamed-chunk-7.png) 
 
 And a zoom in of the area of interest from r = 0 to r = 2:
 
@@ -301,7 +301,7 @@ And a zoom in of the area of interest from r = 0 to r = 2:
 radialPlotZoom()
 {% endhighlight %}
 
-![center](/figs/Calculations Markdown.rmd/unnamed-chunk-9.png) 
+![center](/figs/BrachyReproducible/unnamed-chunk-9.png) 
 
 ###2D Anisotropy
 
@@ -313,7 +313,7 @@ Inspiration for the following plot was taken from [Rivard 2008](http://scitation
 plotAniso()  
 {% endhighlight %}
 
-![center](/figs/Calculations Markdown.rmd/unnamed-chunk-11.png) 
+![center](/figs/BrachyReproducible/unnamed-chunk-11.png) 
 
 ##Conclusion
 

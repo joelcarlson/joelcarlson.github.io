@@ -13,6 +13,6 @@ Before a seed can be used clinically it must have several parameters, known as [
 
 The Monte Carlo simulations for the seed were carried out using the [MCNPX](https://mcnp.lanl.gov/) software.
 
-This project has been completed in a reproducible fashion.  Check out the [Brachytherapy Reproducible Research](http://joelcarlson.github.io/brachytherapy/2 
+This project has been completed in a reproducible fashion.  Check out the [Brachytherapy Reproducible Research](http://joelcarlson.github.io/brachytherapyRepro) page. 
 
 
