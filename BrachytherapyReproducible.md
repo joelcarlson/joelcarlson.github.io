@@ -59,14 +59,12 @@ This output file contains the detector element surfaces relevant to calculating 
 ![AirKerm](/figs/BrachyReproducible/AirKerma.png)
 
 Dose rate constant is calculated as:
-\\[
-\Delta = \frac{\dot{D}(r_0,\theta_0)}{\dot{K}_{\delta}(d)d^2}
-\\]
-\\[
-\Delta = \frac{802_{F6}}{803_{F6}*r^2}
-\\]
 
-In the TG-43 formalism, \\(r_0 = 1\\) cm and \\(\theta_0 = 90^{\circ}\\).
+\\[\Delta = \frac{\dot{D}(r_0,\theta_0)}{\dot{K}_{\delta}(d)d^2}\\]
+
+\\[\Delta = \frac{802_{F6}}{803_{F6}*r^2}\\]
+
+In the TG-43 formalism, \\(\ r_0 = 1 \\) cm and \\(\theta_0 = 90^{\circ}\\).
 
 Given the output file we define a function to extract the cell tally values and use them to calculate the dose rate constant of the seed:
 
