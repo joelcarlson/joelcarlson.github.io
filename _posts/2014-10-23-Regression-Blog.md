@@ -9,7 +9,7 @@ This post will examine multivariate regressions.  I have been taking a coursera 
 
 One way to explore the relationships of variables within a dataset is through regressions. One possible relationship between variables is the linear relationship, as shown by `mpg` vs `disp` in the `mtcars` dataset:
 
-![center](/figs/Regression Blog/unnamed-chunk-1.png) 
+<iframe width="640" height="480" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~joelcarlson/4.embed?width=640&height=480"></iframe>
 
 The formula given is extremely simple:
 \\[y = a + bx + e\\]
