@@ -89,7 +89,7 @@ h1 {
 }
 @media (min-width: 56em) {
   .container {
-    max-width: 43rem;
+    max-width: 38rem;
   }
 }
 
@@ -215,8 +215,8 @@ a.sidebar-nav-item:focus {
 /* Style the `label` that we use to target the `.sidebar-checkbox` */
 .sidebar-toggle {
   position: absolute;
-  top:  0.9rem;
-  left: 10.75rem;
+  top:  1rem;
+  left: 11rem;
   display: block;
   width: 2.2rem;
   padding: .5rem .65rem;
