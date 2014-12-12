@@ -26,15 +26,15 @@ Each of the values is then converted into a pixel value, and a square image is c
 
 <a href="http://imgur.com/XSqCBy7"><img src="http://i.imgur.com/XSqCBy7.gif" title="source: imgur.com" /></a>
 
+Laid side to side the images result in a sinogram:
+
+<a href="http://imgur.com/7y6ShrR"><img src="http://i.imgur.com/7y6ShrR.png" title="source: imgur.com" /></a>
+
 #Image Combination
 
 Next, all of the images are rotated to the angle from which they were obtained:
 
 <a href="http://imgur.com/Q1wTxqu"><img src="http://i.imgur.com/Q1wTxqu.gif" title="source: imgur.com" /></a>
-
-Laid side to side the images result in a sinogram:
-
-<a href="http://imgur.com/7y6ShrR"><img src="http://i.imgur.com/7y6ShrR.png" title="source: imgur.com" /></a>
 
 All of the rotated images are then summed together. However, the images must first be darkened such that the maximal sum of pixel values at any given point doesn't exceed 1, the white value of the image processing software used (`EBImage` for R). Summing together the rotated images allows us to see the image being iteratively formed:
 
