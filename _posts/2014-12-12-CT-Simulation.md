@@ -1,8 +1,8 @@
 ---
-title: "Campep Accreditation Statistics"
+title: "CT Simulation"
 author: "Joel Carlson"
 layout: page
-excerpt: A shiny app for analysis of enrolment and employment for Medical Physics students
+excerpt: A fun project simulating the creation of a backprojection CT image using MCNPX
 ---
 
 Here I will describe a fun project I did to simulate a first generation CT scan image using MCNPX.  The idea was to take a simple geometry: a square, a circle, and a triangle, and create an image using backprojection.  The geometry set-up looked like this:
@@ -14,37 +14,37 @@ To create an image using backprojection, a projection image must be created by s
 
 <a href="http://imgur.com/p5aa5nU"><img src="http://i.imgur.com/p5aa5nU.gif" title="Particles" /></a>
 
-In the image, the source is a pencil beam originating below the geometry, the red and blue dots represent photons of 100keV interacting with the geometry. The detector scanning across the image at the top measure the incident flux, which can be interpreted as a surrogate for the attenuation between the source and the detector. 
+In the image, the source is a pencil beam originating below the geometry, the red and blue dots represent photons of 100keV interacting with the geometry. The detector scanning across the image at the top measures the incident flux, which can be interpreted as a surrogate for the attenuation between the source and the detector. 
 
 #Flux Values
 
 The detector outputs a single value at each simulation, which can be plotted against the location of the detector.  Here is what the normalized values looks like at each angle:
 
-<a href="http://imgur.com/baRIvf8"><img src="http://i.imgur.com/baRIvf8.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/baRIvf8"><img src="http://i.imgur.com/baRIvf8.gif" title="Tally Values" /></a>
 
 Each of the values is then converted into a pixel value, and a square image is created:
 
-<a href="http://imgur.com/XSqCBy7"><img src="http://i.imgur.com/XSqCBy7.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/XSqCBy7"><img src="http://i.imgur.com/XSqCBy7.gif" title="Projection Images" /></a>
 
 Laid side to side the images result in a sinogram:
 
-<a href="http://imgur.com/7y6ShrR"><img src="http://i.imgur.com/7y6ShrR.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/7y6ShrR"><img src="http://i.imgur.com/7y6ShrR.png" title="Sinogram" /></a>
 
 #Image Combination
 
 Next, all of the images are rotated to the angle from which they were obtained:
 
-<a href="http://imgur.com/Q1wTxqu"><img src="http://i.imgur.com/Q1wTxqu.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/Q1wTxqu"><img src="http://i.imgur.com/Q1wTxqu.gif" title="Rotations" /></a>
 
 All of the rotated images are then summed together. However, the images must first be darkened such that the maximal sum of pixel values at any given point doesn't exceed 1, the white value of the image processing software used (`EBImage` for R). Summing together the rotated images allows us to see the image being iteratively formed:
 
-<a href="http://imgur.com/yIBS6aU"><img src="http://i.imgur.com/yIBS6aU.gif" title="source: imgur.com" /></a>
+<a href="http://imgur.com/yIBS6aU"><img src="http://i.imgur.com/yIBS6aU.gif" title="Backprojection Image Formation" /></a>
 
 #Final Image
 
 The last iteration of the image summing gives us the final image:
 
-<a href="http://imgur.com/7lpV0kk"><img src="http://i.imgur.com/7lpV0kk.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/7lpV0kk"><img src="http://i.imgur.com/7lpV0kk.png" title="The Final Image!" /></a>
 
 Which looks pretty good! We can even see the how the different densities of the materials changes their visibility in the image!
 
