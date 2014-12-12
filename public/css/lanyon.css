@@ -566,3 +566,7 @@ a.pagination-item:hover {
 .MathJax .mi {
   color: inherit;
 }
+
+img {
+  max-width: 100%
+}
