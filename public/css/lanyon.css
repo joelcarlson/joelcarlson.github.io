@@ -216,7 +216,7 @@ a.sidebar-nav-item:focus {
 .sidebar-toggle {
   position: absolute;
   top:  1rem;
-  left: 11rem;
+  left: 1rem; /* Changed from 11 */
   display: block;
   width: 2.2rem;
   padding: .5rem .65rem;
@@ -240,7 +240,7 @@ a.sidebar-nav-item:focus {
 }
 
 .sidebar-toggle:active,
-#sidebar-checkbox:checked ~ .sidebar-toggle {
+#sidebar-checkbox:checked ~ .wrap .sidebar-toggle { /*  Added .wrap */
   color: #fff;
   background-color: #505050;
 }
@@ -270,7 +270,7 @@ a.sidebar-nav-item:focus {
  *
  * Read more about it at http://meyerweb.com/eric/thoughts/2011/09/12/.
  */
-
+/*
 .wrap,
 .sidebar,
 .sidebar-toggle {
@@ -295,8 +295,41 @@ a.sidebar-nav-item:focus {
       -ms-transform: translateX(14rem);
           transform: translateX(14rem);
 }
+*/
+/*Added everything from here to .page*/
+.wrap,
+.sidebar,
+.sidebar-toggle {
+    -webkit-backface-visibility: hidden;
+       -moz-backface-visibility: hidden;
+        -ms-backface-visibility: hidden;
+            backface-visibility: hidden;
+  -webkit-perspective: 1000;
+     -moz-perspective: 1000;
+      -ms-perspective: 1000;
+          perspective: 1000;
+}
+.sidebar {
+  -webkit-transition: all .3s ease-in-out;
+     -moz-transition: all .3s ease-in-out;
+      -ms-transition: all .3s ease-in-out;
+          transition: all .3s ease-in-out;
+}
+.wrap,
+.sidebar-toggle {
+  -webkit-transition: left .3s ease-in-out;
+     -moz-transition: left .3s ease-in-out;
+      -ms-transition: left .3s ease-in-out;
+          transition: left .3s ease-in-out;
+}
 
-
+#sidebar-checkbox:checked + .sidebar {
+  left: 0;
+  visibility: visible;
+}
+#sidebar-checkbox:checked ~ .wrap {
+  left: 14rem;
+}
 /*
  * Posts and pages
  *
