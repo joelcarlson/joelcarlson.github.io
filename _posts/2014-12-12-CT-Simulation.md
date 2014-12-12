@@ -38,7 +38,7 @@ All of the rotated images are then summed together. However, the images must fir
 
 Laid side to side the images result in a sinogram:
 
-<a href="http://imgur.com/eFDugnr"><img src="http://i.imgur.com/eFDugnr.png" title="source: imgur.com" /></a>
+<a href="http://imgur.com/7y6ShrR"><img src="http://i.imgur.com/7y6ShrR.png" title="source: imgur.com" /></a>
 
 #Final Image
 
