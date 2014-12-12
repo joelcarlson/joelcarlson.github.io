@@ -1,11 +1,4 @@
 ---
-title: "CT Simulation"
-author: "Joel Carlson"
-layout: page
-excerpt: A fun project to simulate the generation of a simple backprojection CT image using MCNPX
----
-
----
 title: "Campep Accreditation Statistics"
 author: "Joel Carlson"
 layout: page
@@ -43,6 +36,10 @@ All of the rotated images are then summed together. However, the images must fir
 
 <a href="http://imgur.com/yIBS6aU"><img src="http://i.imgur.com/yIBS6aU.gif" title="source: imgur.com" /></a>
 
+Laid side to side the images result in a sinogram:
+
+<a href="http://imgur.com/eFDugnr"><img src="http://i.imgur.com/eFDugnr.png" title="source: imgur.com" /></a>
+
 #Final Image
 
 The last iteration of the image summing gives us the final image:
@@ -51,6 +48,6 @@ The last iteration of the image summing gives us the final image:
 
 Which looks pretty good! We can even see the how the different densities of the materials changes their visibility in the image!
 
-![center](/figs/CTBlog/unnamed-chunk-2-1.png) 
+
 
 
