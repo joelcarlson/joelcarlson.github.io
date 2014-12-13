@@ -1,5 +1,5 @@
 ---
-title: "Campep Accreditation Statistics"
+title: "Visualizing Campep Statistics"
 author: "Joel Carlson"
 layout: page
 excerpt: A shiny app for analysis of enrolment and employment for Medical Physics students
