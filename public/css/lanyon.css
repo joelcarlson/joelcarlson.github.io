@@ -300,7 +300,7 @@ a.sidebar-nav-item:focus {
   visibility: visible;
 }
 #sidebar-checkbox:checked ~ .wrap {
-  left: 14rem;
+  left: 10rem;
 }
 
 
