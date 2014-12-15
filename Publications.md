@@ -11,7 +11,7 @@ So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25225915">*"New conformity indices based on the calculation of distances between the target volume and the volume of reference isodose"*</a>(British Journal of Radiology)<br>
 Authors: Jong Min Park, So-Yeon Park, Sung-Joon Ye, Jin Ho Kim, **Joel Carlson**, and Hong-Gyun Wu
 
-<a href="http://joelcarlson.github.io/publications/">*"Modulation indices for volumetric modulated arc therapy"*</a> (Physics in Medicine and Biology)<br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/25383976">*"Modulation indices for volumetric modulated arc therapy"*</a> (Physics in Medicine and Biology)<br>
 Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and Sung-Joon Ye
 
 ###Submitted:
@@ -27,6 +27,4 @@ Taemin Heo, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 *"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
 Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
-*"Modulation indices for volumetric modulated arc therapy"*<br>
-Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, Sung-Joon Ye
 
