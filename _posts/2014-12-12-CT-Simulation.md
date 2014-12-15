@@ -56,7 +56,7 @@ To solve the blurring issue the image must be filtered.  This is done before rec
 
 By performing a convolution of the tally values and the kernel we get the following:
 
-<img src="http://i.imgur.com/xWN6L0y.png" title="Convolution" />
+<img src="http://i.imgur.com/yn42tc0.png" title="Convolution" />
 
 From this we can see that the "baseline" value has been converted to be approximately 0.5, which corresponds to grey in the final image.  Also of note is the emphasis and subsequent de-emphasis of the "edges" in the tally values.
 
@@ -74,8 +74,11 @@ To remedy this I took a very unsophisticated solution: If the value was greater 
 
 I then renormalized the convolution values, and the resulting convolution values look like this:
 
+<img src="http://i.imgur.com/luqQkVU.png" title="Adjusted convolution" />
 
-<img src="http://i.imgur.com/WRq9w3q.png" title="Adjusted convolution" />
+Varying together, the adjusted and unadjusted tally values:
+
+<img src="http://i.imgur.com/eMxsPaG.gif" title="Convolutions" />
 
 The sinogram of the filtered images:
 
