@@ -40,13 +40,53 @@ All of the rotated images are then summed together. However, the images must fir
 
 <img src="http://i.imgur.com/yIBS6aU.gif" title="Backprojection Image Formation" />
 
+#Reconstructed Image
+
+The last iteration of the image summing gives us the backprojection reconstructed image:
+
+<img src="http://i.imgur.com/7lpV0kk.png" title="Backprojection Image!" />
+
+Which looks pretty good! We can even see the how the different densities of the materials changes their visibility in the image! However, due to the nature of backprojection, there is a radial blur.  That is, each point in the 'true' image is reconstructed as a circular region with decreasing intensity as distance from the center increases.
+
+#Filtered Backprojection
+
+To solve the blurring issue the image must be filtered.  This is done before reconstruction (ie. summing of the rotated images).  The filter kernel used is approximately the Sinc function, but with even indices equal to zero.  The derivation of the kernel can be found <a href="http://www.dspguide.com/ch25/5.htm">here</a>. Here is a graphical representation of the convolution kernel:
+
+<img src="http://i.imgur.com/uJbitL4.png" title="Sinc(ish) Kernel" />
+
+By performing a convolution of the tally values and the kernel we get the following:
+
+<img src="http://i.imgur.com/gMjIrSM.png" title="Convolution" />
+
+From this we can see that the "baseline" value has been converted to be approximately 0.5, which corresponds to grey in the final image.  Also of note is the emphasis and subsequent de-emphasis of the "edges" in the tally values.
+
+The image reconstructed with this convolution kernel looks like this:
+
+<img src="http://i.imgur.com/f1KOdL7.png" title="Filtered image" />
+
+#Dynamic Range Adjustment
+
+I found this image to be lacking in dynamic range. A histogram of the normalized pixel values after convolution shows that there are some outliers which squeeze all the other values into a very small range of values.
+
+<img src="http://i.imgur.com/uI7J0vs.png" title="Histrogram with outliers" />
+
+To remedy this I took a very unsophisticated solution: If the value was greater than 0.775 I set it to 0.8, and if it was less than 0.3 then it was set to 0.3.
+
+I then renormalized the convolution values, and the resulting convolution values look like this:
+
+<img src="http://i.imgur.com/bdeOBVK.png" title="Adjusted convolution" />
+
+The sinogram of the filtered images:
+
+<img src="http://i.imgur.com/QmZ4eJg.png" title="Filtered Sinogram" />
+
 #Final Image
 
-The last iteration of the image summing gives us the final image:
+The filtration results in the final image, which is significantly less blurry than the original backprojection, and has more contrast than the original filtered image (although more artifacts):
 
-<img src="http://i.imgur.com/7lpV0kk.png" title="The Final Image!" />
+<img src="http://i.imgur.com/zPcGqMO.gif" title="Filtered Animation" />
 
-Which looks pretty good! We can even see the how the different densities of the materials changes their visibility in the image!
+<img src="http://i.imgur.com/aBYyrQ7.png" title="Final Image" />
 
 
 
