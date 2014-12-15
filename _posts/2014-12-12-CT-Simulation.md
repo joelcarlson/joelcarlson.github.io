@@ -50,7 +50,7 @@ Which looks pretty good! We can even see the how the different densities of the 
 
 #Filtered Backprojection
 
-To solve the blurring issue the image must be filtered.  This is done before reconstruction (ie. summing of the rotated images).  The filter kernel used is approximately the Sinc function, but with even indices equal to zero.  The derivation of the kernel can be found <a href="http://www.dspguide.com/ch25/5.htm">here</a>. Here is a graphical representation of the convolution kernel:
+To solve the blurring issue the image must be filtered.  This is done before reconstruction (ie. summing of the rotated images).  The filter kernel used is an approximation of the Sinc function, but with even indices equal to zero.  The derivation of the kernel can be found <a href="http://www.dspguide.com/ch25/5.htm">here</a>. Here is a graphical representation of the convolution kernel:
 
 <img src="http://i.imgur.com/R8Vy3Fu.png" title="Sinc(ish) Kernel" />
 
@@ -58,7 +58,7 @@ By performing a convolution of the tally values and the kernel we get the follow
 
 <img src="http://i.imgur.com/Tlf4Owj.png" title="Convolution" />
 
-From this we can see that the "baseline" value has been converted to be approximately 0.5, which corresponds to grey in the final image.  Also of note is the emphasis and subsequent de-emphasis of the "edges" in the tally values.
+From this we can see that the "baseline" value has been converted to be approximately 0.5, which is gray rather than the previous white.  Also of note is the emphasis and subsequent de-emphasis of the "edges" in the tally values.
 
 The image reconstructed with this convolution kernel looks like this:
 
@@ -70,7 +70,7 @@ I found this image to be lacking in dynamic range. A histogram of the normalized
 
 <img src="http://i.imgur.com/uI7J0vs.png" title="Histrogram with outliers" />
 
-To remedy this I took a very unsophisticated solution: If the value was greater than 0.8 I set it to 0.8, and if it was less than 0.3 then it was set to 0.3.
+To remedy this I took a very unsophisticated solution: If the value was greater than 0.8 I set it to 0.8, and if it was less than 0.3 I set it to 0.3.
 
 I then renormalized the convolution values, and the resulting convolution values look like this:
 
@@ -86,7 +86,7 @@ The sinogram of the filtered images:
 
 #Final Image
 
-The filtration results in the final image, which is significantly less blurry than the original backprojection, and has more contrast than the original filtered image (although more artifacts):
+The dynamic range adjusted filtered backprojection image is the final image. The image is significantly less blurry than the original backprojection, and has more contrast than the original filtered image (although it has more artifacts):
 
 <img src="http://i.imgur.com/zPcGqMO.gif" title="Filtered Animation" />
 
