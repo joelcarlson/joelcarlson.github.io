@@ -5,7 +5,7 @@ layout: page
 excerpt: A few .gifs of the complex movements of MLC leaves 
 ---
 
-#MLCs?
+##MLCs?
 
 When a modern treatment plan is delivered using the Volumetric Modulated Arc Therapy (VMAT) technique, one of the ways the x-ray beam is modulated is through the use of a Multi-Leaf Collimator (MLC).  The MLC is a set of metal bars, called leaves, which travel back and forth in front of the beam, blocking it in certain areas and letting it pass in others. Here is an image of a typical MLC:
 
