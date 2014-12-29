@@ -1,5 +1,5 @@
 ---
-title: "MLC Movements Visualized"
+title: "The Complex Movements of MLCs"
 author: "Joel Carlson"
 layout: page
 excerpt: A few .gifs of the complex movements of MLC leaves 
