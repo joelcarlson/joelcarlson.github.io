@@ -21,11 +21,11 @@ I had the opportunity to analyse a set of MLC positions for a few treatment plan
 
 The image consists of one data point per MLC leaf per control point.  There are 120 MLC leaves, and 356 control points per plan, meaning this image contains 42,720 points! 
 
-The animation moves much faster than the real plan.  During actual delivery the linear accelerator takes ~0.42s for every 2 degrees, but the gif only takes ~0.009s. Also, the abrupt shift halfway through is when then linear accelerator has to stop and switch directions.
+The animation moves much faster than the real MLC.  During actual delivery the linear accelerator takes ~0.42s for every 2 degrees, but the gif takes only ~0.009s. The abrupt shift halfway through is when then linear accelerator has to stop and switch directions after the first arc.
 
 ##H&N Plans
 
-Head and Neck plans are significantly more complicated, and utilize many more of the leaves than prostate plans generally do. Here are two different head and neck plans:
+Head and Neck plans are significantly more complicated, and generally utilize many more of the leaves than do prostate plans. Here are two different head and neck plans:
 
 <img src="http://i.imgur.com/HNHBFU7.gif" title="A typical HN plan" />
 
