@@ -1,5 +1,5 @@
 ---
-title: "Visualizing Campep Statistics"
+title: "Interactive Campep Statistics"
 author: "Joel Carlson"
 layout: page
 excerpt: A shiny app for analysis of enrolment and employment for Medical Physics students
