@@ -2,9 +2,6 @@
 layout: page
 title: About
 ---
-<p class="message">
-  Hey there! This page is going to talk all about me! Like, a personal page!
-</p>
 
 <div>
   <img src="/figs/RhiaDada.jpg" alt="Woohoo!" title="Very Cute" width="750px"/>
