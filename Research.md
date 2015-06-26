@@ -4,7 +4,7 @@ title: Research
 permalink: /research/
 ---
 <p class="message">
-  Occasionally I perform research..
+  Descriptions of some projects I have worked on at the Radiological Physics Lab.
 </p>
 
 While at Seoul National University I have focused my research on two different topics: *Dosimetry for a novel brachytherapy seed*, and *Machine learning to predict gamma passing rates from linear accelerator fluence maps*.
