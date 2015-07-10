@@ -339,7 +339,7 @@ glszm_LILAE(hbGLSZM)
 {% endhighlight %}
 
 
-##Calculating featues en-masse
+##Calculating features en-masse
 
 It is not practical to type out the exact features you wish to calculate for each image matrix you create. To remedy this situation, there is a `calc_features()` function. This function, given an image matrix and the types of features you wish to calculate (any or all of "first order", "glcm", "glrlm", "glszm", "mglszm") will create the appropriate texture matrices and calculate all the features relevent to the matrix type, outputting all of the features as an observation of a data frame. 
 
