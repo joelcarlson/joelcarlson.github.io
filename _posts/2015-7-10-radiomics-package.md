@@ -292,6 +292,7 @@ From the texture matrices it is possible to calculate many different features. T
 </tbody>
 </table>
 
+Further information and mathematical definitions of these quantities can be found [here.](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5)
 
 In the `radiomics` package, each feature associated with a given matrix can be calculated by appending the matrix name with the feature name, separated by an underscore. For example:
 
@@ -350,6 +351,6 @@ calc_features(hallbey)
 {% endhighlight %}
 
 {% highlight text %}
-##  image_name n_grey glcm_d  mglszm_SAE   mglszm_LAE   mglszm_IV   mglszm_SZV  mglszm_ZP    mglszm_LIE   ...
-## hallbey         32        1          0.09805366     17.54145        0.9999678    95.82953        0.249782       0.006410295 ...
+##  image_name n_grey glcm_d  glszm_SAE   glszm_LAE   glszm_IV  ...
+## hallbey     32     1       0.0981      17.541      0.999     ...
 {% endhighlight %}
