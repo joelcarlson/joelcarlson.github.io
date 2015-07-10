@@ -20,19 +20,17 @@ In the package are functions for calculating several different types of matrices
 
 ##Gray Level Co-occurrence Matrix
 
-The first matrix type is the gray level co-occurence matrix, or GLCM for short. GLCMs take an image (as a matrix), an angle ("0", "45",  "90", or "135"), and a distance. The axes of the GLCM are defined by the grey levels present in the image. Each pixel of the image is scanned and stored as a "reference pixel". The reference pixel is then compared to the pixel that is distance $d$ at angle $\theta$ away from the reference pixel, known as the neighbor pixel. Each time a reference value and neighbor value pair is found, the corresponding row and column of the GLCM is incremented by 1. 
+The first matrix type is the gray level co-occurence matrix, or GLCM for short. GLCMs take an image (as a matrix), an angle ("0", "45", "90", or "135"), and an integer distance. The axes of the GLCM are defined by the grey levels present in the image. Each pixel of the image is scanned and stored as a "reference pixel". The reference pixel is then compared to the pixel that is distance d at angle theta (where "0" degrees is the pixel to the right, "90" is the pixel above) away from the reference pixel, known as the neighbor pixel. Each time a reference value and neighbor value pair is found, the corresponding row and column of the GLCM is incremented by 1. 
 
-A visual example shows this process. Pixels in the image are colored and labeled by grey value. The GLCM is set up such that each pixel value is represented on each axis.
-
-
+A visual example shows this process. Pixels in the image are colored and labelled by grey value. The GLCM is set up such that each pixel value is represented on each axis.
 
 <img src="http://i.imgur.com/m9MKq1I.png" height="227px" width="500px" />
 
-We count the number of times each pair of grey levels occurs, for example, if $\theta = 0$ and $d = 1$, for the grey level of $1$, there is one $1:1$ pair:
+We count the number of times each pair of grey levels occurs, for example, if angle = "0" and d = 1, for the grey level of 1, there is one 1:1 pair:
 
 <img src="http://i.imgur.com/z5xFw6C.png" height="227px" width="500px" />
 
-While there are two $1:3$ pairs:
+While there are two 1:3 pairs:
 
 <img src="http://i.imgur.com/4L8dSgf.png" height="227px" width="500px" />
 
@@ -69,7 +67,7 @@ More information about the GLCM can be found [here.](http://www.fp.ucalgary.ca/m
 
 The GLRLM is a matrix which attempts to quantify runs of the same grey level in the image. The GLRLM is set up slightly differently than the GLCM; instead of having grey levels along the abscissa of the table the GLRLM has run lengths.
 
-As with the GLCM, an angle is required (one of $0$, $45$, $90$, or $135$). Below is an example using $0$, note that the image matrix is not the same as the GLCM example:
+As with the GLCM, an angle is required (one of "0", "45", "90", or "135"). Below is an example using "0", note that the image matrix is not the same as the GLCM example:
 
 <img src="http://i.imgur.com/aTapTC1.png" height="227px" width="478x" />
 
@@ -155,29 +153,145 @@ For more information on the GLSZM see [here.](http://thibault.biz/Research/Thiba
 From the texture matrices it is possible to calculate many different features. These are summarized in the following table:
 
 
-|First.Order   |GLCM              |GLRLM  |GLSZM |
-|:-------------|:-----------------|:------|:-----|
-|energy        |mean              |GLN    |SAE   |
-|entropy       |variance          |HGLRE  |LAE   |
-|kurtosis      |autoCorrelation   |LRE    |IV    |
-|meanDeviation |cProminence       |LRHGLE |SZV   |
-|skewness      |cShade            |LRLGLE |ZP    |
-|uniformity    |cTendency         |LGLRE  |LIE   |
-|mean          |contrast          |RLN    |HIE   |
-|median        |correlation       |RP     |LISAE |
-|max           |differenceEntropy |SRE    |HISAE |
-|min           |dissimilarity     |SRHGLE |LILAE |
-|diff          |energy            |SRLGLE |HILAE |
-|var           |entropy           |-      |-     |
-|RMS           |homogeneity1      |-      |-     |
-|sd            |homogeneity2      |-      |-     |
-|-             |IDMN              |-      |-     |
-|-             |IDN               |-      |-     |
-|-             |inverseVariance   |-      |-     |
-|-             |maxProb           |-      |-     |
-|-             |sumAverage        |-      |-     |
-|-             |sumEntropy        |-      |-     |
-|-             |sumVariance       |-      |-     |
+<table>
+<thead>
+<tr class="header">
+<th align="left">First Order</th>
+<th align="left">GLCM</th>
+<th align="left">GLRLM</th>
+<th align="left">GLSZM</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">energy</td>
+<td align="left">mean</td>
+<td align="left">GLN</td>
+<td align="left">SAE</td>
+</tr>
+<tr class="even">
+<td align="left">entropy</td>
+<td align="left">variance</td>
+<td align="left">HGLRE</td>
+<td align="left">LAE</td>
+</tr>
+<tr class="odd">
+<td align="left">kurtosis</td>
+<td align="left">autoCorrelation</td>
+<td align="left">LRE</td>
+<td align="left">IV</td>
+</tr>
+<tr class="even">
+<td align="left">meanDeviation</td>
+<td align="left">cProminence</td>
+<td align="left">LRHGLE</td>
+<td align="left">SZV</td>
+</tr>
+<tr class="odd">
+<td align="left">skewness</td>
+<td align="left">cShade</td>
+<td align="left">LRLGLE</td>
+<td align="left">ZP</td>
+</tr>
+<tr class="even">
+<td align="left">uniformity</td>
+<td align="left">cTendency</td>
+<td align="left">LGLRE</td>
+<td align="left">LIE</td>
+</tr>
+<tr class="odd">
+<td align="left">mean</td>
+<td align="left">contrast</td>
+<td align="left">RLN</td>
+<td align="left">HIE</td>
+</tr>
+<tr class="even">
+<td align="left">median</td>
+<td align="left">correlation</td>
+<td align="left">RP</td>
+<td align="left">LISAE</td>
+</tr>
+<tr class="odd">
+<td align="left">max</td>
+<td align="left">differenceEntropy</td>
+<td align="left">SRE</td>
+<td align="left">HISAE</td>
+</tr>
+<tr class="even">
+<td align="left">min</td>
+<td align="left">dissimilarity</td>
+<td align="left">SRHGLE</td>
+<td align="left">LILAE</td>
+</tr>
+<tr class="odd">
+<td align="left">diff</td>
+<td align="left">energy</td>
+<td align="left">SRLGLE</td>
+<td align="left">HILAE</td>
+</tr>
+<tr class="even">
+<td align="left">var</td>
+<td align="left">entropy</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">RMS</td>
+<td align="left">homogeneity1</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">sd</td>
+<td align="left">homogeneity2</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="left">IDMN</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="left">IDN</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="left">inverseVariance</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="left">maxProb</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="left">sumAverage</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="even">
+<td align="left">-</td>
+<td align="left">sumEntropy</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+<tr class="odd">
+<td align="left">-</td>
+<td align="left">sumVariance</td>
+<td align="left">-</td>
+<td align="left">-</td>
+</tr>
+</tbody>
+</table>
+
 
 In the `radiomics` package, each feature associated with a given matrix can be calculated by appending the matrix name with the feature name, separated by an underscore. For example:
 
