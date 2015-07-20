@@ -27,7 +27,7 @@ Taemin Heo, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 *"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
 Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
-###Conference Presentations
+#Conference Presentations
 
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/26129042">*"A Statistical Learning Approach to the Accurate Prediction of MLC Positional Errors during VMAT Delivery"*</a> (AAPM 2015, "Quantifying QA" session)<br>
 **Joel Carlson**, Jong Min Park, So-Yeon Park, Jong-in Park, Yunseok Choi, Sung-Joon Ye
