@@ -30,8 +30,7 @@ Reproducible research is important to me, so the progress of this
 project can be tracked at my [Thesis 
 Project](http://joelcarlson.github.io/thesis) page. 
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
-
+Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 
 ##Brachytherapy 
 
