@@ -1,8 +1,9 @@
---- 
+---
 layout: page
-title: Research 
-permalink: /research/ 
+title: Research
+permalink: /research/
 --- 
+
 <p class="message">
 While at Seoul National University I have focused my research on two 
 different topics: *Machine learning for prediction of MLC positional errors during VMAT* and *Dosimetry for a novel brachytherapy seed*. 
