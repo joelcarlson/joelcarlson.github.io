@@ -2,7 +2,7 @@
 layout: page
 title: Research
 permalink: /research/
---- 
+---
 
 <p class="message">
 While at Seoul National University I have focused my research on two 
@@ -11,11 +11,10 @@ My future research goals include knowledge-based methods for improving disease p
 </p> 
 
 
-##Machine Learning and Fluence Maps 
+##Machine Learning to Predict MLC Errors 
 
-For my thesis project I am looking to use machine learning algorithms 
-and concepts to predict gamma analysis results from fluence maps 
-produced by radiotherapy treatment planning systems. 
+For my thesis project I have used machine learning algorithms 
+and concepts to predict positional errors of multi leaf collimator leaves.
 
 When a patient is to receive a treatment they must first have several 
 x-ray images taken of them, and based on these images a plan is 
@@ -25,23 +24,7 @@ complicated process, and the treatment planning system is occasionally
 over ambitious, creating a plan so complicated that the linear 
 accelerator cannot physically deliver it. 
 
-To test whether the plan is deliverable, the planning system first 
-calculates what it believes the dose distribution should look like, and 
-the plan then is physically delivered to a measurement device. It is the 
-job of the medical physicist to compare the measured and calculated 
-distributions. 
-
-Gamma analysis is one way of interpreting the results of the comparison. 
-By way of example, if the institution wants a gamma passing rate of 90% 
-for 2%/2mm, then 90% of the 2mm by 2mm voxels must be within 2% of each 
-other. 
-
-The process of physically delivering and measuring the distribution is 
-time consuming and laborious for Medical Physicists. Thus to spare 
-valuable clinical resources, for my MSc thesis project I am looking to 
-find a way to *predict* gamma passing rates using only information 
-available in the calculated plan, obviating the need for the measurement 
-step in certain cases. 
+The goal, then, is to correct the plan such that the encoded leaf positions truly represent where the leaves will be.
 
 Reproducible research is important to me, so the progress of this 
 project can be tracked at my [Thesis 
