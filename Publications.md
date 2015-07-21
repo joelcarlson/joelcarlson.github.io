@@ -29,5 +29,5 @@ Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
 #Conference Presentations
 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/26129042">*"A Statistical Learning Approach to the Accurate Prediction of MLC Positional Errors during VMAT Delivery"*</a> (AAPM 2015, "Quantifying QA" session)<br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/26129042">*"A Statistical Learning Approach to the Accurate Prediction of MLC Positional Errors during VMAT Delivery"*</a> (AAPM 2015, "Quantifying QA" session, [Slides](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0))<br>
 **Joel Carlson**, Jong Min Park, So-Yeon Park, Jong-in Park, Yunseok Choi, Sung-Joon Ye
