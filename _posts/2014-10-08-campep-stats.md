@@ -5,7 +5,7 @@ layout: page
 excerpt: A shiny app for analysis of enrolment and employment for Medical Physics students
 ---
 
-To practice as a Medical Physicist in North America one has to become certified by the [ABR](http://www.theabr.org/).  As of 2014, only those who have graduated from a [CAMPEP](http://www.campep.org/) accredited Medical Physics residency are eligible to take the ABR exams, and thus be able to pursue the practice. 
+To practice as a Medical Physicist in North America one has to become certified by the [ABR](http://www.theabr.org/).  As of 2014, only those who have graduated from a [CAMPEP](http://www.campep.org/) accredited Medical Physics residency are eligible to take the ABR exams, and thus able to pursue the practice. 
 
 Something nice that has come from this is that CAMPEP requires schools to post several statistics pertaining to enrolment and employment of their students.  However, there are no regulations for *how* this data is to be presented, resulting in a situation where each school posts the stats in a different way.  Some schools post a .pdf on their homepage, others bury it with grad school admission statistics, others are accessible using only the skeleton key provided to the dean.
 
