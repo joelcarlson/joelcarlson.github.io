@@ -2,7 +2,8 @@
 title: "The Dangers(?) of Improperly Centering and Scaling Your Data"
 author: "Joel Carlson"
 date: "August 18, 2015"
-output: html_document
+layout: page
+excerpt: What happens if you center and scale your training and test set data together? Read on to find out!
 ---
 
 Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.
