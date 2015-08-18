@@ -2,7 +2,7 @@
 title: "The Dangers(?) of Improperly Centering and Scaling Your Data"
 author: "Joel Carlson"
 date: "August 15, 2015"
-output: html_document
+output: pdf_document
 ---
 
 Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.
@@ -106,7 +106,7 @@ To demonstrate the importance of centering and scaling for support vector machin
 ```{r, echo=FALSE, warning=FALSE}
 
 noSC <- data.frame("name"="NoSC", "Accuracy"=numeric(test_len), stringsAsFactors=FALSE)
-for( i in 1:test_len){
+for( i in 1:(test_len)){
   #if(i%%100 == 0) print(i)
   set.seed(i * sample(1:100, 1))
   inTrain <- createDataPartition(y=wine$Region, p=0.50)
@@ -216,7 +216,7 @@ z <- t.test(separateSC$Accuracy,togetherSC$Accuracy)
 z
 ```
 
-```{r,echo=FALSE}
+```{r,echo=FALSE, warning=FALSE}
 
 all <- rbind(separateSC, togetherSC)
 ggplot(data=all, aes(x=name, y=Accuracy,fill=name)) +
@@ -224,6 +224,7 @@ ggplot(data=all, aes(x=name, y=Accuracy,fill=name)) +
   geom_boxplot(outlier.size = 0) +
   guides(fill=FALSE) +
   labs(x="") + 
+  ylim(0.875, 1) + 
   ggtitle(paste("Difference in Mean Accuracy from Scaling and Centering\n",
                 "Estimate =", round(z$estimate[1] - z$estimate[2], 5),
                 "(p =", round(z$p.value, 5), ")"))

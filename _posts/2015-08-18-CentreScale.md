@@ -108,7 +108,7 @@ There are 13 variables in the data, but we are going to use only the 5 with the 
 Just so that we have a feel for the data, let's plot a variable or two:
 We might be able to guess that there is some relationship between alcohol content and region:
 
-![center](/figs/CentreScale/unnamed-chunk-4-1.png) 
+![center](/figs/CentreScale/plot1.png) 
 
 And indeed there is, not a big surprise there.
 
