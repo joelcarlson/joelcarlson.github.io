@@ -18,16 +18,11 @@ In this post, I am going to explore this by assessing the accuracy of support ve
   - Training and testing centered and scaled together
   - Training and testing centered separately
   
-For each situation we will train 1000 svm models using the default parameters from the `e1071` R package. Datawise, we will use a set from the [UCI machine learning repository](http://archive.ics.uci.edu/ml/datasets/Wine). The dataset is a series of wine measurements, quantifying things like "Alcohol Content", "Color Intensity", and "Hue" for 178 wines. The goal is to predict the region the wine came from based on the measurements. 
-
-There are actually 13 variables in the data, but we are going to use only the 5 with the highest standard deviation, since this is for demonstration purposes, not pure predictive accuracy.
+Datawise, we will use a set from the [UCI machine learning repository](http://archive.ics.uci.edu/ml/datasets/Wine). The dataset is a series of wine measurements, quantifying things like "Alcohol Content", "Color Intensity", and "Hue" for 178 wines. The goal is to predict the region the wine came from based on the measurements. 
 
 ##Summarizing the data
 
-
- 
 Let's take a quick look at the mean and standard deviation of each column in the data (sorted by SD):
-
 
 <table>
  <thead>
@@ -106,9 +101,7 @@ Let's take a quick look at the mean and standard deviation of each column in the
 </tbody>
 </table>
 
-As previously stated, we are only going to use the five variables with the highest standard deviation (and alcohol, because hey, we're talking about wine!).
-
-
+There are 13 variables in the data, but we are going to use only the 5 with the highest standard deviation, since this is for demonstration purposes, not pure predictive accuracy. Although Alcohol is not in the top 5, we are going to use it as well (because hey, we're talking about wine!)
 
 ##A bit of intuition
 
@@ -129,15 +122,15 @@ As expected. It looks like these variables are going to be able to feed a pretty
 
 The features of this data vary wildly in scale, for example, the range of the `Proline` column is from 278 to 1680, whereas the `Acid` column goes from 0.74 to 5.80. This is an issue for support vector machines (and some other algorithms), so we need to center and scale the data.
 
-For each situation described above, I trained 1000 svm models (with default parameters) and recorded the accuracy on a held out test set. Each model was trained on a random subset of 50% of the data, and tested on the remaining 50%. The test set acccuracy distributions in each situation are presented as histograms.
+For each situation described above, I trained 1000 svm models from the `e1071` R package (with default parameters) and recorded the accuracy. Each model was trained on a random subset of 50% of the data, and tested on the remaining 50%. The test set acccuracy distributions in each situation are presented as histograms.
 
 ###No centering and scaling
 
-To demonstrate the importance of centering and scaling for support vector machines, the models were trained on the raw data.
+To demonstrate the importance of centering and scaling for support vector machines, the accuracy was first assessed without centering and scaling:
 
 ![center](/figs/CentreScale/unnamed-chunk-6-1.png) 
 
-As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of 0.415 is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svm's.
+As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of 0.415 is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svms.
 
 ###Scaling Training and Test together
 
@@ -149,7 +142,7 @@ Clearly that made the difference, accuracy is nearly perfect.
 
 ###Scaling separately (the right way)
 
-Well, this is the right way.
+Well, this is the right way. 
 
 ![center](/figs/CentreScale/unnamed-chunk-8-1.png) 
 
