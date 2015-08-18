@@ -85,7 +85,7 @@ h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
