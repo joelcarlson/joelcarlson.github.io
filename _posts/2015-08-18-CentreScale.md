@@ -169,11 +169,12 @@ We can assess whether or not there is a difference in the mean accuracy between 
 
 ![center](/figs/CentreScale/plot6.png) 
 
-The difference is extremely small, but exists, and is statistically significant.  
+The difference is extremely small (around 0.4%), but it exists and is statistically significant.  
 
 ##Conclusion
 
-As we saw, centering and scaling the data the proper actually, for this dataset, leads to a tiny, but statistically significant **increase** in the mean accuracy of the svm models. I'm surprised, I thought it was going to be the other way around! It would be interesting to see how the size of the dataset, and number of variables in the model impact this difference.
+As we saw, centering and scaling the data the proper way actually, for this dataset, leads to a tiny but statistically significant **increase** in the mean accuracy of the svm models. 
+I have to admit to being surpised, I expected the opposite result! It would be interesting to see how the size of the dataset, and number of variables in the model impact this difference.
 
-Of course, this was no fully rigorous test, but I think this adds to the evidence that you should always center and scale your training and test data separately (not least because it's the correct way!).
+Of course, this was no fully rigorous test, but I do think it adds to the evidence that you should always center and scale your training and test data separately (not least because it's the correct way!).
 
