@@ -29,21 +29,82 @@ There are actually 13 variables in the data, but we are going to use only the 5 
 Let's take a quick look at the mean and standard deviation of each column in the data (sorted by SD):
 
 
-|Variable            |   Mean|     SD|
-|:-------------------|------:|------:|
-|Proline             | 746.89| 314.91|
-|Magnesium           |  99.74|  14.28|
-|Alcalinity          |  19.49|   3.34|
-|ColorIntensity      |   5.06|   2.32|
-|Acid                |   2.34|   1.12|
-|Flavanoids          |   2.03|   1.00|
-|Alcohol             |  13.00|   0.81|
-|OpticalDensity      |   2.61|   0.71|
-|Phenols             |   2.30|   0.63|
-|Proanthocyanins     |   1.59|   0.57|
-|Ash                 |   2.37|   0.27|
-|Hue                 |   0.96|   0.23|
-|NonFlavanoidPhenols |   0.36|   0.12|
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Variable </th>
+   <th style="text-align:right;"> Mean </th>
+   <th style="text-align:right;"> SD </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Proline </td>
+   <td style="text-align:right;"> 746.89 </td>
+   <td style="text-align:right;"> 314.91 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Magnesium </td>
+   <td style="text-align:right;"> 99.74 </td>
+   <td style="text-align:right;"> 14.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcalinity </td>
+   <td style="text-align:right;"> 19.49 </td>
+   <td style="text-align:right;"> 3.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ColorIntensity </td>
+   <td style="text-align:right;"> 5.06 </td>
+   <td style="text-align:right;"> 2.32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Acid </td>
+   <td style="text-align:right;"> 2.34 </td>
+   <td style="text-align:right;"> 1.12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Flavanoids </td>
+   <td style="text-align:right;"> 2.03 </td>
+   <td style="text-align:right;"> 1.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcohol </td>
+   <td style="text-align:right;"> 13.00 </td>
+   <td style="text-align:right;"> 0.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OpticalDensity </td>
+   <td style="text-align:right;"> 2.61 </td>
+   <td style="text-align:right;"> 0.71 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phenols </td>
+   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 0.63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Proanthocyanins </td>
+   <td style="text-align:right;"> 1.59 </td>
+   <td style="text-align:right;"> 0.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ash </td>
+   <td style="text-align:right;"> 2.37 </td>
+   <td style="text-align:right;"> 0.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hue </td>
+   <td style="text-align:right;"> 0.96 </td>
+   <td style="text-align:right;"> 0.23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NonFlavanoidPhenols </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.12 </td>
+  </tr>
+</tbody>
+</table>
 
 As previously stated, we are only going to use the five variables with the highest standard deviation (and alcohol, because hey, we're talking about wine!).
 
