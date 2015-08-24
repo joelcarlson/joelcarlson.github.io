@@ -178,3 +178,5 @@ I have to admit to being surpised, I expected the opposite result! It would be i
 
 Of course, this was no fully rigorous test, but I do think it adds to the evidence that you should always center and scale your training and test data separately (not least because it's the correct way!).
 
+This post has a small discussion on reddit [here](https://www.reddit.com/r/statistics/comments/3heml4/the_dangers_of_improperly_centering_and_scaling/) and a reproducible version with code can be found [here](https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/CentreScale.Rmd)
+
