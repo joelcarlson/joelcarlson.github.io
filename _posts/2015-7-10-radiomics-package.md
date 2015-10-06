@@ -123,7 +123,7 @@ For the GLSZM we will use the same image as for the GLCM. Rather than labeling g
 
 <img src="http://i.imgur.com/vNQTAsz.png" height="227px" width="496px" />
 
-For each color we count the number of zones of a given size, here for example, there are two red zones of size 1, a single blue zone of size 3, and a single light blue zone of size 2:
+For each color we count the number of zones of a given size, here for example, among other size zones, there are two red zones of size 1, a single blue zone of size 2, and a single light blue zone of size 3:
 
 <img src="http://i.imgur.com/UezvMmX.png" height="227px" width="496px" />
 
