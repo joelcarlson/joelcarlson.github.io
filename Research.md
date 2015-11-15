@@ -20,9 +20,8 @@ Here is a link to the presentation I gave at AAPM 2015 related to this material:
 
 ##Brachytherapy TG43 Parameters
 
-<p class="message">
 Determining the radiation dose distribution from a prototype brachytherapy seed via Monte Carlo methods
-</p>
+
 <a href="http://joelcarlson.github.io/brachytherapy"><img src="http://i.imgur.com/BOEufs8.png?1" width=70% ></a>
 
 
