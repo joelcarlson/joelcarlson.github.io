@@ -18,7 +18,7 @@ Prediction of MLC positional errors using a decision tree regression approach
 
 Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 
-##Brachytherapy 
+##Brachytherapy TG43 Parameters
 
 <p class="message">
 Determining the radiation dose distribution from a prototype brachytherapy seed via Monte Carlo methods
