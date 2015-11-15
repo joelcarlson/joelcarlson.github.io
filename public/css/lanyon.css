@@ -80,7 +80,7 @@ h1 {
  */
 
 .container {
-  max-width: 28rem;
+  max-width: 35rem;
 }
 @media (min-width: 38rem) {
   .container {
