@@ -13,7 +13,7 @@ My future research goals include knowledge-based methods for improving disease p
 
 ##Machine Learning to Predict MLC Errors 
 
-<a href="http://joelcarlson.github.io/thesis"><img src="http://i.imgur.com/UAybAep.png?1" align="left" height="350" width="200" ></a>
+<a href="http://joelcarlson.github.io/thesis"><img src="http://i.imgur.com/UAybAep.png?1" height="200" width="350" ></a>
 
 For my thesis project I have used machine learning algorithms 
 and concepts to predict positional errors of multi leaf collimator leaves.
