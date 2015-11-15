@@ -5,32 +5,16 @@ permalink: /research/
 ---
 
 <p class="message">
-While at Seoul National University I have focused my research on two 
-different topics: *Machine learning for prediction of MLC positional errors during VMAT* and *Dosimetry for a novel brachytherapy seed*. 
-My future research goals include knowledge-based methods for improving disease prognosis, and using these methods for better clinical decision support systems.
+My research goals involve creating methods for improving treatment outcomes, predicting disease prognosis, and implementing these methods as clinical decision support systems.
 </p> 
 
 
-##Machine Learning to Predict MLC Errors 
+##Machine Learning to Predict MLC Errors
 
+<p class="message">
+Prediction of MLC positional errors using a decision tree regression approach
+</p>
 <a href="http://joelcarlson.github.io/thesis"><img src="http://i.imgur.com/WeS6XR6.png?1" width=70% ></a>
-
-For my thesis project I have used machine learning algorithms 
-and concepts to predict positional errors of multi leaf collimator leaves.
-
-When a patient is to receive a treatment they must first have several 
-x-ray images taken of them, and based on these images a plan is 
-developed to deliver as much radiation to the tumor as possible while 
-sparing the surrounding tissues and any susceptible organs. This is a 
-complicated process, and the treatment planning system is occasionally 
-over ambitious, creating a plan so complicated that the linear 
-accelerator cannot physically deliver it. 
-
-The goal, then, is to correct the plan such that the encoded leaf positions truly represent where the leaves will be.
-
-Reproducible research is important to me, so the progress of this 
-project can be tracked at my [Thesis 
-Project](http://joelcarlson.github.io/thesis) page. 
 
 Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 
