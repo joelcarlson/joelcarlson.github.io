@@ -37,6 +37,6 @@ Radiotherapy plans are complicated, there is no doubt about that. It is importan
 
 The following gif shows errors between planned and delivered positions. Red for errors which occur when the leaf is left too far into the center of the MLC, and grey when it is too far outside. These are precisely the types of errors my research works to avoid!
 
-<img src="http://i.imgur.com/Qv0kC6s.gifv" title="MLC Errors" />
+<blockquote class="imgur-embed-pub" lang="en" data-id="Qv0kC6s"></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
 
 That's all for now!
