@@ -13,6 +13,8 @@ My future research goals include knowledge-based methods for improving disease p
 
 ##Machine Learning to Predict MLC Errors 
 
+![MLC](http://i.imgur.com/UAybAep.png?1)
+
 For my thesis project I have used machine learning algorithms 
 and concepts to predict positional errors of multi leaf collimator leaves.
 
