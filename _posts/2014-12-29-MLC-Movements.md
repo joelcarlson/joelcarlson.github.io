@@ -31,4 +31,12 @@ Head and Neck plans are significantly more complicated, and generally utilize ma
 
 <img src="http://i.imgur.com/cVx4iRX.gif" title="A more complex HN plan" />
 
+##Errors Between Planned and Delivered Positions
+
+Radiotherapy plans are complicated, there is no doubt about that. It is important, then, to realize that they must be delivered by physical components. The above gifs display the planned positions of the MLC, but can the physical MLC actually achieve those positions?
+
+The following gif shows errors between planned and delivered positions. Red for errors which occur when the leaf is left too far into the center of the MLC, and grey when it is too far outside. These are precisely the types of errors my research works to avoid!
+
+<img src="http://i.imgur.com/Qv0kC6s.gifv" title="MLC Errors" />
+
 That's all for now!
