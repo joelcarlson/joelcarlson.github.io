@@ -108,13 +108,14 @@ There are 13 variables in the data, but we are going to use only the 5 with the 
 Just so that we have a feel for the data, let's plot a variable or two:
 We might be able to guess that there is some relationship between alcohol content and region:
 
-![center](/figs/CentreScale/plot1.png) 
+<img src="/figs/CentreScale/plot1.png" width=30%/>
+
 
 And indeed there is, not a big surprise there.
 
 Wikipedia tells me that, during brewing, [Proline](https://en.wikipedia.org/wiki/Proline) may produce haze, so perhaps it would be related to Color Intensity?
 
-![center](/figs/CentreScale/plot2.png) 
+<img src="/figs/CentreScale/plot2.png" width=30%/>
 
 As expected. It looks like these variables are going to be able to feed a pretty accurate model. Based on the way the second plot is organized into clusters I imagine even a simple approach like KNN would do well.
 
@@ -128,7 +129,8 @@ For each situation described above, I trained 1000 svm models from the `e1071` R
 
 To demonstrate the importance of centering and scaling for support vector machines, the accuracy was first assessed without centering and scaling:
 
-![center](/figs/CentreScale/plot3.png) 
+<img src="/figs/CentreScale/plot3.png" width=30%/>
+
 
 As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of 0.415 is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svms.
 
@@ -136,7 +138,8 @@ As we can see, the accuracy is pretty abysmal. There are three categories, so th
 
 This time we scale the training and test together, and then split them apart for training of the model. This means that there is some information from the test set leaking into the training set, and vice versa.
 
-![center](/figs/CentreScale/plot4.png) 
+<img src="/figs/CentreScale/plot4.png" width=30%/>
+
 
 Clearly that made the difference, accuracy is nearly perfect. 
 
@@ -144,7 +147,7 @@ Clearly that made the difference, accuracy is nearly perfect.
 
 Well, this is the right way. 
 
-![center](/figs/CentreScale/plot5.png) 
+<img src="/figs/CentreScale/plot5.png" width=30%/>
 
 So, it appears that there is just the teeensiest increase in accuracy if we do it the right way. Is it statistically significant, though?
 
@@ -167,7 +170,7 @@ We can assess whether or not there is a difference in the mean accuracy between 
       0.939 0.936
 {% endhighlight %}
 
-![center](/figs/CentreScale/plot6.png) 
+<img src="/figs/CentreScale/plot6.png" width=30%/>
 
 The difference is extremely small (around 0.4%), but it exists and is statistically significant.  
 
