@@ -17,7 +17,7 @@ MLCs themselves aren't particularly attractive to look at, however, their moveme
  
 I had the opportunity to analyse a set of MLC positions for a few treatment plans and made some .gifs out of them. Here is a relatively simple prostate VMAT plan:
 
-<img src="http://i.imgur.com/puquDzz.gif" title="A relatively simple prostate plan" />
+<img src="/figs/MLCMovement/prostateGIF.gif" title="A relatively simple prostate plan" />
 
 The image consists of one data point per MLC leaf per control point.  There are 120 MLC leaves, and 356 control points per plan, meaning this image contains 42,720 points! 
 
@@ -27,9 +27,9 @@ The animation moves much faster than the real MLC.  During actual delivery the l
 
 Head and Neck plans are significantly more complicated, and generally utilize many more of the leaves than do prostate plans. Here are two different head and neck plans:
 
-<img src="http://i.imgur.com/HNHBFU7.gif" title="A typical HN plan" />
+<img src="/figs/MLCMovement/hn1GIF.gif" title="A typical HN plan" />
 
-<img src="http://i.imgur.com/cVx4iRX.gif" title="A more complex HN plan" />
+<img src="/figs/MLCMovement/hn2GIF.gif" title="A more complex HN plan" />
 
 ##Errors Between Planned and Delivered Positions
 
@@ -37,6 +37,6 @@ Radiotherapy plans are complicated, there is no doubt about that. It is importan
 
 The following gif shows errors between planned and delivered positions. Red for errors which occur when the leaf is left too far into the center of the MLC, and grey when it is too far outside. These are precisely the types of errors my research works to avoid!
 
-<blockquote class="imgur-embed-pub" lang="en" data-id="a85xX6s"><a href="//imgur.com/a85xX6s">MLC Positional Errors</a></blockquote><script async src="//s.imgur.com/min/embed.js" charset="utf-8"></script>
+<img src="/figs/MLCMovement/planVsDeliverGIF.gif" title="Differences between planned and delivered positions" />
 
 That's all for now!

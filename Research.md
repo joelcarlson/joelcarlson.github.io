@@ -14,7 +14,9 @@ My research goals involve creating methods for improving treatment outcomes, pre
 
 Prediction of MLC positional errors using a decision tree regression approach
 
-<a href="http://joelcarlson.github.io/thesis"><img src="http://i.imgur.com/WeS6XR6.png?1" width=70% ></a>
+<a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/MLCfilter.png" width=70%/></a>
+
+
 
 Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 
@@ -22,7 +24,7 @@ Here is a link to the presentation I gave at AAPM 2015 related to this material:
 
 Determining the radiation dose distribution from a prototype brachytherapy seed via Monte Carlo methods
 
-<a href="http://joelcarlson.github.io/brachytherapy"><img src="http://i.imgur.com/BOEufs8.png?1" width=70% ></a>
+<a href="http://joelcarlson.github.io/brachytherapy"><img src="/figs/ResearchImages/brachySeed.png" width=70%/></a>
 
 
 
