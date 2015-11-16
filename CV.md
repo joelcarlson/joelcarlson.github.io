@@ -5,27 +5,51 @@ permalink: /cv/
 ---
 
 
-<http://www.joelcarlson.me>
-<joelcarlson@snu.ac.kr>
 
-Education
-=========
+##Education
 
-|                                                                        |                                                                                |
-|-----------------------------------------------------------------------:|:-------------------------------------------------------------------------------|
-|  <span style="font-variant:small-caps;">2014 - 2016</span> \(\:\:\:\:\)| <span style="font-variant:small-caps;">Seoul National University</span>        |
-|                                                                        | MSc <span style="font-variant:small-caps;">Biomedical Radiation Science</span> |
-|                                                                        | Thesis: “A Statisical Learning Approach to the Accurate Prediction             
-                                                                          & \(\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\) of Radiotherapy Delivery Errors”     |
-|                                                                        | Advisor: Professor Sung-Joon Ye                                                |
-
-|                                                                        |                                                                               |
-|-----------------------------------------------------------------------:|:------------------------------------------------------------------------------|
-|  <span style="font-variant:small-caps;">2007 - 2012</span> \(\:\:\:\:\)| <span style="font-variant:small-caps;">University of Calgary</span>           |
-|                                                                        | BSc <span style="font-variant:small-caps;">Physics</span>                     |
-|                                                                        | Thesis: “Single-Individuum Single Nucleotide Polymorphisms                    
-                                                                          & \(\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\:\) in the Human Mitochondrial Genome”  |
-|                                                                        | Advisor: Professor Peter Grassberger                                          |
+<table>
+<tbody>
+<tr class="odd">
+<td align="right"><span style="font-variant: small-caps;">2014 - 2016</span></td>
+<td align="left"><span style="font-variant: small-caps;">Seoul National University</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="left">MSc <span style="font-variant: small-caps;">Biomedical Radiation Science</span></td>
+</tr>
+<tr class="odd">
+<td align="right"></td>
+<td align="left">Thesis: “A Statisical Learning Approach to the Accurate Prediction<br />
+&amp; of Radiotherapy Delivery Errors”</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="left">Advisor: Professor Sung-Joon Ye</td>
+</tr>
+</tbody>
+</table>
+<table>
+<tbody>
+<tr class="odd">
+<td align="right"><span style="font-variant: small-caps;">2007 - 2012</span></td>
+<td align="left"><span style="font-variant: small-caps;">University of Calgary</span></td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="left">BSc <span style="font-variant: small-caps;">Physics</span></td>
+</tr>
+<tr class="odd">
+<td align="right"></td>
+<td align="left">Thesis: “Single-Individuum Single Nucleotide Polymorphisms<br />
+&amp; in the Human Mitochondrial Genome”</td>
+</tr>
+<tr class="even">
+<td align="right"></td>
+<td align="left">Advisor: Professor Peter Grassberger</td>
+</tr>
+</tbody>
+</table>
 
 Experience
 ==========
