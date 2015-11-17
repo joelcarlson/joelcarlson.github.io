@@ -1,5 +1,5 @@
 ---
-title: 'Mulitvariate Regression Modeling'
+title: 'Multivariate Regression Modeling'
 author: "Joel Carlson"
 layout: page
 excerpt: Some methods for regression modeling with explanations of mediators and confounders
