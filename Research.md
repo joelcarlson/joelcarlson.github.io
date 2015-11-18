@@ -9,7 +9,7 @@ My research goals involve creating methods for improving treatment outcomes, pre
 </p> 
 
 
-##Machine Learning to Predict MLC Errors
+###Machine Learning to Predict MLC Errors
 
 
 Prediction of MLC positional errors using a decision tree regression approach
@@ -20,7 +20,7 @@ Prediction of MLC positional errors using a decision tree regression approach
 
 Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 
-##Brachytherapy TG43 Parameters
+###Brachytherapy TG43 Parameters
 
 Determining the radiation dose distribution from a prototype brachytherapy seed via Monte Carlo methods
 
