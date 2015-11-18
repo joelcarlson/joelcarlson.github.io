@@ -4,8 +4,8 @@ title: Curriculum Vitae
 permalink: /cv/
 ---
 
-Link to [CV](https://www.dropbox.com/s/r9gwk8ikhqt5j8e/JoelCarlsonCV.pdf?dl=0) (.pdf)
+Click [here](https://www.dropbox.com/s/r9gwk8ikhqt5j8e/JoelCarlsonCV.pdf?dl=0) for CV with links to DOI's and course certificates.
 
 <div>
-  <img src="/figs/CVImage/CVImage.png" alt="Woohoo!" title="Run for cover!" width="750px"/>
+ <a href="https://www.dropbox.com/s/r9gwk8ikhqt5j8e/JoelCarlsonCV.pdf?dl=0"><img src="/figs/CVImage/CVImage.png" alt="CV" title="CV" width="750px"/></a>
 </div>
