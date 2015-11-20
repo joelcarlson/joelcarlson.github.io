@@ -6,10 +6,10 @@ permalink: /research/
 
 <p class="message">
 My research goals involve creating methods for improving treatment outcomes, predicting disease prognosis, and implementing these methods as clinical decision support systems.
-
-Click on the images for detailed summaries of each research project.
 </p> 
 
+
+<a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/MLCfilter.png" width=70%/></a>
 
 ###Machine Learning to Predict MLC Errors
 
@@ -17,17 +17,21 @@ Radiotherapy plans have become increasingly complex in recent years, and with th
 
 In this project, I used decision-tree regression techniques to predict the MLC errors, and incorporated them into the treatment planning system. This research allows treatment planners to view a more accurate representation of the dose as it will truly be delivered to the patient.
 
-<a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/MLCfilter.png" width=70%/></a>
+Click [here](http://joelcarlson.github.io/thesis) for a more detailed summary of this project.
 
-Here is a link to the presentation I gave at AAPM 2015 related to this material: [SlideShare link](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
+Click [here](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0) to view the presentation I gave at AAPM 2015 related to this material.
 
-Here is a link to a web-interface which allows access to the models developed in this work: [Link](http://joelcarlson.me/2015/11/14/mlc-dashboard/)
+Click [here](http://joelcarlson.me/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
+
+<a href="http://joelcarlson.github.io/brachytherapy"><img src="/figs/ResearchImages/brachySeed.png" width=70%/></a>
 
 ###Brachytherapy TG43 Parameters
 
 For certain tumors, rather than irradiating with an external beam, it is more appropriate to position radioactive seeds in close proximity to the tumor. In this project, I used Monte-Carlo techniques to calculate the dose deposition pattern of a prototype seed. Knowing the pattern of radiation emanating from the seeds allows treatment planners to  position the seeds such that the tumor receives the exact required dose.
 
-<a href="http://joelcarlson.github.io/brachytherapy"><img src="/figs/ResearchImages/brachySeed.png" width=70%/></a>
+Click [here](http://joelcarlson.github.io/brachytherapy) for a more detailed summary of this project.
+
+
 
 
 
