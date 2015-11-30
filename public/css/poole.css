@@ -408,3 +408,27 @@ a.pagination-item:hover {
     border-bottom-right-radius: 4px;
   }
 }
+
+/* Additional CSS to play with javascript */
+.box{
+  float:left;
+  padding:10px;
+  background:#aab;
+  width: 150px;
+  border-radius:4px;
+  margin:8px;
+  box-shadow: 0 1px 2px #334;
+  -webkit-transition:0.3s;
+  transition:0.3s;
+}
+.box img{
+  width:150px;
+}
+
+.box.toggled {
+   box-shadow: 0 2px 8px #334;
+   background:#ccd;
+   -webkit-transform: scale(2);
+   transform: scale(2);
+   opacity:1;
+}
