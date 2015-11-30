@@ -411,7 +411,7 @@ a.pagination-item:hover {
 
 /* Additional CSS to play with javascript */
 .box{
-  float:left;
+  float:center;
   padding:10px;
 
   width: 150px;
