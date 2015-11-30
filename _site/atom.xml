@@ -4,7 +4,7 @@
  <title>Joel Carlson</title>
  <link href="http://joelcarlson.github.io/atom.xml" rel="self"/>
  <link href="http://joelcarlson.github.io/"/>
- <updated>2014-10-08T22:40:14+09:00</updated>
+ <updated>2015-11-30T16:03:27+09:00</updated>
  <id>http://joelcarlson.github.io</id>
  <author>
    <name>Joel Carlson</name>
@@ -13,364 +13,781 @@
 
  
  <entry>
-   <title>Proof that Rhia is the best</title>
-   <link href="http://joelcarlson.github.io/2014/09/22/rhia-best/"/>
-   <updated>2014-09-22T00:00:00+09:00</updated>
-   <id>http://joelcarlson.github.io/2014/09/22/rhia-best</id>
-   <content type="html">&lt;p&gt;I wonder if Rhia will browse my website a bit if I send it to her.  Well, if she does, perhaps she will find this!&lt;/p&gt;
+   <title>Predict Your Own MLC Errors!</title>
+   <link href="http://joelcarlson.github.io/2015/11/14/mlc-dashboard/"/>
+   <updated>2015-11-14T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2015/11/14/mlc-dashboard</id>
+   <content type="html">&lt;p&gt;Give the dashboard ~15 seconds to load. &lt;/p&gt;
 
-&lt;p&gt;Hi Rhia! I love you!&lt;/p&gt;
+&lt;p&gt;Code available &lt;a href=&quot;https://github.com/joelcarlson/MLCPredictionsDashboard&quot;&gt;here&lt;/a&gt;, and a version that isn&amp;#39;t stuck in an iframe &lt;a href=&quot;https://jnkcarlson.shinyapps.io/MLCPredictionDash&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;##here is some code to show some love!&lt;/span&gt;
-WhoIsBest &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;person&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-        ifelse&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;person &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&amp;quot;Rhia&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;TRUE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
-
-WhoIsBest&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Rhia&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-
-
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] TRUE
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-
-Could someone else be the best?
-
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;WhoIsBest&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;Someone Other Than Rhia&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-
-
-
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] FALSE
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-
-
-Well, I suppose that settles it! Rhia is best!
-
-Test embedding of a shiny app:
-&lt;iframe src=&quot;https://joelcarlson.shinyapps.io/campep&quot; style=&quot;border: none; width: 900px; height: 900px&quot;&gt;&lt;/iframe&gt;
-
-Lets test to see if I can put a direct copy of googleVis output into an md!:
-
-&lt;!-- MotionChart generated in R 3.1.1 by googleVis 0.5.5 package --&gt;
-&lt;!-- Tue Oct 07 12:49:39 2014 --&gt;
-
-
-&lt;!-- jsHeader --&gt;
-&lt;script type=&quot;text/javascript&quot;&gt;
- 
-// jsData 
-function gvisDataMotionChartID119c2aa0b2f () {
-var data = new google.visualization.DataTable();
-var datajson =
-[
- [
- &quot;Apples&quot;,
-2008,
-&quot;West&quot;,
-98,
-78,
-20,
-&quot;2008-12-31&quot; 
-],
-[
- &quot;Apples&quot;,
-2009,
-&quot;West&quot;,
-111,
-79,
-32,
-&quot;2009-12-31&quot; 
-],
-[
- &quot;Apples&quot;,
-2010,
-&quot;West&quot;,
-89,
-76,
-13,
-&quot;2010-12-31&quot; 
-],
-[
- &quot;Oranges&quot;,
-2008,
-&quot;East&quot;,
-96,
-81,
-15,
-&quot;2008-12-31&quot; 
-],
-[
- &quot;Bananas&quot;,
-2008,
-&quot;East&quot;,
-85,
-76,
-9,
-&quot;2008-12-31&quot; 
-],
-[
- &quot;Oranges&quot;,
-2009,
-&quot;East&quot;,
-93,
-80,
-13,
-&quot;2009-12-31&quot; 
-],
-[
- &quot;Bananas&quot;,
-2009,
-&quot;East&quot;,
-94,
-78,
-16,
-&quot;2009-12-31&quot; 
-],
-[
- &quot;Oranges&quot;,
-2010,
-&quot;East&quot;,
-98,
-91,
-7,
-&quot;2010-12-31&quot; 
-],
-[
- &quot;Bananas&quot;,
-2010,
-&quot;East&quot;,
-81,
-71,
-10,
-&quot;2010-12-31&quot; 
-] 
-];
-data.addColumn(&#39;string&#39;,&#39;Fruit&#39;);
-data.addColumn(&#39;number&#39;,&#39;Year&#39;);
-data.addColumn(&#39;string&#39;,&#39;Location&#39;);
-data.addColumn(&#39;number&#39;,&#39;Sales&#39;);
-data.addColumn(&#39;number&#39;,&#39;Expenses&#39;);
-data.addColumn(&#39;number&#39;,&#39;Profit&#39;);
-data.addColumn(&#39;string&#39;,&#39;Date&#39;);
-data.addRows(datajson);
-return(data);
-}
- 
-// jsDrawChart
-function drawChartMotionChartID119c2aa0b2f() {
-var data = gvisDataMotionChartID119c2aa0b2f();
-var options = {};
-options[&quot;width&quot;] =    600;
-options[&quot;height&quot;] =    400;
-
-
-    var chart = new google.visualization.MotionChart(
-    document.getElementById(&#39;MotionChartID119c2aa0b2f&#39;)
-    );
-    chart.draw(data,options);
-    
-
-}
-  
- 
-// jsDisplayChart
-(function() {
-var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-var chartid = &quot;motionchart&quot;;
-  
-// Manually see if chartid is in pkgs (not all browsers support Array.indexOf)
-var i, newPackage = true;
-for (i = 0; newPackage &amp;&amp; i &lt; pkgs.length; i++) {
-if (pkgs[i] === chartid)
-newPackage = false;
-}
-if (newPackage)
-  pkgs.push(chartid);
-  
-// Add the drawChart function to the global list of callbacks
-callbacks.push(drawChartMotionChartID119c2aa0b2f);
-})();
-function displayChartMotionChartID119c2aa0b2f() {
-  var pkgs = window.__gvisPackages = window.__gvisPackages || [];
-  var callbacks = window.__gvisCallbacks = window.__gvisCallbacks || [];
-  window.clearTimeout(window.__gvisLoad);
-  // The timeout is set to 100 because otherwise the container div we are
-  // targeting might not be part of the document yet
-  window.__gvisLoad = setTimeout(function() {
-  var pkgCount = pkgs.length;
-  google.load(&quot;visualization&quot;, &quot;1&quot;, { packages:pkgs, callback: function() {
-  if (pkgCount != pkgs.length) {
-  // Race condition where another setTimeout call snuck in after us; if
-  // that call added a package, we must not shift its callback
-  return;
-}
-while (callbacks.length &gt; 0)
-callbacks.shift()();
-} });
-}, 100);
-}
- 
-// jsFooter
-&lt;/script&gt;
- 
-&lt;!-- jsChart --&gt;  
-&lt;script type=&quot;text/javascript&quot; src=&quot;https://www.google.com/jsapi?callback=displayChartMotionChartID119c2aa0b2f&quot;&gt;&lt;/script&gt;
- 
-&lt;!-- divChart --&gt;
-  
-&lt;div id=&quot;MotionChartID119c2aa0b2f&quot; 
-  style=&quot;width: 600; height: 400;&quot;&gt;
-&lt;/div&gt;
+&lt;iframe src=&quot;https://jnkcarlson.shinyapps.io/MLCPredictionDash&quot; style=&quot;border: none; width: 100%; height: 1100px&quot;&gt;&lt;/iframe&gt;
 </content>
  </entry>
  
  <entry>
-   <title>Monte Carlo Example Post</title>
-   <link href="http://joelcarlson.github.io/2014/09/21/example-mc-post/"/>
-   <updated>2014-09-21T00:00:00+09:00</updated>
-   <id>http://joelcarlson.github.io/2014/09/21/example-mc-post</id>
-   <content type="html">&lt;p&gt;This is just an example to see if a more complicated .rmd file can survive conversion from .rmd to .md&lt;/p&gt;
+   <title>The Dangers(?) of Improperly Centering and Scaling Your Data</title>
+   <link href="http://joelcarlson.github.io/2015/08/18/CentreScale/"/>
+   <updated>2015-08-18T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2015/08/18/CentreScale</id>
+   <content type="html">&lt;p&gt;Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.&lt;/p&gt;
 
-&lt;h3&gt;Question 2 a)&lt;/h3&gt;
+&lt;p&gt;For example, for certain machine learning algorithms, such as support vector machines, centering and scaling your data is essential for the algorithm to perform. Centering and scaling the data is a process by which you transform each feature such that its mean becomes 0, and variance becomes 1. If you center and scale your data before splitting it into training and test sets, then you have used information from your training set to make calculations on your test set. This is a problem. Or could be, at least.&lt;/p&gt;
 
-&lt;p&gt;Calculate the area encompassed by \(x^2 + 4y^2 = 4\)&lt;/p&gt;
+&lt;p&gt;This was concerning me at the conference, but I didn&amp;#39;t speak up about it because although I had been instructed to avoid this mistake, and it made intuitive sense to me, I had never actually tested to see if there was a significant difference between the two methods. &lt;/p&gt;
 
-&lt;p&gt;The x intercept:&lt;br&gt;
-\(x^2 + 4y^2 = 4\) 
-\(x^2 + 4(0)^2 = 4\)&lt;br&gt;
-\(x = \sqrt{4} = 2\)  &lt;/p&gt;
-
-&lt;p&gt;And y intercept:&lt;br&gt;
-\((0)^2 + 4y^2 = 4\)&lt;br&gt;
-\(y = \sqrt{4/4} = 1\)  &lt;/p&gt;
-
-&lt;p&gt;So we will choose random numbers from \(0 \leq x \leq 2\) and \(0 \leq y \leq 1\) and test whether or not fall inside or outside of our function.&lt;/p&gt;
-
-&lt;p&gt;Below is a function which has three steps:&lt;/p&gt;
+&lt;p&gt;In this post, I am going to explore this by assessing the accuracy of support vector machine models on three datasets: &lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;&lt;p&gt;Create a data frame of a given size with random $x$ and $y$ values within our defined intercept bounds&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create a column of the function evaluated using the $x$ and $y$ values&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Create a new column that is &lt;code&gt;1&lt;/code&gt; if the $x$ and $y$ values are below our function&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Not centered or scaled&lt;/li&gt;
+&lt;li&gt;Training and testing centered and scaled together&lt;/li&gt;
+&lt;li&gt;Training and testing centered separately&lt;/li&gt;
 &lt;/ul&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;valueCalc &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Create data frame&lt;/span&gt;
-    values &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; data.frame&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;runif&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;runif&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Calculations&lt;/span&gt;
-    values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;calc &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;*&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;y&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Create counting column &lt;/span&gt;
-    values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; ifelse&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;calc &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    values
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Datawise, we will use a set from the &lt;a href=&quot;http://archive.ics.uci.edu/ml/datasets/Wine&quot;&gt;UCI machine learning repository&lt;/a&gt;. The dataset is a series of wine measurements, quantifying things like &amp;quot;Alcohol Content&amp;quot;, &amp;quot;Color Intensity&amp;quot;, and &amp;quot;Hue&amp;quot; for 178 wines. The goal is to predict the region the wine came from based on the measurements. &lt;/p&gt;
 
-&lt;p&gt;Let&amp;#39;s look at a quick example with only 5 iterations:&lt;/p&gt;
+&lt;h2&gt;Summarizing the data&lt;/h2&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;valueCalc&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Let&amp;#39;s take a quick look at the mean and standard deviation of each column in the data (sorted by SD):&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;##       x       y  calc inside
-## 1 1.830 0.01203 3.351      1
-## 2 1.527 0.75843 4.632      0
-## 3 1.611 0.49895 3.592      1
-## 4 1.468 0.46611 3.023      1
-## 5 1.364 0.90101 5.108      0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;table&gt;
+ &lt;thead&gt;
+  &lt;tr&gt;
+   &lt;th style=&quot;text-align:left;&quot;&gt; Variable &lt;/th&gt;
+   &lt;th style=&quot;text-align:right;&quot;&gt; Mean &lt;/th&gt;
+   &lt;th style=&quot;text-align:right;&quot;&gt; SD &lt;/th&gt;
+  &lt;/tr&gt;
+ &lt;/thead&gt;
+&lt;tbody&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Proline &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 746.89 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 314.91 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Magnesium &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 99.74 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 14.28 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Alcalinity &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 19.49 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 3.34 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; ColorIntensity &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 5.06 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.32 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Acid &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.34 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 1.12 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Flavanoids &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.03 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 1.00 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Alcohol &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 13.00 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.81 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; OpticalDensity &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.61 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.71 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Phenols &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.30 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.63 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Proanthocyanins &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 1.59 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.57 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Ash &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 2.37 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.27 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; Hue &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.96 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.23 &lt;/td&gt;
+  &lt;/tr&gt;
+  &lt;tr&gt;
+   &lt;td style=&quot;text-align:left;&quot;&gt; NonFlavanoidPhenols &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.36 &lt;/td&gt;
+   &lt;td style=&quot;text-align:right;&quot;&gt; 0.12 &lt;/td&gt;
+  &lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
 
-&lt;p&gt;Lets look at a plot of the given function, and 10 random points, and 100 random points:&lt;/p&gt;
+&lt;p&gt;There are 13 variables in the data, but we are going to use only the 5 with the highest standard deviation, since this is for demonstration purposes, not pure predictive accuracy. Although Alcohol is not in the top 5, we are going to use it as well (because hey, we&amp;#39;re talking about wine!)&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figs/Example%20Post%20-%20MC.rmd/unnamed-chunk-5.png&quot; alt=&quot;center&quot;&gt; &lt;/p&gt;
+&lt;h2&gt;A bit of intuition&lt;/h2&gt;
 
-&lt;p&gt;To calculate the area of the defined shape we note that the area of the square is \(2 * 1 = 2\), and a certain proportion of that area is taken up by the defined shape (area below the function). By looking at the proportion of the random points that fall inside &lt;em&gt;vs&lt;/em&gt; outside the shape (that is, the sum of our &lt;code&gt;inside&lt;/code&gt; column), we can guess its area.&lt;/p&gt;
+&lt;p&gt;Just so that we have a feel for the data, let&amp;#39;s plot a variable or two:
+We might be able to guess that there is some relationship between alcohol content and region:&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#100 iterations&lt;/span&gt;
-hundred &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; valueCalc&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-sum&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hundred&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;100&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot1.png&quot; width=60%/&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] 0.82
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;And indeed there is, not a big surprise there.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#10000 iterations&lt;/span&gt;
-tenthousand &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; valueCalc&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-sum&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;tenthousand&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;10000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Wikipedia tells me that, during brewing, &lt;a href=&quot;https://en.wikipedia.org/wiki/Proline&quot;&gt;Proline&lt;/a&gt; may produce haze, so perhaps it would be related to Color Intensity?&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] 0.7807
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot2.png&quot; width=60%/&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#1000000 iterations&lt;/span&gt;
-million &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; valueCalc&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-sum&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;million&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;As expected. It looks like these variables are going to be able to feed a pretty accurate model. Based on the way the second plot is organized into clusters I imagine even a simple approach like KNN would do well.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] 0.7849
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h2&gt;Building the models&lt;/h2&gt;
 
-&lt;p&gt;This is just \(\frac{1}{4}\) of the shape, however.  The shape is symmetrical, so the proportion of points inside &lt;em&gt;vs&lt;/em&gt; outside of the function will remain constant. In an area \(4\) times as large, or \(4 * 2 = 8 m^2\), \(78.49\%\) of the area is taken up by the shape.  That is \(0.7849 * 8m^2 = 6.2792m^2\) is the area. &lt;/p&gt;
+&lt;p&gt;The features of this data vary wildly in scale, for example, the range of the &lt;code&gt;Proline&lt;/code&gt; column is from 278 to 1680, whereas the &lt;code&gt;Acid&lt;/code&gt; column goes from 0.74 to 5.80. This is an issue for support vector machines (and some other algorithms), so we need to center and scale the data.&lt;/p&gt;
 
-&lt;p&gt;We can confirm this with an integral:
-\(2\int_{-2}^{2}\sqrt{\frac{4-x^2}{4}}\,dx = 2pi \approx 6.28\)&lt;/p&gt;
+&lt;p&gt;For each situation described above, I trained 1000 svm models from the &lt;code&gt;e1071&lt;/code&gt; R package (with default parameters) and recorded the accuracy. Each model was trained on a random subset of 50% of the data, and tested on the remaining 50%. The test set acccuracy distributions in each situation are presented as histograms.&lt;/p&gt;
 
-&lt;h3&gt;Question 2 b)&lt;/h3&gt;
+&lt;h3&gt;No centering and scaling&lt;/h3&gt;
 
-&lt;p&gt;A similar procedure as &lt;em&gt;Question 2 a)&lt;/em&gt; is followed.  This time we want the relative area of the shape defined by: \((x-1)^2 + y^2 = 1\).&lt;/p&gt;
+&lt;p&gt;To demonstrate the importance of centering and scaling for support vector machines, the accuracy was first assessed without centering and scaling:&lt;/p&gt;
 
-&lt;p&gt;This is a circle shifted by \(1\) to the right on the \(x-axis\).  Thus the intercepts are \(x = 0, 2\) and \(y = 0\)&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot3.png&quot; width=60%/&gt;&lt;/p&gt;
 
-&lt;p&gt;The shift moving the center of the cicle won&amp;#39;t change our boundaries in this case, we will just have to be more careful at the end when we are talking about relative proportions.&lt;/p&gt;
+&lt;p&gt;As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of 0.415 is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svms.&lt;/p&gt;
 
-&lt;p&gt;We will define a similar function:&lt;/p&gt;
+&lt;h3&gt;Scaling Training and Test together&lt;/h3&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;valueCalcb &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kr&quot;&gt;function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;){&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Create data frame&lt;/span&gt;
-    values &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; data.frame&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;x&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;runif&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; y&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;runif&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;iterations&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Calculations&lt;/span&gt;
-    values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;calc &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;x &lt;span class=&quot;o&quot;&gt;-&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;+&lt;/span&gt; values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;y&lt;span class=&quot;o&quot;&gt;^&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;
-    &lt;span class=&quot;c1&quot;&gt;#Create counting column &lt;/span&gt;
-    values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; ifelse&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;values&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;calc &lt;span class=&quot;o&quot;&gt;&amp;lt;&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-    
-    values
-&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;This time we scale the training and test together, and then split them apart for training of the model. This means that there is some information from the test set leaking into the training set, and vice versa.&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;valueCalcb&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot4.png&quot; width=60%/&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;##        x        y    calc inside
-## 1 1.4803 0.504945 0.48562      1
-## 2 0.7941 0.001354 0.04239      1
-## 3 0.8626 0.776546 0.62190      1
-## 4 1.1135 0.325987 0.11916      1
-## 5 0.4893 0.990583 1.24206      0
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;Clearly that made the difference, accuracy is nearly perfect. &lt;/p&gt;
 
-&lt;p&gt;And plotted:&lt;/p&gt;
+&lt;h3&gt;Scaling separately (the right way)&lt;/h3&gt;
 
-&lt;p&gt;&lt;img src=&quot;/figs/Example%20Post%20-%20MC.rmd/unnamed-chunk-10.png&quot; alt=&quot;center&quot;&gt; &lt;/p&gt;
+&lt;p&gt;Well, this is the right way. &lt;/p&gt;
 
-&lt;p&gt;With proportions:&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot5.png&quot; width=60%/&gt;&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;r&quot;&gt;&lt;span class=&quot;c1&quot;&gt;#1000000 iterations&lt;/span&gt;
-millionb &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; valueCalcb&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-sum&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;millionb&lt;span class=&quot;o&quot;&gt;$&lt;/span&gt;inside&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1000000&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;So, it appears that there is just the teeensiest increase in accuracy if we do it the right way. Is it statistically significant, though?&lt;/p&gt;
 
-&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;text&quot;&gt;## [1] 0.7863
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;h3&gt;Statistical Significance&lt;/h3&gt;
 
-&lt;p&gt;This time our square area is of size \(2 * 2 = 4m^2\) and the proportion of hits inside the shape is \(78.63\%\) thus the area is \(0.7863 * 4m^2 = 3.1452 \approx pi\).  This makes sense, as it is a circle of \(radius = 1\), merely shifted to the side. &lt;/p&gt;
+&lt;p&gt;We can assess whether or not there is a difference in the mean accuracy between scaling together and scaling separately by using a t-test. From the histograms we can see that the accuracy scores are very roughly normal, so t-tests are appropriate here.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;Welch Two Sample t-test
+ 
+ data: Separate and Together
+ t = 3.8542, df = 1996.389, p-value = 0.0001198
+ alternative hypothesis: true difference in means is not equal to 0
+ 95 percent confidence interval:
+      0.00179 0.00552
+ sample estimates:
+ mean of x mean of y 
+      0.939 0.936&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/CentreScale/plot6.png&quot; width=60%/&gt;&lt;/p&gt;
+
+&lt;p&gt;The difference is extremely small (around 0.4%), but it exists and is statistically significant.  &lt;/p&gt;
+
+&lt;h2&gt;Conclusion&lt;/h2&gt;
+
+&lt;p&gt;As we saw, centering and scaling the data the proper way actually, for this dataset, leads to a tiny but statistically significant &lt;strong&gt;increase&lt;/strong&gt; in the mean accuracy of the svm models. 
+I have to admit to being surpised, I expected the opposite result! It would be interesting to see how the size of the dataset, and number of variables in the model impact this difference.&lt;/p&gt;
+
+&lt;p&gt;Of course, this was no fully rigorous test, but I do think it adds to the evidence that you should always center and scale your training and test data separately (not least because it&amp;#39;s the correct way!).&lt;/p&gt;
+
+&lt;p&gt;This post has a small discussion on reddit &lt;a href=&quot;https://www.reddit.com/r/statistics/comments/3heml4/the_dangers_of_improperly_centering_and_scaling/&quot;&gt;here&lt;/a&gt; and a reproducible version with code can be found &lt;a href=&quot;https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/CentreScale.Rmd&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Introducing radiomics for R</title>
+   <link href="http://joelcarlson.github.io/2015/07/10/radiomics-package/"/>
+   <updated>2015-07-10T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2015/07/10/radiomics-package</id>
+   <content type="html">&lt;p&gt;The &lt;code&gt;radiomics&lt;/code&gt; package is a set of tools for computing texture matrices from images, and features derived from the matrices. &lt;/p&gt;
+
+&lt;p&gt;You can install the package using:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;devtools&lt;span class=&quot;o&quot;&gt;::&lt;/span&gt;install_github&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&amp;quot;joelcarlson/radiomics&amp;quot;&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h1&gt;Texture Matrices&lt;/h1&gt;
+
+&lt;p&gt;In the package are functions for calculating several different types of matrices used to quantify the texture of an image in the form of a matrix.&lt;/p&gt;
+
+&lt;h2&gt;Gray Level Co-occurrence Matrix&lt;/h2&gt;
+
+&lt;p&gt;The first texture matrix is the gray level co-occurence matrix (GLCM). GLCMs take an image (as a matrix), an angle (&amp;quot;0&amp;quot;, &amp;quot;45&amp;quot;, &amp;quot;90&amp;quot;, or &amp;quot;135&amp;quot;), and an integer distance, d. The axes of the GLCM are defined by the grey levels present in the image. Each pixel of the image is scanned and stored as a &amp;quot;reference pixel&amp;quot;. The reference pixel is then compared to the pixel that is distance d at angle theta (where &amp;quot;0&amp;quot; degrees is the pixel to the right, &amp;quot;90&amp;quot; is the pixel above) away from the reference pixel, known as the neighbor pixel. Each time a reference value and neighbor value pair is found, the corresponding row and column of the GLCM is incremented by 1. &lt;/p&gt;
+
+&lt;p&gt;A visual example shows this process. Pixels in the image are colored and labelled by grey value. The GLCM is set up such that each pixel value is represented on each axis.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/m9MKq1I.png&quot; height=&quot;227px&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We count the number of times each pair of grey levels occurs, for example, if angle = &amp;quot;0&amp;quot; and d = 1, for the grey level of 1, there is one 1:1 pair:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/z5xFw6C.png&quot; height=&quot;227px&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;While there are two 1:3 pairs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/4L8dSgf.png&quot; height=&quot;227px&quot; width=&quot;500px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Continuing in this fashion for each grey level, we end up with a GLCM filled with counts.&lt;/p&gt;
+
+&lt;p&gt;By convention, we sum the GLCM and the GLCMs transpose to obtain a symmetric matrix:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/GdVzVxN.png&quot; height=&quot;227px&quot; width=&quot;829px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This can be accomplished using the &lt;code&gt;radiomics&lt;/code&gt; package as follows:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;&lt;span class=&quot;kn&quot;&gt;library&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;radiomics&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+image &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; nrow&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glcm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;image&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; normalize&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;kc&quot;&gt;FALSE&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   1 2 3 4
+## 1 2 2 3 0
+## 2 2 0 2 1
+## 3 3 2 0 2
+## 4 0 1 2 2&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Normally, GLCMs are normalized before features are calculated, this is the default situation for the &lt;code&gt;glcm()&lt;/code&gt; function.&lt;/p&gt;
+
+&lt;p&gt;More information about the GLCM can be found &lt;a href=&quot;http://www.fp.ucalgary.ca/mhallbey/tutorial.htm&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Gray Level Run Length Matrix&lt;/h2&gt;
+
+&lt;p&gt;The GLRLM is a matrix which attempts to quantify runs of the same grey level in the image. The GLRLM is set up slightly differently than the GLCM; instead of having grey levels along the abscissa of the table the GLRLM has run lengths.&lt;/p&gt;
+
+&lt;p&gt;As with the GLCM, an angle is required (one of &amp;quot;0&amp;quot;, &amp;quot;45&amp;quot;, &amp;quot;90&amp;quot;, or &amp;quot;135&amp;quot;). Below is an example using &amp;quot;0&amp;quot;, note that the image matrix is not the same as the GLCM example:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/aTapTC1.png&quot; height=&quot;227px&quot; width=&quot;478x&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For each run of a given length we count how many times that length occurs for each grey level. Here, a run length of 1 pixel occurs 3 times for the yellow pixels, and a run length of 3 occurs once for the blue pixels.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/u87fW55.png&quot; height=&quot;227px&quot; width=&quot;545px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We complete this for all pixels in the image to obtain the final GLRLM:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/b61vqV2.png&quot; height=&quot;227px&quot; width=&quot;545px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This can be accomplished using the radiomics package with the command:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;image &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; nrow&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glrlm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;image&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   1 2 3 4
+## 1 0 1 0 0
+## 2 3 1 0 0
+## 3 2 1 0 0
+## 4 0 1 1 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;Note the extra run length column, the number of run length columns is a function of the dimensions of the image. If the run length is possible (in this case, if there were 4 pixels in a row), there will be a column for it in the output. This output can be truncated by specifying the maximum run length you wish to search for:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;glrlm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;image&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; max_run_length&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   1 2 3
+## 1 0 1 0
+## 2 3 1 0
+## 3 2 1 0
+## 4 0 1 1&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Gray Level Size Zone Matrix&lt;/h2&gt;
+
+&lt;p&gt;The goal of the GLSZM is to quantify regions of contiguous pixels in the image. The GLSZM is set up in the same way as the GLRLM, except along the abscissa are size zones rather than run lengths. A size zone is defined as a collection of 9-connected pixels (ie. connected on their edges and corners) of the same grey level.&lt;/p&gt;
+
+&lt;p&gt;For the GLSZM we will use the same image as for the GLCM. Rather than labeling grey levels, contiguous size zones are labeled with their size:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/vNQTAsz.png&quot; height=&quot;227px&quot; width=&quot;496px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;For each color we count the number of zones of a given size, here for example, among other size zones, there are two red zones of size 1, a single blue zone of size 2, and a single light blue zone of size 3:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/UezvMmX.png&quot; height=&quot;227px&quot; width=&quot;496px&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;GLSZMs can be calculated using the &lt;code&gt;glszm&lt;/code&gt; function:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;image &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; &lt;span class=&quot;kt&quot;&gt;matrix&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;kt&quot;&gt;c&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;3&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; nrow&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;4&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glszm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;image&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##   1 2 3
+## 1 2 0 1
+## 2 0 0 1
+## 3 1 0 1
+## 4 2 1 0&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;For more information on the GLSZM see &lt;a href=&quot;http://thibault.biz/Research/ThibaultMatrices/GLSZM/GLSZM.html&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;h1&gt;Calculating Features&lt;/h1&gt;
+
+&lt;p&gt;From the texture matrices it is possible to calculate many different features. These are summarized in the following table:&lt;/p&gt;
+
+&lt;table&gt;
+&lt;thead&gt;
+&lt;tr class=&quot;header&quot;&gt;
+&lt;th align=&quot;left&quot;&gt;First Order&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;GLCM&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;GLRLM&lt;/th&gt;
+&lt;th align=&quot;left&quot;&gt;GLSZM&lt;/th&gt;
+&lt;/tr&gt;
+&lt;/thead&gt;
+&lt;tbody&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;energy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;mean&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;GLN&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;entropy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;variance&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;HGLRE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;kurtosis&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;autoCorrelation&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LRE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;IV&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;meanDeviation&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;cProminence&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LRHGLE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SZV&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;skewness&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;cShade&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LRLGLE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;ZP&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;uniformity&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;cTendency&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LGLRE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LIE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;mean&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;contrast&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;RLN&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;HIE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;median&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;correlation&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;RP&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LISAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;max&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;differenceEntropy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SRE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;HISAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;min&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;dissimilarity&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SRHGLE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;LILAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;diff&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;energy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;SRLGLE&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;HILAE&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;var&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;entropy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;RMS&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;homogeneity1&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;sd&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;homogeneity2&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;IDMN&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;IDN&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;inverseVariance&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;maxProb&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;sumAverage&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;even&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;sumEntropy&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;tr class=&quot;odd&quot;&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;sumVariance&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;td align=&quot;left&quot;&gt;-&lt;/td&gt;
+&lt;/tr&gt;
+&lt;/tbody&gt;
+&lt;/table&gt;
+
+&lt;p&gt;Further information and mathematical definitions of these quantities can be found &lt;a href=&quot;http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5&quot;&gt;here.&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In the &lt;code&gt;radiomics&lt;/code&gt; package, each feature associated with a given matrix can be calculated by appending the matrix name with the feature name, separated by an underscore. For example:&lt;/p&gt;
+
+&lt;p&gt;First order features are calculated on the image, and are prefixed with &amp;#39;calc&amp;#39;:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;calc_energy&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hallbey&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 42&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;GLCM features are calculated on a glcm, and take &amp;#39;glcm&amp;#39; as a prefix:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;hbGLCM &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glcm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hallbey&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glcm_contrast&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hbGLCM&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 0.5833333&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;GLRLM features are calculated on a glrlm, and take &amp;#39;glrlm&amp;#39; as a prefix:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;hbGLRLM &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glrlm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hallbey&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glrlm_GLN&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hbGLRLM&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 2.25&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;p&gt;GLSZM features are calculated on a glszm, and take &amp;#39;glszm&amp;#39; as a prefix:&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;hbGLSZM &lt;span class=&quot;o&quot;&gt;&amp;lt;-&lt;/span&gt; glszm&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hallbey&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+glszm_LILAE&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hbGLSZM&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;## [1] 8.006944&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;h2&gt;Calculating features en-masse&lt;/h2&gt;
+
+&lt;p&gt;It is not practical to type out the exact features you wish to calculate for each image matrix you create. To remedy this situation, there is a &lt;code&gt;calc_features()&lt;/code&gt; function. This function, given an image matrix and the types of features you wish to calculate (any or all of &amp;quot;first order&amp;quot;, &amp;quot;glcm&amp;quot;, &amp;quot;glrlm&amp;quot;, &amp;quot;glszm&amp;quot;, &amp;quot;mglszm&amp;quot;) will create the appropriate texture matrices and calculate all the features relevent to the matrix type, outputting all of the features as an observation of a data frame. &lt;/p&gt;
+
+&lt;p&gt;To note: The &lt;code&gt;calc_features()&lt;/code&gt; function calculates all angles (&amp;quot;0&amp;quot;, &amp;quot;45&amp;quot;, &amp;quot;90&amp;quot;, &amp;quot;135&amp;quot;) for the GLCM and GLRLM, and then averages them together. This is to ensure rotation invariance.&lt;/p&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-r&quot; data-lang=&quot;r&quot;&gt;calc_features&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hallbey&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+
+&lt;div class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-text&quot; data-lang=&quot;text&quot;&gt;##  image_name n_grey glcm_d  glszm_SAE   glszm_LAE   glszm_IV  ...
+## hallbey     32     1       0.0981      17.541      0.999     ...&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>The Complexity of MLC Movement</title>
+   <link href="http://joelcarlson.github.io/2014/12/29/MLC-Movements/"/>
+   <updated>2014-12-29T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2014/12/29/MLC-Movements</id>
+   <content type="html">&lt;h2&gt;MLCs?&lt;/h2&gt;
+
+&lt;p&gt;When a modern treatment plan is delivered using the Volumetric Modulated Arc Therapy (VMAT) technique, one of the ways the x-ray beam is modulated is through the use of a Multi-Leaf Collimator (MLC).  The MLC is a set of metal bars, called leaves, which travel back and forth in front of the beam, blocking it in certain areas and letting it pass in others. Here is an image of a typical MLC:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/onD7Z1R.jpg&quot; title=&quot;A Typical MLC&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;MLCs themselves aren&amp;#39;t particularly attractive to look at, however, their movements are extremely complex and interesting to watch. In the movements you can see the general shape of the tumor being irradiated, and watch how the beam is made to evade any organs or other healthy tissues.&lt;/p&gt;
+
+&lt;h2&gt;Prostate Plan&lt;/h2&gt;
+
+&lt;p&gt;I had the opportunity to analyse a set of MLC positions for a few treatment plans and made some .gifs out of them. Here is a relatively simple prostate VMAT plan:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/MLCMovement/prostateGIF.gif&quot; title=&quot;A relatively simple prostate plan&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The image consists of one data point per MLC leaf per control point.  There are 120 MLC leaves, and 356 control points per plan, meaning this image contains 42,720 points! &lt;/p&gt;
+
+&lt;p&gt;The animation moves much faster than the real MLC.  During actual delivery the linear accelerator takes ~0.42s for every 2 degrees, but the gif takes only ~0.09s. The abrupt shift halfway through is when then linear accelerator has to stop and switch directions after the first arc.&lt;/p&gt;
+
+&lt;h2&gt;H&amp;amp;N Plans&lt;/h2&gt;
+
+&lt;p&gt;Head and Neck plans are significantly more complicated, and generally utilize many more of the leaves than do prostate plans. Here are two different head and neck plans:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/MLCMovement/hn1GIF.gif&quot; title=&quot;A typical HN plan&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/MLCMovement/hn2GIF.gif&quot; title=&quot;A more complex HN plan&quot; /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Errors Between Planned and Delivered Positions&lt;/h2&gt;
+
+&lt;p&gt;Radiotherapy plans are complicated, there is no doubt about that. It is important, then, to realize that they must be delivered by physical components. The above gifs display the planned positions of the MLC, but can the physical MLC actually achieve those positions?&lt;/p&gt;
+
+&lt;p&gt;The following gif shows errors between planned and delivered positions. Red for errors which occur when the leaf is left too far into the center of the MLC, and grey when it is too far outside. These are precisely the types of errors my research works to avoid!&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/MLCMovement/planVsDeliverGIF.gif&quot; title=&quot;Differences between planned and delivered positions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;That&amp;#39;s all for now!&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>CT Simulation</title>
+   <link href="http://joelcarlson.github.io/2014/12/12/CT-Simulation/"/>
+   <updated>2014-12-12T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2014/12/12/CT-Simulation</id>
+   <content type="html">&lt;p&gt;Here I will describe a fun project I did to simulate a first generation CT scan image using MCNPX.  The idea was to take a simple geometry: a square, a circle, and a triangle, and create an image using backprojection.  The geometry set-up looked like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/CTBlog/unnamed-chunk-1-1.png&quot; alt=&quot;center&quot;&gt; &lt;/p&gt;
+
+&lt;p&gt;To create an image using backprojection, a projection image must be created by scanning across the geometry.  This projection image is really just a measure of the attenuation between the source and detector over a given interval. The geometry is then rotated and the process repeated. To implement this using MCNPX, each interval represents a unique simulation.  In this case, I used 100 intervals at 36 angles, resulting in 3600 total simulations. Here is a mockup of the (slightly altered) situation at considerably lower resolution for demonstration purposes:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/p5aa5nU.gif&quot; title=&quot;Particles&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;In the image, the source is a pencil beam originating below the geometry, the red and blue dots represent photons of 100keV interacting with the geometry. The detector scanning across the image at the top measures the incident flux, which can be interpreted as a surrogate for the attenuation between the source and the detector. &lt;/p&gt;
+
+&lt;h1&gt;Flux Values&lt;/h1&gt;
+
+&lt;p&gt;The detector outputs a single value at each simulation, which can be plotted against the location of the detector.  Here is what the normalized values looks like at each angle:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/baRIvf8.gif&quot; title=&quot;Tally Values&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Each of the values is then converted into a pixel value, and a square image is created:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/XSqCBy7.gif&quot; title=&quot;Projection Images&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Laid side to side the images result in a sinogram:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/7y6ShrR.png&quot; title=&quot;Sinogram&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Image Combination&lt;/h1&gt;
+
+&lt;p&gt;Next, all of the images are rotated to the angle from which they were obtained:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Q1wTxqu.gif&quot; title=&quot;Rotations&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;All of the rotated images are then summed together. However, the images must first be darkened such that the maximal sum of pixel values at any given point doesn&amp;#39;t exceed 1, the white value of the image processing software used (&lt;code&gt;EBImage&lt;/code&gt; for R). Summing together the rotated images allows us to see the image being iteratively formed:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/yIBS6aU.gif&quot; title=&quot;Backprojection Image Formation&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Reconstructed Image&lt;/h1&gt;
+
+&lt;p&gt;The last iteration of the image summing gives us the backprojection reconstructed image:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/7lpV0kk.png&quot; title=&quot;Backprojection Image!&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Which looks pretty good! We can even see the how the different densities of the materials changes their visibility in the image! However, the image has a sort of radial blur due to the nature of backprojection.  That is, each point in the &amp;#39;true&amp;#39; image is reconstructed as a circular region with decreasing intensity as distance from the center increases.&lt;/p&gt;
+
+&lt;h1&gt;Filtered Backprojection&lt;/h1&gt;
+
+&lt;p&gt;To solve the blurring issue the image must be filtered.  This is done before reconstruction (ie. summing of the rotated images).  The filter kernel used is an approximation of the Sinc function, but with even indices equal to zero.  The derivation of the kernel can be found &lt;a href=&quot;http://www.dspguide.com/ch25/5.htm&quot;&gt;here&lt;/a&gt;. Here is a graphical representation of the convolution kernel:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/R8Vy3Fu.png&quot; title=&quot;Sinc(ish) Kernel&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;By performing a convolution of the tally values and the kernel we get the following:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/Tlf4Owj.png&quot; title=&quot;Convolution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;From this we can see that the &amp;quot;baseline&amp;quot; value has been converted to be approximately 0.5, which is gray rather than the previous white.  Also of note is the emphasis and subsequent de-emphasis of the &amp;quot;edges&amp;quot; in the tally values.&lt;/p&gt;
+
+&lt;p&gt;The image reconstructed with this convolution kernel looks like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/f1KOdL7.png&quot; title=&quot;Filtered image&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Dynamic Range Adjustment&lt;/h1&gt;
+
+&lt;p&gt;I found this image to be lacking in dynamic range. A histogram of the normalized pixel values after convolution shows that there are some outliers which squeeze all the other values into a very small range of values.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/uI7J0vs.png&quot; title=&quot;Histrogram with outliers&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;To remedy this I took a very unsophisticated solution: If the value was greater than 0.8 I set it to 0.8, and if it was less than 0.3 I set it to 0.3.&lt;/p&gt;
+
+&lt;p&gt;I then renormalized the convolution values, and the resulting convolution values look like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/jpJFM9b.png&quot; title=&quot;Adjusted convolution&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Varying together, the adjusted and unadjusted tally values:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/eMxsPaG.gif&quot; title=&quot;Convolutions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The sinogram of the filtered images:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/QmZ4eJg.png&quot; title=&quot;Filtered Sinogram&quot; /&gt;&lt;/p&gt;
+
+&lt;h1&gt;Final Image&lt;/h1&gt;
+
+&lt;p&gt;The dynamic range adjusted filtered backprojection image is the final image. The image is significantly less blurry than the original backprojection, and has more contrast than the original filtered image (although it has more artifacts):&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/zPcGqMO.gif&quot; title=&quot;Filtered Animation&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;http://i.imgur.com/aBYyrQ7.png&quot; title=&quot;Final Image&quot; /&gt;&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Multivariate Regression Modeling</title>
+   <link href="http://joelcarlson.github.io/2014/10/23/Regression-Blog/"/>
+   <updated>2014-10-23T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2014/10/23/Regression-Blog</id>
+   <content type="html">&lt;p&gt;This post will examine multivariate regressions.  I have been taking a coursera course about making causal inferences in the social sciences, and while I am not directly involved in social science, the methods are broadly applicable to my own field.  &lt;/p&gt;
+
+&lt;p&gt;One way to explore the relationships of variables within a dataset is through regressions. One possible relationship between variables is the linear relationship, as shown by &lt;code&gt;mpg&lt;/code&gt; vs &lt;code&gt;disp&lt;/code&gt; in the &lt;code&gt;mtcars&lt;/code&gt; dataset:&lt;/p&gt;
+
+&lt;iframe width=&quot;640&quot; height=&quot;480&quot; frameborder=&quot;0&quot; seamless=&quot;seamless&quot; scrolling=&quot;no&quot; src=&quot;https://plot.ly/~joelcarlson/4.embed?width=640&amp;height=480&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The formula given is extremely simple:
+\[y = a + bx + e\]
+Where \(y\) is the dependent variable (in this case &lt;code&gt;mpg&lt;/code&gt;), and \(x\) is the independent (&lt;code&gt;displacement&lt;/code&gt;).  The relationship between the two is expressed by the slope term, \(b\), which is interpreted as the change in \(y\) per unit of \(x\), in this case, \(-0.041\) mpg per cubic inch of displacement.  The \(a\) term gives the \(y\)-intercept, that is, the value of \(y\) when \(x\) is \(0\), which for the cars data gives the theoretical &lt;code&gt;mpg&lt;/code&gt; of a vehicle with \(0\) &lt;code&gt;displacement&lt;/code&gt;. The error term is not displayed on the graph.&lt;/p&gt;
+
+&lt;h3&gt;Multivariate Regressions&lt;/h3&gt;
+
+&lt;p&gt;Theoretically there is no limit to how many independent variables we wish to include in the model. Let&amp;#39;s consider a different example, perhaps more relatable than technical specs of old cars: The relationship between a students GPA, the years the student spends in school, and their estimated earnings later in life.  &lt;/p&gt;
+
+&lt;p&gt;In our theoretical model, a student with a higher GPA will generally earn more than a student with a lower GPA.  Also, a student who has spent more years studying will have higher earnings than a student who has spent fewer years studying.  With these assumptions it is implied that a student with a high GPA, who has spent many years in school will have the highest earnings of all.  The converse is also implied, a student who did not study for long, and had a low GPA will have the lowest earnings. Given more than one independent variable, our equation becomes:&lt;/p&gt;
+
+&lt;p&gt;\[
+y = a + \beta x + \gamma z + \mu
+\]&lt;/p&gt;
+
+&lt;p&gt;In reality this relationship is not so clear cut as the explanation.  In a given population very few of the datapoints will actually lie on the plane defined by the model. Many of the data points will be either above or below (ie. high earners with low GPAs, low earners with high GPAs.) This is already taken into account by the error term,\(\mu\), in the equation.&lt;/p&gt;
+
+&lt;p&gt;There is also the question of how the independent variables are related to each other.  For example, it stands to reason that student who have higher GPAs may go on to study for more years than do their low GPA counterparts.&lt;/p&gt;
+
+&lt;p&gt;One way to capture this potential correlation is to look at the relationship between \(x\) and \(z\).  In this case again assumed to be linear:&lt;/p&gt;
+
+&lt;p&gt;\[
+z = \delta + \theta x + \nu 
+\]&lt;/p&gt;
+
+&lt;p&gt;If the covariance of \(x\) and \(z\) is not equal to \(0\) then there is evidence that they are related to each other in some way.&lt;/p&gt;
+
+&lt;p&gt;\[
+cov(z,x) \neq 0
+\]&lt;/p&gt;
+
+&lt;p&gt;Rearranging and substituting the covariance equation into the regression model returns a linear relationship:&lt;/p&gt;
+
+&lt;p&gt;\[
+y = a + \beta x + \gamma (\delta + \theta x + \nu) + \mu&lt;br&gt;
+\]&lt;/p&gt;
+
+&lt;p&gt;Rearranging and collecting like terms gives: &lt;/p&gt;
+
+&lt;p&gt;\[
+y = a + \gamma \delta + (\beta + \gamma \theta)x + \gamma \nu +  \mu
+\]&lt;/p&gt;
+
+&lt;p&gt;\[
+y = a + bx + e
+\]&lt;/p&gt;
+
+&lt;p&gt;Where the new \(b = \beta + \gamma \theta\) and the new error term \(e = \gamma \nu + \mu\).  We can therefore say that when \(z\) is excluded, \(b\) captures the direct effect of \(x\) &lt;em&gt;and&lt;/em&gt; the indirect effect of \(z\) on \(y\).  A small caveat, for this to be true \(z\) must have both a direct effect on \(y\), and also be correlated with \(x\) (\(\theta \neq 0\)).&lt;/p&gt;
+
+&lt;p&gt;In this case, GPA affects earnings directly, and also indirectly by increasing the years of study, which in turn has a further affect on earnings.  In other words, when we manipulate \(x\) (GPA) this causes a direct change in both \(y\) (earnings) and \(z\) (years spent studying), and an indirect change in \(y\) through \(z\). A variable that is causally influenced by an independent variable, and in turn has a causal influence on the dependent variable is known is a &lt;em&gt;mediator&lt;/em&gt;. By this definition, years spent studying is a mediator in the relationship between GPA and earnings.&lt;/p&gt;
+
+&lt;p&gt;This leads us to a set of equations describing the causal relationships:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The DIRECT &lt;em&gt;causal&lt;/em&gt; effect of \(x\) controlled for \(z\) is \(\beta\)&lt;/li&gt;
+&lt;li&gt;The INDIRECT effect of \(x\) on \(y\) is \(b - \beta = \gamma \theta\)&lt;/li&gt;
+&lt;li&gt;The TOTAL &lt;em&gt;causal&lt;/em&gt; effect, DIRECT (\(\beta\)) + INDIRECT (\(\gamma \theta\)), of \(x\) on \(y\) is \(b\)&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;These relationships are represented visually in the following figure:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/Regression%20Blog/causal.png&quot; alt=&quot;causal&quot;&gt;&lt;/p&gt;
+
+&lt;h3&gt;Confounders&lt;/h3&gt;
+
+&lt;p&gt;In the above we have made the assumption that GPA and time spent studying are the only things that affect earnings.  This is clearly not realistic. Without context our results are not guaranteed to be legitimate, which is to say, correlation is not causation.  &lt;/p&gt;
+
+&lt;p&gt;To illustrate, would anyone ever imagine there being a causal relationship between &lt;em&gt;avalanches&lt;/em&gt; and the &lt;em&gt;number of internships at banks&lt;/em&gt;?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/figs/Regression%20Blog/avalanche.PNG&quot; alt=&quot;rut&quot;&gt;&lt;/p&gt;
+
+&lt;p&gt;Of course, both of these are seasonal occurrences, and have no causal relationship. Therefore observed effects may be completely, or partly spurious.  In the GPA and earnings example perhaps there is another variable.  One possibility is &lt;em&gt;innate IQ&lt;/em&gt;. Those with a high IQ would presumably have a better GPA, and also be able to achieve higher earnings later in life.  If we let \(z\) be innate IQ rather than year spent studying, the directionality of the arrow for \(\theta\) would change in our diagram due to the causal nature of IQ on GPA. This change leads to the equations:&lt;/p&gt;
+
+&lt;p&gt;\[y = a + \beta x + \gamma z + e\]
+\[z = \delta + \theta x + \epsilon\]&lt;/p&gt;
+
+&lt;p&gt;Which therefore leads to:
+\[
+y = a + \beta x + \gamma (\delta + \theta x + \epsilon) + e\]
+\[ \downarrow\]
+\[y = a + \gamma \delta + (\beta + \gamma \theta)x + e + \gamma \epsilon\]&lt;/p&gt;
+
+&lt;p&gt;Where the new constant term, or intercept, is \(a + \gamma \delta\), the slope of \(x\) is \(\beta + \gamma \theta\) and the error term is \(e + \gamma \epsilon\).&lt;/p&gt;
+
+&lt;p&gt;So there is some relationship between the variables, and even if \(\beta\) is zero, IQ has an effect on GPA and earnings. If we therefore do not include IQ we may erroneously conclude that better GPA causes higher earnings, because \(\theta\) and \(\gamma\) are non-zero. When the causal effect runs from \(z\) to \(x\) in the diagram we call \(z\) a confounder. By this definition, innate IQ is a confounder.&lt;/p&gt;
+
+&lt;h2&gt;Controlling for Confounders&lt;/h2&gt;
+
+&lt;p&gt;We want to control for the effect of the confounder to find the true causal effect of our independent variable on the dependent variable. If the confounder is not present in our data we cannot easily control for it.  You don&amp;#39;t know what you don&amp;#39;t know!&lt;/p&gt;
+
+&lt;p&gt;We do know, however, that there &lt;em&gt;could&lt;/em&gt; be a potential confounder, and given the relationship
+\[
+y = a + \beta x + \gamma z + e\]&lt;/p&gt;
+
+&lt;p&gt;we know what the error term looks like if the confounder is unobserved: \(\gamma z + e\). From
+\[ z = \delta + \theta x + \epsilon\]
+we can see that \(z\) and \(x\) are correlated.  When the two are correlated the effect of \(x\) on \(y\) also involves the effect of the unobserved confounder.  It is essential, therefore, that \(x\) and the error term be &lt;em&gt;uncorrelated&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In the absence of confounders we can estimate the slope of the regression for \(y\) vs \(x\) by taking the covariance of \(x\) and \(y\) as follows:&lt;/p&gt;
+
+&lt;p&gt;\[cov(x,y) = cov(x, a + bx + e) = cov(x,bx) + cov(x,e) = b*var(x)\]
+\[b = \frac{cov(x,y)}{var(x)}\]&lt;/p&gt;
+
+&lt;p&gt;If the true model is linear, and the error term is uncorrelated with \(x\), then the slope is equal to the causal effect of \(x\) on \(y\). However, in a more realistic situation with confounders, where \(x\) and the error term are correlated, the slope measures both the effect of the confounder, and the effect of \(x\) on \(y\).  In this case, the slope from above is measuring the following:&lt;/p&gt;
+
+&lt;p&gt;\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} \]
+\[= \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\]&lt;/p&gt;
+</content>
+ </entry>
+ 
+ <entry>
+   <title>Interactive Campep Statistics</title>
+   <link href="http://joelcarlson.github.io/2014/10/08/campep-stats/"/>
+   <updated>2014-10-08T00:00:00+09:00</updated>
+   <id>http://joelcarlson.github.io/2014/10/08/campep-stats</id>
+   <content type="html">&lt;p&gt;To practice as a Medical Physicist in North America one has to become certified by the &lt;a href=&quot;http://www.theabr.org/&quot;&gt;ABR&lt;/a&gt;.  As of 2014, only those who have graduated from a &lt;a href=&quot;http://www.campep.org/&quot;&gt;CAMPEP&lt;/a&gt; accredited Medical Physics residency are eligible to take the ABR exams, and thus able to pursue the practice. &lt;/p&gt;
+
+&lt;p&gt;Something nice that has come from this is that CAMPEP requires schools to post several statistics pertaining to enrolment and employment of their students.  However, there are no regulations for &lt;em&gt;how&lt;/em&gt; this data is to be presented, resulting in a situation where each school posts the stats in a different way.  Some schools post a .pdf on their homepage, others bury it with grad school admission statistics, others are accessible using only the skeleton key provided to the dean.&lt;/p&gt;
+
+&lt;p&gt;I wanted to get an overview of these statistics, and to do so I combed through all of the schools on the accredited schools &lt;a href=&quot;http://www.campep.org/campeplstgrad.asp&quot;&gt;list&lt;/a&gt; and compiled it here, with a convenient &lt;a href=&quot;http://shiny.rstudio.com/&quot;&gt;Shiny&lt;/a&gt; app to allow some data exploration.  Here is the app:&lt;/p&gt;
+
+&lt;iframe src=&quot;https://joelcarlson.shinyapps.io/campep&quot; style=&quot;border: none; width: 900px; height: 1100px&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;I was somewhat surprised to see that, &lt;a href=&quot;http://www.jacmp.org/index.php/jacmp/article/view/4729/html&quot;&gt;despite&lt;/a&gt; much &lt;a href=&quot;http://www.jacmp.org/index.php/jacmp/article/view/4932/html_35&quot;&gt;naysaying&lt;/a&gt; on the part of &lt;a href=&quot;http://www.jacmp.org/index.php/jacmp/article/view/4932/html_35&quot;&gt;JACMP&lt;/a&gt;, MSc degrees have similar rates for obtaining residencies as do their PhD counterparts.&lt;/p&gt;
+
+&lt;p&gt;Of note also is the approximate number of graduates.  JACMP has mentioned that in North America there is a need for 150-175 new Medical Physicists each year, however the number of graduates in 2012 was close to 250. The number of graduates drops under 150 for 2013, but this may be due to incomplete reporting of 2013 statistics at the time of data compilation. Clearly there is a bit of a mismatch between supply and demand. CAMPEP has stated that they are working to increase the number of residency positions to meet the increased demand.&lt;/p&gt;
+
+&lt;p&gt;There are several things to note about the above app:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Not every school actually publishes their stats. I made every effort to find stats from each school, but several eluded me.&lt;/li&gt;
+&lt;li&gt;Stats for 2014 are scarce, and some schools haven&amp;#39;t yet published 2013 data.&lt;/li&gt;
+&lt;li&gt;The degree type label &amp;quot;Both MSc + PhD&amp;quot; implies the published stats were not differentiated&lt;/li&gt;
+&lt;li&gt;DMP degrees were labeled as PhD&lt;/li&gt;
+&lt;li&gt;Any school not on the list (and there are several) did not have the proper data published&lt;/li&gt;
+&lt;/ul&gt;
 </content>
  </entry>
  

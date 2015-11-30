@@ -1,4 +1,4 @@
-/*
+﻿/*
  *                        ___
  *                       /\_ \
  *  _____     ___     ___\//\ \      __
@@ -77,7 +77,7 @@ a:focus {
 }
 
 /* Headings */
-h1, h2, h3, h4, h5, h6 {
+h2, h3, h4, h5, h6 {
   margin-bottom: .5rem;
   font-weight: bold;
   line-height: 1.25;
@@ -85,7 +85,12 @@ h1, h2, h3, h4, h5, h6 {
   text-rendering: optimizeLegibility;
 }
 h1 {
-  font-size: 2rem;
+  font-size: 1.75rem;
+  margin-bottom: .5rem;
+  font-weight: bold;
+  line-height: 1.25;
+  text-rendering: optimizeLegibility;
+  color: #0099CC;
 }
 h2 {
   margin-top: 1rem;
@@ -204,6 +209,7 @@ img {
   display: block;
   margin: 0 0 1rem;
   border-radius: 5px;
+  max-width: 100%
 }
 
 /* Tables */
@@ -258,7 +264,7 @@ tbody tr:nth-child(odd) th {
  */
 
 .container {
-  max-width: 38rem;
+  max-width: 47rem;
   padding-left:  1rem;
   padding-right: 1rem;
   margin-left:  auto;
@@ -306,7 +312,9 @@ tbody tr:nth-child(odd) th {
 }
 
 /* Blog post or page title */
-.page-title,
+.page-title {
+color: #0099CC;
+}
 .post-title,
 .post-title a {
   color: #303030;
@@ -399,4 +407,24 @@ a.pagination-item:hover {
     border-top-right-radius:    4px;
     border-bottom-right-radius: 4px;
   }
+}
+
+/* Additional CSS to play with javascript */
+.box{
+  float:center;
+  padding:5px;
+  background:#E0E0E0;
+  margin:20px;
+  box-shadow: 0 5px 10px #334;
+  -webkit-transition:0.3s;
+  transition:0.3s;
+}
+
+
+.box.toggled {
+   box-shadow: 0 2px 5px #334;
+   background:#E0E0E0;
+   -webkit-transform: scale(2);
+   transform: scale(2);
+   opacity:1;
 }
