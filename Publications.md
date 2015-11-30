@@ -18,16 +18,16 @@ Jong Min Park, So-Yeon Park, Sung-Joon Ye, Jin Ho Kim, **Joel Carlson**, and Hon
 Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and Sung-Joon Ye
 
 ###Submitted:
-*"Dosimetric Effects of Roll Rotational Setup Errors on Lung Stereotactic Ablative Radiotherapy Using Volumetric Modulated Arc Therapy"*  (Acta Oncologica)<br>
-Jaegi Lee, Sung-Joon Ye, Hak Jae Kim, **Joel Carlson**, and Jong Min Park
 
-*"The Effect of Beam Interruption during VMAT Delivery on the Delivered Dose Distribution"*<br>
-Taemin Heo, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
+*"A machine learning approach to the accurate prediction of MLC positional errors during radiotherapy"*  (Physics in Medicine and Biology, **under revision**)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
 
 *"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
 Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
 #Conference Presentations
+
+*"A Radiomics Approach to the Classification of Astrocytoma and Oligodendroglioma"* (MICCAI 2015, "Computational Brain Tumor Cluster of Events" session, [Slides](http://www.slideshare.net/JoelCarlson2/miccai-2015))<br>
+**Joel Carlson**, Sung-Joon Ye
 
 <a href="http://scitation.aip.org/content/aapm/journal/medphys/42/6/10.1118/1.4925742">*"A Statistical Learning Approach to the Accurate Prediction of MLC Positional Errors during VMAT Delivery"*</a> (AAPM 2015, "Quantifying QA" session, [Slides](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0))<br>
 **Joel Carlson**, Jong Min Park, So-Yeon Park, Jong-in Park, Yunseok Choi, Sung-Joon Ye
