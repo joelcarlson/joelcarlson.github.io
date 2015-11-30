@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: pagewithjs
 title: ML For Radiotherapy
 permalink: /thesis/
 ---
@@ -69,6 +69,8 @@ distributions, a reference and an evaluated distribution. The Gamma at
 each point is given by 
 
 ![Gamma formula](/figs/Thesis/gammanalysis.png) 
+
+<div class="box"><img src="/figs/Thesis/gammanalysis.png" alt="image" /></div>
 
 The delta terms are the DTA and dose difference criteria. The other 
 terms: 
