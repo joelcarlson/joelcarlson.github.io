@@ -3,6 +3,7 @@ title: "The Dangers(?) of Improperly Centering and Scaling Your Data"
 author: "Joel Carlson"
 date: "August 15, 2015"
 output: pdf_document
+permalink: /reproducible/centrescale/
 ---
 
 Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.

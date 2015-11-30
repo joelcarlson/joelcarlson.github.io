@@ -23,9 +23,13 @@ version:          2.0.0
 github:
   repo:           https://github.com/joelcarlson
 
-about:            'About'
-research:         'Research'
-publications:     'Publications'
-cv:               'Curriculum Vitae'
-projects:         'Projects'  
-blog:             'Blog'
+collections:
+  research:
+    output: true
+    permalink: /research/:path/
+  reproducible:
+    output: true
+    permalink: /reproducible/:path/
+
+
+

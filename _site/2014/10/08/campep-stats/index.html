@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Interactive Campep Statistics &middot; Joel Carlson
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56125968-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A place for thoughts and projects</p>
+  </div>
+
+<!--  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/blog/">Projects and Posts</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+     -->
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/research/">Research</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/publications/">Publications</a>    
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/cv/">Curriculum Vitae</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/blog/">Blog</a>
+    
+   <!-- <a class="sidebar-nav-item" href="https://github.com/joelcarlson/archive/v2.0.0.zip">Download</a>  
+    <span class="sidebar-nav-item"></span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Joel Carlson</a>
+            <small>MSc student, Seoul National University</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Interactive Campep Statistics</h1>
+  <p>To practice as a Medical Physicist in North America one has to become certified by the <a href="http://www.theabr.org/">ABR</a>.  As of 2014, only those who have graduated from a <a href="http://www.campep.org/">CAMPEP</a> accredited Medical Physics residency are eligible to take the ABR exams, and thus able to pursue the practice. </p>
+
+<p>Something nice that has come from this is that CAMPEP requires schools to post several statistics pertaining to enrolment and employment of their students.  However, there are no regulations for <em>how</em> this data is to be presented, resulting in a situation where each school posts the stats in a different way.  Some schools post a .pdf on their homepage, others bury it with grad school admission statistics, others are accessible using only the skeleton key provided to the dean.</p>
+
+<p>I wanted to get an overview of these statistics, and to do so I combed through all of the schools on the accredited schools <a href="http://www.campep.org/campeplstgrad.asp">list</a> and compiled it here, with a convenient <a href="http://shiny.rstudio.com/">Shiny</a> app to allow some data exploration.  Here is the app:</p>
+
+<iframe src="https://joelcarlson.shinyapps.io/campep" style="border: none; width: 900px; height: 1100px"></iframe>
+
+<p>I was somewhat surprised to see that, <a href="http://www.jacmp.org/index.php/jacmp/article/view/4729/html">despite</a> much <a href="http://www.jacmp.org/index.php/jacmp/article/view/4932/html_35">naysaying</a> on the part of <a href="http://www.jacmp.org/index.php/jacmp/article/view/4932/html_35">JACMP</a>, MSc degrees have similar rates for obtaining residencies as do their PhD counterparts.</p>
+
+<p>Of note also is the approximate number of graduates.  JACMP has mentioned that in North America there is a need for 150-175 new Medical Physicists each year, however the number of graduates in 2012 was close to 250. The number of graduates drops under 150 for 2013, but this may be due to incomplete reporting of 2013 statistics at the time of data compilation. Clearly there is a bit of a mismatch between supply and demand. CAMPEP has stated that they are working to increase the number of residency positions to meet the increased demand.</p>
+
+<p>There are several things to note about the above app:</p>
+
+<ul>
+<li>Not every school actually publishes their stats. I made every effort to find stats from each school, but several eluded me.</li>
+<li>Stats for 2014 are scarce, and some schools haven&#39;t yet published 2013 data.</li>
+<li>The degree type label &quot;Both MSc + PhD&quot; implies the published stats were not differentiated</li>
+<li>DMP degrees were labeled as PhD</li>
+<li>Any school not on the list (and there are several) did not have the proper data published</li>
+</ul>
+
+</div>
+
+      </div>
+    </div>
+    
+  
+  
+  </body>
+</html>
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

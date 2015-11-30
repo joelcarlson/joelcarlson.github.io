@@ -559,3 +559,7 @@ a.pagination-item:hover {
 img {
   max-width: 100%
 }
+
+iframe {
+margin: 20px 20px;
+}

@@ -65,18 +65,6 @@
     
       
         
-          <a class="sidebar-nav-item" href="/brachytherapy/">TG43 Brachytherapy Dosimetry</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/brachytherapyRepro/">Brachytherapy Reproducible Research</a>
-        
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
         
       
@@ -99,10 +87,6 @@
     
       
         
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/about/">About</a>
         
       
@@ -117,6 +101,10 @@
     
       
     
+      
+        
+          <a class="sidebar-nav-item active" href="/research/">Research</a>
+        
       
      -->
     <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
@@ -158,33 +146,48 @@
 My research goals involve creating methods for improving treatment outcomes, predicting disease prognosis, and implementing these methods as clinical decision support systems.
 </p> 
 
-<h3>Machine Learning to Predict MLC Errors</h3>
+<div class="posts">
+    
+    <div class="post">
+        <h2 class="post-title">
+            <a href="/research/mlradiotherapy/">
+                Machine Learning to Improve Radiotherapy Accuracy
+            </a>
+        </h2>
+        <a href="/research/mlradiotherapy/">
+            <img src="/figs/ResearchImages/MLCfilter.png"></img>
+        </a>
 
-<p><a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/MLCfilter.png" width=70%/></a></p>
+        Decision tree regression techniques for predicting and correcting for errors in radiotherapy plans.
+    </div>
+    
+    <div class="post">
+        <h2 class="post-title">
+            <a href="/research/glioma/">
+                A Radiomics Approach to Classifying Low Grade Gliomas
+            </a>
+        </h2>
+        <a href="/research/glioma/">
+            <img src="/figs/ResearchImages/Oligodendro.png"></img>
+        </a>
 
-<p>Radiotherapy plans have become increasingly complex in recent years, and with this added complexity have come numerous new sources of errors during plan delivery. One such source of errors is the multi-leaf collimator (MLC), the final component between the linear accelerator and patient. Tasked with shaping the radiation beam in real-time during delivery, the movement of the MLC must be highly precise. However, with the highly choreographed nature of modern plans, the beam shapes become slightly deformed, leading to plans not being delivered exactly as intended.</p>
+        Glioma classification using features extracted from histological and radiological images.
+    </div>
+    
+    <div class="post">
+        <h2 class="post-title">
+            <a href="/research/brachytherapy/">
+                Monte Carlo Brachytherapy Simulation
+            </a>
+        </h2>
+        <a href="/research/brachytherapy/">
+            <img src="/figs/ResearchImages/brachySeed.png"></img>
+        </a>
 
-<p>In this project, I used decision-tree regression techniques to predict the MLC errors, and incorporated them into the treatment planning system. This research allows treatment planners to view a more accurate representation of the dose as it will truly be delivered to the patient.</p>
-
-<p>Click <a href="http://joelcarlson.github.io/thesis">here</a> for a more detailed summary of this project.</p>
-
-<p>Click <a href="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0">here</a> to view the presentation I gave at AAPM 2015 related to this material.</p>
-
-<p>Click <a href="http://joelcarlson.me/2015/11/14/mlc-dashboard/">here</a> to view a web-interface which allows access to the models developed in this work.</p>
-
-<h3>A Radiomics Approach to Classifying Low Grade Gliomas</h3>
-
-<p><a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/Oligodendro.png" width=70%/></a></p>
-
-<p>Click <a href="https://www.slideshare.net/slideshow/embed_code/key/Ixlq8OxRVIIIUY">here</a> to view the presentation I gave at MICCAI 2015 related to this material.</p>
-
-<h3>Brachytherapy TG43 Parameters</h3>
-
-<p><a href="http://joelcarlson.github.io/brachytherapy"><img src="/figs/ResearchImages/brachySeed.png" width=70%/></a></p>
-
-<p>For certain tumors, rather than irradiating with an external beam, it is more appropriate to position radioactive seeds in close proximity to the tumor. In this project, I used Monte-Carlo techniques to calculate the dose deposition pattern of a prototype seed. Knowing the pattern of radiation emanating from the seeds allows treatment planners to  position the seeds such that the tumor receives the exact required dose.</p>
-
-<p>Click <a href="http://joelcarlson.github.io/brachytherapy">here</a> for a more detailed summary of this project.</p>
+        Monte Carlo methods for calculating TG-43 parameters of a novel brachytherapy seed.
+    </div>
+    
+</div>
 
 </div>
 

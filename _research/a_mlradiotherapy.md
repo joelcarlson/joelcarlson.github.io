@@ -1,13 +1,24 @@
 ---
+title: "Machine Learning to Improve Radiotherapy Accuracy"
+author: "Joel Carlson"
 layout: pagewithjs
-title: ML For Radiotherapy
-permalink: /thesis/
+permalink: /research/mlradiotherapy/
+thumbnail: "/figs/ResearchImages/MLCfilter.png"
+excerpt: "Decision tree regression techniques for predicting and correcting for errors in radiotherapy plans."
 ---
-<p class="message"> A Statistical Learning Approach to the Accurate Prediction of MLC Errors During VMAT Delivery </p> 
 
 Here is the presentation I gave at [AAPM 2015](http://www.aapm.org/meetings/2015AM/) regarding this work:
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="500" marginheight="0" scrolling="no" style="float:right"></iframe>
+
+
+Radiotherapy plans have become increasingly complex in recent years, and with this added complexity have come numerous new sources of errors during plan delivery. One such source of errors is the multi-leaf collimator (MLC), the final component between the linear accelerator and patient. Tasked with shaping the radiation beam in real-time during delivery, the movement of the MLC must be highly precise. However, with the highly choreographed nature of modern plans, the beam shapes become slightly deformed, leading to plans not being delivered exactly as intended.
+
+In this project, I used decision-tree regression techniques to predict the MLC errors, and incorporated them into the treatment planning system. This research allows treatment planners to view a more accurate representation of the dose as it will truly be delivered to the patient.
+
+Click [here](http://joelcarlson.me/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
+
+##Introduction
 
 To test whether the plan is deliverable, the planning system first 
 calculates what it believes the dose distribution should look like, and 

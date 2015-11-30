@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Multivariate Regression Modeling &middot; Joel Carlson
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56125968-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A place for thoughts and projects</p>
+  </div>
+
+<!--  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/blog/">Projects and Posts</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+     -->
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/research/">Research</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/publications/">Publications</a>    
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/cv/">Curriculum Vitae</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/blog/">Blog</a>
+    
+   <!-- <a class="sidebar-nav-item" href="https://github.com/joelcarlson/archive/v2.0.0.zip">Download</a>  
+    <span class="sidebar-nav-item"></span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Joel Carlson</a>
+            <small>MSc student, Seoul National University</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Multivariate Regression Modeling</h1>
+  <p>This post will examine multivariate regressions.  I have been taking a coursera course about making causal inferences in the social sciences, and while I am not directly involved in social science, the methods are broadly applicable to my own field.  </p>
+
+<p>One way to explore the relationships of variables within a dataset is through regressions. One possible relationship between variables is the linear relationship, as shown by <code>mpg</code> vs <code>disp</code> in the <code>mtcars</code> dataset:</p>
+
+<iframe width="640" height="480" frameborder="0" seamless="seamless" scrolling="no" src="https://plot.ly/~joelcarlson/4.embed?width=640&height=480"></iframe>
+
+<p>The formula given is extremely simple:
+\[y = a + bx + e\]
+Where \(y\) is the dependent variable (in this case <code>mpg</code>), and \(x\) is the independent (<code>displacement</code>).  The relationship between the two is expressed by the slope term, \(b\), which is interpreted as the change in \(y\) per unit of \(x\), in this case, \(-0.041\) mpg per cubic inch of displacement.  The \(a\) term gives the \(y\)-intercept, that is, the value of \(y\) when \(x\) is \(0\), which for the cars data gives the theoretical <code>mpg</code> of a vehicle with \(0\) <code>displacement</code>. The error term is not displayed on the graph.</p>
+
+<h3>Multivariate Regressions</h3>
+
+<p>Theoretically there is no limit to how many independent variables we wish to include in the model. Let&#39;s consider a different example, perhaps more relatable than technical specs of old cars: The relationship between a students GPA, the years the student spends in school, and their estimated earnings later in life.  </p>
+
+<p>In our theoretical model, a student with a higher GPA will generally earn more than a student with a lower GPA.  Also, a student who has spent more years studying will have higher earnings than a student who has spent fewer years studying.  With these assumptions it is implied that a student with a high GPA, who has spent many years in school will have the highest earnings of all.  The converse is also implied, a student who did not study for long, and had a low GPA will have the lowest earnings. Given more than one independent variable, our equation becomes:</p>
+
+<p>\[
+y = a + \beta x + \gamma z + \mu
+\]</p>
+
+<p>In reality this relationship is not so clear cut as the explanation.  In a given population very few of the datapoints will actually lie on the plane defined by the model. Many of the data points will be either above or below (ie. high earners with low GPAs, low earners with high GPAs.) This is already taken into account by the error term,\(\mu\), in the equation.</p>
+
+<p>There is also the question of how the independent variables are related to each other.  For example, it stands to reason that student who have higher GPAs may go on to study for more years than do their low GPA counterparts.</p>
+
+<p>One way to capture this potential correlation is to look at the relationship between \(x\) and \(z\).  In this case again assumed to be linear:</p>
+
+<p>\[
+z = \delta + \theta x + \nu 
+\]</p>
+
+<p>If the covariance of \(x\) and \(z\) is not equal to \(0\) then there is evidence that they are related to each other in some way.</p>
+
+<p>\[
+cov(z,x) \neq 0
+\]</p>
+
+<p>Rearranging and substituting the covariance equation into the regression model returns a linear relationship:</p>
+
+<p>\[
+y = a + \beta x + \gamma (\delta + \theta x + \nu) + \mu<br>
+\]</p>
+
+<p>Rearranging and collecting like terms gives: </p>
+
+<p>\[
+y = a + \gamma \delta + (\beta + \gamma \theta)x + \gamma \nu +  \mu
+\]</p>
+
+<p>\[
+y = a + bx + e
+\]</p>
+
+<p>Where the new \(b = \beta + \gamma \theta\) and the new error term \(e = \gamma \nu + \mu\).  We can therefore say that when \(z\) is excluded, \(b\) captures the direct effect of \(x\) <em>and</em> the indirect effect of \(z\) on \(y\).  A small caveat, for this to be true \(z\) must have both a direct effect on \(y\), and also be correlated with \(x\) (\(\theta \neq 0\)).</p>
+
+<p>In this case, GPA affects earnings directly, and also indirectly by increasing the years of study, which in turn has a further affect on earnings.  In other words, when we manipulate \(x\) (GPA) this causes a direct change in both \(y\) (earnings) and \(z\) (years spent studying), and an indirect change in \(y\) through \(z\). A variable that is causally influenced by an independent variable, and in turn has a causal influence on the dependent variable is known is a <em>mediator</em>. By this definition, years spent studying is a mediator in the relationship between GPA and earnings.</p>
+
+<p>This leads us to a set of equations describing the causal relationships:</p>
+
+<ol>
+<li>The DIRECT <em>causal</em> effect of \(x\) controlled for \(z\) is \(\beta\)</li>
+<li>The INDIRECT effect of \(x\) on \(y\) is \(b - \beta = \gamma \theta\)</li>
+<li>The TOTAL <em>causal</em> effect, DIRECT (\(\beta\)) + INDIRECT (\(\gamma \theta\)), of \(x\) on \(y\) is \(b\)</li>
+</ol>
+
+<p>These relationships are represented visually in the following figure:</p>
+
+<p><img src="/figs/Regression%20Blog/causal.png" alt="causal"></p>
+
+<h3>Confounders</h3>
+
+<p>In the above we have made the assumption that GPA and time spent studying are the only things that affect earnings.  This is clearly not realistic. Without context our results are not guaranteed to be legitimate, which is to say, correlation is not causation.  </p>
+
+<p>To illustrate, would anyone ever imagine there being a causal relationship between <em>avalanches</em> and the <em>number of internships at banks</em>?</p>
+
+<p><img src="/figs/Regression%20Blog/avalanche.PNG" alt="rut"></p>
+
+<p>Of course, both of these are seasonal occurrences, and have no causal relationship. Therefore observed effects may be completely, or partly spurious.  In the GPA and earnings example perhaps there is another variable.  One possibility is <em>innate IQ</em>. Those with a high IQ would presumably have a better GPA, and also be able to achieve higher earnings later in life.  If we let \(z\) be innate IQ rather than year spent studying, the directionality of the arrow for \(\theta\) would change in our diagram due to the causal nature of IQ on GPA. This change leads to the equations:</p>
+
+<p>\[y = a + \beta x + \gamma z + e\]
+\[z = \delta + \theta x + \epsilon\]</p>
+
+<p>Which therefore leads to:
+\[
+y = a + \beta x + \gamma (\delta + \theta x + \epsilon) + e\]
+\[ \downarrow\]
+\[y = a + \gamma \delta + (\beta + \gamma \theta)x + e + \gamma \epsilon\]</p>
+
+<p>Where the new constant term, or intercept, is \(a + \gamma \delta\), the slope of \(x\) is \(\beta + \gamma \theta\) and the error term is \(e + \gamma \epsilon\).</p>
+
+<p>So there is some relationship between the variables, and even if \(\beta\) is zero, IQ has an effect on GPA and earnings. If we therefore do not include IQ we may erroneously conclude that better GPA causes higher earnings, because \(\theta\) and \(\gamma\) are non-zero. When the causal effect runs from \(z\) to \(x\) in the diagram we call \(z\) a confounder. By this definition, innate IQ is a confounder.</p>
+
+<h2>Controlling for Confounders</h2>
+
+<p>We want to control for the effect of the confounder to find the true causal effect of our independent variable on the dependent variable. If the confounder is not present in our data we cannot easily control for it.  You don&#39;t know what you don&#39;t know!</p>
+
+<p>We do know, however, that there <em>could</em> be a potential confounder, and given the relationship
+\[
+y = a + \beta x + \gamma z + e\]</p>
+
+<p>we know what the error term looks like if the confounder is unobserved: \(\gamma z + e\). From
+\[ z = \delta + \theta x + \epsilon\]
+we can see that \(z\) and \(x\) are correlated.  When the two are correlated the effect of \(x\) on \(y\) also involves the effect of the unobserved confounder.  It is essential, therefore, that \(x\) and the error term be <em>uncorrelated</em>.</p>
+
+<p>In the absence of confounders we can estimate the slope of the regression for \(y\) vs \(x\) by taking the covariance of \(x\) and \(y\) as follows:</p>
+
+<p>\[cov(x,y) = cov(x, a + bx + e) = cov(x,bx) + cov(x,e) = b*var(x)\]
+\[b = \frac{cov(x,y)}{var(x)}\]</p>
+
+<p>If the true model is linear, and the error term is uncorrelated with \(x\), then the slope is equal to the causal effect of \(x\) on \(y\). However, in a more realistic situation with confounders, where \(x\) and the error term are correlated, the slope measures both the effect of the confounder, and the effect of \(x\) on \(y\).  In this case, the slope from above is measuring the following:</p>
+
+<p>\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} \]
+\[= \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\]</p>
+
+</div>
+
+      </div>
+    </div>
+    
+  
+  
+  </body>
+</html>
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

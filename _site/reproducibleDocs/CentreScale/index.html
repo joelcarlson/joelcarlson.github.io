@@ -1,0 +1,238 @@
+<p>Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.</p>
+
+<p>For example, for certain machine learning algorithms, such as support vector machines, centering and scaling your data is essential for the algorithm to perform. Centering is the process of subtracting the mean of the data from each observation to make the mean of the data zero. Scaling brings the range of the data into [-1,1]. If you center and scale your data before splitting it into training and test sets, then you have used information from your training set to make calculations on your test set. This is a problem. Or could be, at least.</p>
+
+<p>This was concerning me at the conference, but I didn&#39;t speak up about it because although I had been instructed to avoid this mistake, and it made intuitive sense to me, I had never actually tested to see if there was a significant difference between the two methods. </p>
+
+<p>In this post, I am going to explore this by assessing the accuracy of support vector machine models on three datasets: </p>
+
+<ul>
+<li>Not centered or scaled</li>
+<li>Training and testing centered and scaled together</li>
+<li>Training and testing centered separately</li>
+</ul>
+
+<p>For each situation we will train 1000 svm models using the default parameters from the <code>e1071</code> R package. Datawise, we will use a set from the <a href="http://archive.ics.uci.edu/ml/datasets/Wine">UCI machine learning repository</a>. The dataset is a series of wine measurements, quantifying things like &quot;Alcohol Content&quot;, &quot;Color Intensity&quot;, and &quot;Hue&quot; for 178 wines. The goal is to predict the region the wine came from based on the measurements. </p>
+
+<p>There are actually 13 variables in the data, but we are going to use only the 5 with the highest standard deviation, since this is for demonstration purposes, not pure predictive accuracy.</p>
+
+<h2>Summarizing the data</h2>
+
+<p>```{r, message=FALSE, warning=FALSE, echo=FALSE}</p>
+
+<h1>Enter the Hadleyverse</h1>
+
+<p>library(dplyr);library(reshape2);library(ggplot2); library(knitr);
+library(ggthemes);library(e1071); library(caret); library(scales)</p>
+
+<h1>Globals</h1>
+
+<p>test<em>len &lt;- 1000
+DATA</em>PATH &lt;-&quot;http://archive.ics.uci.edu/ml/machine-learning-databases/wine/wine.data&quot;</p>
+
+<p>wine &lt;- read.csv(DATA_PATH, header=FALSE)</p>
+
+<h1>Colnames are from the documentation</h1>
+
+<p>colnames(wine) &lt;- c(&quot;Region&quot;, &quot;Alcohol&quot;, &quot;Acid&quot;,&quot;Ash&quot;,
+                    &quot;Alcalinity&quot;,&quot;Magnesium&quot;,&quot;Phenols&quot;,
+                    &quot;Flavanoids&quot;,&quot;NonFlavanoidPhenols&quot;,
+                    &quot;Proanthocyanins&quot;,&quot;ColorIntensity&quot;,&quot;Hue&quot;,
+                    &quot;OpticalDensity&quot;,&quot;Proline&quot;)</p>
+
+<p>wine &lt;- as.data.frame(apply(wine, 2, as.numeric))
+wine$Region &lt;- as.factor(wine$Region)
+```</p>
+
+<p>Let&#39;s take a quick look at the mean and standard deviation of each column in the data (sorted by SD):</p>
+
+<p><code>{r,echo=FALSE}
+kable( wine %&gt;% 
+         melt(id.vars=&quot;Region&quot;, variable.name=&quot;Variable&quot;) %&gt;%
+         group_by(Variable) %&gt;% 
+         summarize(&quot;Mean&quot; = round(mean(value), 2), &quot;SD&quot; = round(sd(value), 2)) %&gt;% 
+         arrange(desc(SD)),
+       format=&quot;html&quot;
+     )
+</code></p>
+
+<p>As previously stated, we are only going to use the five variables with the highest standard deviation (and alcohol, because hey, we&#39;re talking about wine!).</p>
+
+<p><code>{r, echo=FALSE}
+wine &lt;- select(wine, Region, Alcohol, Proline, Magnesium, Alcalinity, ColorIntensity, Acid)
+</code></p>
+
+<h2>A bit of intuition</h2>
+
+<p>Just so that we have a feel for the data, let&#39;s plot a variable or two:
+We might be able to guess that there is some relationship between alcohol content and region:</p>
+
+<p>```{r, echo=FALSE}
+ggplot(data=wine, aes(x=Region, y=Alcohol, fill=Region)) + 
+  geom<em>boxplot(outlier.size = 0) +
+  theme</em>hc() +
+  scale<em>fill</em>hc() +
+  labs(x = &quot;Region&quot;,y =&quot;Alcohol Content (%)&quot;) + 
+  guides(fill=FALSE)</p>
+
+<p>```</p>
+
+<p>And indeed there is, not a big surprise there.</p>
+
+<p>Wikipedia tells me that, during brewing, <a href="https://en.wikipedia.org/wiki/Proline">Proline</a> may produce haze, so perhaps it would be related to Color Intensity?</p>
+
+<p><code>{r, echo=FALSE}
+ggplot(data=wine, aes(x=ColorIntensity, y=Proline, col=Region)) + 
+  geom_point() +
+  theme_hc() +
+  scale_colour_hc() +
+  labs(x = &quot;Color Intensity&quot;,y =&quot;Proline Content&quot;) + 
+  guides(fill=FALSE)
+</code></p>
+
+<p>As expected. It looks like these variables are going to be able to feed a pretty accurate model. Based on the way the second plot is organized into clusters I imagine even a simple approach like KNN would do well.</p>
+
+<h2>Building the models</h2>
+
+<p>The features of this data vary wildly in scale, for example, the range of the <code>Proline</code> column is from 278 to 1680, whereas the <code>Acid</code> column goes from 0.74 to 5.80. This is an issue for support vector machines (and some other algorithms), so we need to center and scale the data.</p>
+
+<p>For each situation described above, I trained 1000 svm models (with default parameters) and recorded the accuracy on a held out test set. Each model was trained on a random subset of 50% of the data, and tested on the remaining 50%. The test set acccuracy distributions in each situation are presented as histograms.</p>
+
+<h3>No centering and scaling</h3>
+
+<p>To demonstrate the importance of centering and scaling for support vector machines, the models were trained on the raw data.</p>
+
+<p>```{r, echo=FALSE, warning=FALSE}</p>
+
+<p>noSC &lt;- data.frame(&quot;name&quot;=&quot;NoSC&quot;, &quot;Accuracy&quot;=numeric(test<em>len), stringsAsFactors=FALSE)
+for( i in 1:(test</em>len)){
+  #if(i%%100 == 0) print(i)
+  set.seed(i * sample(1:100, 1))
+  inTrain &lt;- createDataPartition(y=wine$Region, p=0.50)
+  train &lt;- wine[inTrain$Resample1,]
+  test &lt;- wine[-inTrain$Resample1,]
+  noSCmod &lt;- svm(Region ~ . , data=train, scale=FALSE)
+  preds &lt;- predict(noSCmod, test) 
+  levels(preds) &lt;- levels(test$Region)</p>
+
+<p>acc &lt;- confusionMatrix( test$Region, preds)
+  noSC[i,&quot;Accuracy&quot;] &lt;- acc$overall[&quot;Accuracy&quot;]
+}</p>
+
+<p>ggplot(data=noSC, aes(x=Accuracy)) + 
+  theme<em>hc()+
+  geom</em>histogram(aes(y=..count../sum(..count..)), binwidth=diff(range(noSC$Accuracy))/length(table(noSC$Accuracy))) +
+  scale<em>y</em>continuous(labels = percent) +
+  scale<em>x</em>continuous(labels = percent) +
+  labs(y=&quot;Percent&quot;) + 
+  ggtitle(paste(&quot;No Centering or Scaling\nMean Accuracy =&quot;, round(mean(noSC$Accuracy), 3), &quot;\nSD =&quot;,  round(sd(noSC$Accuracy), 3)))</p>
+
+<p>```</p>
+
+<p>As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of <code>r round(mean(noSC$Accuracy),3)</code> is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svm&#39;s.</p>
+
+<h3>Scaling Training and Test together</h3>
+
+<p>This time we scale the training and test together, and then split them apart for training of the model. This means that there is some information from the test set leaking into the training set, and vice versa.</p>
+
+<p>```{r, warning=FALSE, echo=FALSE}
+togetherSC &lt;- data.frame(&quot;name&quot;=&quot;Together&quot;,&quot;Accuracy&quot;=numeric(test<em>len), stringsAsFactors=FALSE)
+for( i in 1:test</em>len){
+  #if(i%%100 == 0) print(i)
+  set.seed(i * sample(1:100, 1))</p>
+
+<p>dat<em>scaled &lt;- data.frame(scale(wine[,-1]), &quot;Region&quot;=wine[,1])
+  inTrain &lt;- createDataPartition(y=dat</em>scaled$Region, p=0.50)
+  train &lt;- dat<em>scaled[inTrain$Resample1,]
+  test &lt;- dat</em>scaled[-inTrain$Resample1,]
+  togetherSCmod &lt;- svm(Region ~ . , data=train, scale=FALSE)
+  preds &lt;- predict(togetherSCmod, test) 
+  levels(preds) &lt;- levels(test$Region)</p>
+
+<p>acc &lt;- confusionMatrix( test$Region, preds)
+  togetherSC[i, &quot;Accuracy&quot;] &lt;- acc$overall[&quot;Accuracy&quot;]
+}</p>
+
+<p>ggplot(data=togetherSC, aes(x=Accuracy)) + 
+  theme<em>hc()+
+  geom</em>histogram(aes(y=..count../sum(..count..)), binwidth=diff(range(togetherSC$Accuracy))/length(table(togetherSC$Accuracy))) + 
+  scale<em>y</em>continuous(labels = percent) +
+  scale<em>x</em>continuous(labels = percent) +
+  labs(y=&quot;Percent&quot;) + 
+  ggtitle(paste(&quot;Centered and Scaled Together&quot;,
+                &quot;\nMean Accuracy =&quot;, round(mean(togetherSC$Accuracy), 3),
+                &quot;\nSD =&quot;,  round(sd(togetherSC$Accuracy), 3)))</p>
+
+<p>```</p>
+
+<p>Clearly that made the difference, accuracy is nearly perfect. </p>
+
+<h3>Scaling separately (the right way)</h3>
+
+<p>Well, this is the right way.</p>
+
+<p>```{r, warning=FALSE, echo=FALSE}</p>
+
+<p>separateSC &lt;- data.frame(&quot;name&quot;=&quot;Separate&quot;, &quot;Accuracy&quot;=numeric(test<em>len), stringsAsFactors=FALSE)
+for( i in 1:test</em>len){
+  #if(i%%100 == 0) print(i)
+  set.seed(i * sample(1:100, 1))
+  inTrain &lt;- createDataPartition(y=wine$Region, p=0.50)</p>
+
+<p>train &lt;- wine[inTrain$Resample1,]
+  train_scaled &lt;- data.frame(scale(train[,-1]), &quot;Region&quot;=train[,1])</p>
+
+<p>test &lt;- wine[-inTrain$Resample1,]
+  test_scaled &lt;- data.frame(scale(test[,-1]), &quot;Region&quot;=test[,1])</p>
+
+<p>separateSCmod &lt;- svm(Region ~ . , data=train<em>scaled, scale=FALSE)
+  preds &lt;- predict(separateSCmod, test</em>scaled) 
+  levels(preds) &lt;- levels(test<em>scaled$Region)
+  acc &lt;- confusionMatrix( test</em>scaled$Region, preds)
+  separateSC[i, &quot;Accuracy&quot;] &lt;- acc$overall[&quot;Accuracy&quot;]
+}</p>
+
+<p>ggplot(data=separateSC, aes(x=Accuracy)) + 
+  theme<em>hc()+
+  geom</em>histogram(aes(y=..count../sum(..count..)), binwidth=diff(range(separateSC$Accuracy))/length(table(separateSC$Accuracy))) + 
+  scale<em>y</em>continuous(labels = percent) +
+  scale<em>x</em>continuous(labels = percent) +
+  labs(y=&quot;Percent&quot;) + 
+  ggtitle(paste(&quot;Centered and Scaled Separately&quot;,
+                &quot;\nMean Accuracy =&quot;, round(mean(separateSC$Accuracy), 3),
+                &quot;\nSD =&quot;, round(sd(separateSC$Accuracy), 3)))</p>
+
+<p>```</p>
+
+<p>So, it appears that there is just the teeensiest increase in accuracy if we do it the right way. Is it statistically significant, though?</p>
+
+<h3>Statistical Significance</h3>
+
+<p>We can assess whether or not there is a difference in the mean accuracy between scaling together and scaling separately by using a t-test. From the histograms we can see that the accuracy scores are very roughly normal, so t-tests are appropriate here.</p>
+
+<p><code>{r,echo=FALSE}
+z &lt;- t.test(separateSC$Accuracy,togetherSC$Accuracy)
+z
+</code></p>
+
+<p>```{r,echo=FALSE, warning=FALSE}</p>
+
+<p>all &lt;- rbind(separateSC, togetherSC)
+ggplot(data=all, aes(x=name, y=Accuracy,fill=name)) +
+  theme<em>hc() +
+  geom</em>boxplot(outlier.size = 0) +
+  guides(fill=FALSE) +
+  labs(x=&quot;&quot;) + 
+  ylim(0.875, 1) + 
+  ggtitle(paste(&quot;Difference in Mean Accuracy from Scaling and Centering\n&quot;,
+                &quot;Estimate =&quot;, round(z$estimate[1] - z$estimate[2], 5),
+                &quot;(p =&quot;, round(z$p.value, 5), &quot;)&quot;))
+```</p>
+
+<p>The difference is extremely small, but exists, and is statistically significant.  </p>
+
+<h2>Conclusion</h2>
+
+<p>As we saw, centering and scaling the data the proper actually, for this dataset, leads to a tiny, but statistically significant <strong>increase</strong> in the mean accuracy of the svm models. I&#39;m surprised, I thought it was going to be the other way around! It would be interesting to see how the size of the dataset, and number of variables in the model impact this difference.</p>
+
+<p>Of course, this was no fully rigorous test, but I think this adds to the evidence that you should always center and scale your training and test data separately (not least because it&#39;s the correct way!).</p>

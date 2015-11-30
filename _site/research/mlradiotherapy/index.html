@@ -10,7 +10,7 @@
 
   <title>
     
-      ML For Radiotherapy &middot; Joel Carlson
+      Machine Learning to Improve Radiotherapy Accuracy &middot; Joel Carlson
     
   </title>
 
@@ -94,18 +94,6 @@
     
       
         
-          <a class="sidebar-nav-item" href="/brachytherapy/">TG43 Brachytherapy Dosimetry</a>
-        
-      
-    
-      
-        
-          <a class="sidebar-nav-item" href="/brachytherapyRepro/">Brachytherapy Reproducible Research</a>
-        
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
         
       
@@ -128,10 +116,6 @@
     
       
         
-      
-    
-      
-        
           <a class="sidebar-nav-item" href="/about/">About</a>
         
       
@@ -146,6 +130,10 @@
     
       
     
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
       
      -->
     <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
@@ -182,12 +170,18 @@
 
       <div class="container content">
         <div class="pagewithjs">
-  <h1 class="page-title">ML For Radiotherapy</h1>
-  <p class="message"> A Statistical Learning Approach to the Accurate Prediction of MLC Errors During VMAT Delivery </p> 
+  <h1 class="page-title">Machine Learning to Improve Radiotherapy Accuracy</h1>
+  <p>Here is the presentation I gave at <a href="http://www.aapm.org/meetings/2015AM/">AAPM 2015</a> regarding this work:</p>
 
-<p>Here is the presentation I gave at <a href="http://www.aapm.org/meetings/2015AM/">AAPM 2015</a> regarding this work:</p>
+<iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="500" marginheight="0" scrolling="no" style="float:right"></iframe>
 
-<iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"></iframe>
+<p>Radiotherapy plans have become increasingly complex in recent years, and with this added complexity have come numerous new sources of errors during plan delivery. One such source of errors is the multi-leaf collimator (MLC), the final component between the linear accelerator and patient. Tasked with shaping the radiation beam in real-time during delivery, the movement of the MLC must be highly precise. However, with the highly choreographed nature of modern plans, the beam shapes become slightly deformed, leading to plans not being delivered exactly as intended.</p>
+
+<p>In this project, I used decision-tree regression techniques to predict the MLC errors, and incorporated them into the treatment planning system. This research allows treatment planners to view a more accurate representation of the dose as it will truly be delivered to the patient.</p>
+
+<p>Click <a href="http://joelcarlson.me/2015/11/14/mlc-dashboard/">here</a> to view a web-interface which allows access to the models developed in this work.</p>
+
+<h2>Introduction</h2>
 
 <p>To test whether the plan is deliverable, the planning system first 
 calculates what it believes the dose distribution should look like, and 

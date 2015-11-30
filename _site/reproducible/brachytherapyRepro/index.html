@@ -1,0 +1,422 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      Brachytherapy Reproducible Research &middot; Joel Carlson
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56125968-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A place for thoughts and projects</p>
+  </div>
+
+<!--  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/blog/">Projects and Posts</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+     -->
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/research/">Research</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/publications/">Publications</a>    
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/cv/">Curriculum Vitae</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/blog/">Blog</a>
+    
+   <!-- <a class="sidebar-nav-item" href="https://github.com/joelcarlson/archive/v2.0.0.zip">Download</a>  
+    <span class="sidebar-nav-item"></span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Joel Carlson</a>
+            <small>MSc student, Seoul National University</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">Brachytherapy Reproducible Research</h1>
+  <h2>Introduction</h2>
+
+<p>In this document I will explain the calculations required to obtain TG-43 parameters for a new brachytherapy seed. The document contains  R functions capable of calculating all required quantities of interest in a reproducible fashion.</p>
+
+<h2>Calculated quantities</h2>
+
+<h3>Geometry Function</h3>
+
+<p>The first required quantity is the <strong>Geometry Function</strong>.  The purpose of the geometry function is to improve the accuracy with which dose rates can be estimated through interpolation. The line source model is recommended in <a href="https://www.aapm.org/pubs/reports/rpt_84.pdf">TG-43</a>, with geometry as in this diagram:</p>
+
+<p><img src="/figs/BrachyReproducible/Geom1.png" alt="geom1"></p>
+
+<p>The equation for the Geometry function is as follows:</p>
+
+<p><img src="/figs/BrachyReproducible/Geom2.png" alt="geom2"></p>
+
+<p>To calculate the geometry function we define several function.  The equations for each side of the diagram, and \(\beta\), and use the outputs from these functions to calculate the geometry function:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r">Beta <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>theta<span class="p">,</span> r<span class="p">,</span> L<span class="o">=</span><span class="m">0.3</span><span class="p">){</span>
+    side1 <span class="o">&lt;-</span> <span class="kp">sqrt</span><span class="p">((</span>L<span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> r<span class="o">^</span><span class="m">2</span> <span class="o">-</span> L<span class="o">*</span>r<span class="o">*</span><span class="kp">cos</span><span class="p">(</span><span class="kc">pi</span> <span class="o">-</span> theta<span class="p">))</span>
+    side2 <span class="o">&lt;-</span> <span class="kp">sqrt</span><span class="p">((</span>L<span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">^</span><span class="m">2</span> <span class="o">+</span> r<span class="o">^</span><span class="m">2</span> <span class="o">-</span> L<span class="o">*</span>r<span class="o">*</span><span class="kp">cos</span><span class="p">(</span>theta<span class="p">))</span>
+    beta <span class="o">&lt;-</span> <span class="kp">acos</span><span class="p">((</span>side1<span class="o">^</span><span class="m">2</span> <span class="o">+</span> side2<span class="o">^</span><span class="m">2</span> <span class="o">-</span> L<span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">2</span><span class="o">*</span>side1<span class="o">*</span>side2<span class="p">))</span>   
+    <span class="kr">return</span><span class="p">(</span><span class="kp">beta</span><span class="p">)</span>
+<span class="p">}</span>    
+ 
+GeomFunction <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>theta<span class="p">,</span> r<span class="p">,</span> L<span class="o">=</span><span class="m">0.3</span><span class="p">){</span>
+    <span class="kr">if</span><span class="p">(</span>theta <span class="o">==</span> <span class="m">0</span><span class="p">){</span>geom <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span><span class="p">(</span>r<span class="o">^</span><span class="m">2</span> <span class="o">-</span> <span class="p">(</span>L<span class="o">^</span><span class="m">2</span><span class="p">)</span><span class="o">/</span><span class="m">4</span><span class="p">)}</span>
+    <span class="kp">else</span><span class="p">{</span>geom <span class="o">&lt;-</span> Beta<span class="p">(</span>theta<span class="p">,</span> r<span class="p">,</span> L<span class="p">)</span><span class="o">/</span><span class="p">(</span>L<span class="o">*</span>r<span class="o">*</span><span class="kp">sin</span><span class="p">(</span>theta<span class="p">))}</span>
+    <span class="kr">return</span><span class="p">(</span>geom<span class="p">)</span>    
+<span class="p">}</span>
+
+<span class="c1">#Example calculation:</span>
+GeomFunction<span class="p">(</span><span class="kc">pi</span><span class="o">/</span><span class="m">18</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span><span class="m">0.3</span><span class="p">)</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 0.01</code></pre></figure>
+
+<h2>Measured Quantities</h2>
+
+<p>All measured quantities are &quot;measured&quot; using Monte Carlo simulation.  In this case, MCNPX was used for calculation.  The rest of the document will assume that the Mone Carlo calculations are complete, and the output files are organized in a directory structure such as this:
+<img src="/figs/BrachyReproducible/DirStructure.png" alt="dirStruct"></p>
+
+<h3>Dose Rate Constant</h3>
+
+<p>The output file should look like this: <a href="https://raw.githubusercontent.com/joelcarlson/Reproducible-TG43-Brachytherapy/master/Aug28KAERIFA.txt">MCNP output file</a>.</p>
+
+<p>This output file contains the detector element surfaces relevant to calculating 2D anisotropy, hence the many warnings, however they do not alter the output in any way. A function must be written to extract the relevant detector cell tallies described in this diagram, where F6 indicates the track length estimator tally in MCNPX:</p>
+
+<p><img src="/figs/BrachyReproducible/AirKerma.png" alt="AirKerm"></p>
+
+<p>Dose rate constant is calculated as:</p>
+
+<p><img src="/figs/BrachyReproducible/DRC.png" alt="drc"></p>
+
+<p>Given the output file we define a function to extract the cell tally values and use them to calculate the dose rate constant of the seed:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="kn">library</span><span class="p">(</span>stringr<span class="p">)</span>
+
+doseRC <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>upper.cell <span class="o">=</span> <span class="m">803</span><span class="p">,</span> lower.cell <span class="o">=</span> <span class="m">802</span><span class="p">,</span> r<span class="o">=</span><span class="m">30</span><span class="p">,</span> file.path<span class="o">=</span> <span class="s">&quot;DoseRateOutfile/KAERIFreeAir.txt&quot;</span><span class="p">){</span>
+    <span class="c1">#Read the output file</span>
+    sctext <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="kp">file.path</span><span class="p">,</span> <span class="kt">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> sep <span class="o">=</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+    
+    <span class="c1">#Find and extract tally value, then trim whitespace and extract value </span>
+    <span class="c1">##Upper tally</span>
+    upper <span class="o">&lt;-</span> <span class="kp">which</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>str_extract<span class="p">(</span>sctext<span class="p">,</span><span class="kp">paste0</span><span class="p">(</span><span class="s">&quot;cell  &quot;</span><span class="p">,</span>upper.cell<span class="p">)))</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span>
+    upper <span class="o">&lt;-</span> sctext<span class="p">[</span>upper <span class="o">+</span> <span class="m">1</span><span class="p">]</span>
+    upper <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">unlist</span><span class="p">(</span>str_split<span class="p">(</span>str_trim<span class="p">(</span>upper<span class="p">),</span> <span class="s">&quot; &quot;</span><span class="p">))[</span><span class="m">1</span><span class="p">])</span>
+    
+    <span class="c1">##Lower tally</span>
+    lower <span class="o">&lt;-</span> <span class="kp">which</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>str_extract<span class="p">(</span>sctext<span class="p">,</span><span class="kp">paste0</span><span class="p">(</span><span class="s">&quot;cell  &quot;</span><span class="p">,</span>lower.cell<span class="p">)))</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span>
+    lower <span class="o">&lt;-</span> sctext<span class="p">[</span>lower <span class="o">+</span> <span class="m">1</span><span class="p">]</span>
+    lower <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">unlist</span><span class="p">(</span>str_split<span class="p">(</span>str_trim<span class="p">(</span>lower<span class="p">),</span> <span class="s">&quot; &quot;</span><span class="p">))[</span><span class="m">1</span><span class="p">])</span>
+    
+    <span class="c1">#calculate air kerma</span>
+    doseRC <span class="o">&lt;-</span> lower<span class="o">/</span><span class="p">(</span>upper <span class="o">*</span> <span class="p">(</span>r<span class="o">^</span><span class="m">2</span><span class="p">))</span>
+    <span class="kr">return</span><span class="p">(</span>doseRC<span class="p">)</span>
+<span class="p">}</span>   
+
+doseRC<span class="p">()</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">## [1] 0.9174</code></pre></figure>
+
+<h3>Radial Dose Function</h3>
+
+<p>The next quantity of interest to calculate is the <strong>Radial Dose Function</strong>, \(g_L(r)\).  The formula is as follows:</p>
+
+<p><img src="/figs/BrachyReproducible/radial.png" alt="drc"></p>
+
+<p>Therefore we need to access the tally values from our output from the simulation with the detectors on the transverse plane (ie. \(\theta_0\)). The output file should look like this: <a href="https://raw.githubusercontent.com/joelcarlson/Reproducible-TG43-Brachytherapy/master/KAERI_90_out.txt">example output file</a>.</p>
+
+<p>A similar method is used as for the extraction of the dose rate constant.  To note, the input of the function called <code>cell.range</code> is the range of cells used to define the detector elements (tallies), and <code>radii</code> is a vector containing the distance of each detector element from the seed.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">##Find F6 tally value at given cell range and radii, outputs a dataframe containing D(r,90)</span>
+Dr90 <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>cell.range <span class="o">=</span> <span class="kt">c</span><span class="p">(</span><span class="m">223</span><span class="o">:</span><span class="m">246</span><span class="p">),</span> radii<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">0.4</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.6</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1.25</span><span class="p">,</span><span class="m">1.5</span><span class="p">,</span><span class="m">1.75</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2.5</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3.5</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4.5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">),</span> file.path<span class="o">=</span> <span class="s">&quot;AnisoOutFiles/KAERI_90_out.txt&quot;</span><span class="p">){</span>
+    <span class="c1">#Read the output file</span>
+    sctext <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="kp">file.path</span><span class="p">,</span> <span class="kt">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> sep <span class="o">=</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+    f6vals <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">()</span>
+    <span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> cell.range<span class="p">){</span>
+      cellval <span class="o">&lt;-</span> <span class="kp">which</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>str_extract<span class="p">(</span>sctext<span class="p">,</span><span class="kp">paste0</span><span class="p">(</span><span class="s">&quot;cell  &quot;</span><span class="p">,</span>i<span class="p">)))</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span>
+      cellval <span class="o">&lt;-</span> sctext<span class="p">[</span>cellval <span class="o">+</span> <span class="m">1</span><span class="p">]</span>
+      cellval <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">unlist</span><span class="p">(</span>str_split<span class="p">(</span>str_trim<span class="p">(</span>cellval<span class="p">),</span> <span class="s">&quot; &quot;</span><span class="p">))[</span><span class="m">1</span><span class="p">])</span>
+      f6vals <span class="o">&lt;-</span> <span class="kp">append</span><span class="p">(</span>f6vals<span class="p">,</span> cellval<span class="p">)</span>
+    <span class="p">}</span>
+    
+    Dr90 <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="o">=</span>radii<span class="p">,</span> <span class="s">&quot;Dr90&quot;</span><span class="o">=</span>f6vals <span class="p">)</span>
+    <span class="kr">return</span><span class="p">(</span>Dr90<span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1">##Use our GeomFunction and Dr90 to calculate the radial dose function </span>
+RadialDoseFunction <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
+  <span class="c1">#Define values</span>
+  Dr90 <span class="o">&lt;-</span> Dr90<span class="p">()</span>
+  D190 <span class="o">&lt;-</span> Dr90<span class="p">[</span>Dr90<span class="o">$</span>r<span class="o">==</span><span class="m">1.00</span><span class="p">,</span><span class="s">&quot;Dr90&quot;</span><span class="p">]</span>
+  GLr90 <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">()</span>
+  <span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> Dr90<span class="p">[,</span><span class="s">&quot;r&quot;</span><span class="p">]){</span>
+      GLr90 <span class="o">&lt;-</span> <span class="kp">append</span><span class="p">(</span>GLr90<span class="p">,</span>GeomFunction<span class="p">(</span><span class="kc">pi</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> i<span class="p">))</span>
+  <span class="p">}</span>
+  GL190 <span class="o">&lt;-</span> GeomFunction<span class="p">(</span><span class="kc">pi</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+  
+  RDtable <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>Dr90<span class="p">,</span> GLr90<span class="p">)</span>
+  
+  RDtable<span class="o">$</span>gLr <span class="o">&lt;-</span> <span class="p">(</span>RDtable<span class="o">$</span>Dr90 <span class="o">/</span> D190<span class="p">)</span> <span class="o">*</span> <span class="p">(</span>GL190 <span class="o">/</span> RDtable<span class="o">$</span>GLr90<span class="p">)</span>
+  <span class="kr">return</span><span class="p">(</span>RDtable<span class="p">)</span>
+<span class="p">}</span>
+
+RadialDoseFunction<span class="p">()</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##        r      Dr90     GLr90     gLr
+## 1   0.25 3.658e-03 14.411187 1.08665
+## 2   0.30 2.611e-03 10.303280 1.08473
+## 3   0.40 1.506e-03  5.979511 1.07839
+## 4   0.50 9.696e-04  3.886091 1.06812
+## 5   0.60 6.718e-04  2.721985 1.05652
+## 6   0.70 4.900e-04  2.010413 1.04354
+## 7   0.80 3.717e-04  1.544566 1.03029
+## 8   0.90 2.901e-04  1.223324 1.01540
+## 9   1.00 2.319e-04  0.992600 1.00000
+## 10  1.25 1.425e-04  0.636954 0.95755
+## 11  1.50 9.441e-05  0.442972 0.91241
+## 12  1.75 6.586e-05  0.325734 0.86557
+## 13  2.00 4.773e-05  0.249533 0.81896
+## 14  2.50 2.714e-05  0.159808 0.72719
+## 15  3.00 1.661e-05  0.111019 0.64063
+## 16  3.50 1.068e-05  0.081583 0.56059
+## 17  4.00 7.134e-06  0.062471 0.48886
+## 18  4.50 4.894e-06  0.049364 0.42439
+## 19  5.00 3.434e-06  0.039988 0.36762
+## 20  6.00 1.779e-06  0.027772 0.27418
+## 21  7.00 9.681e-07  0.020405 0.20311
+## 22  8.00 5.465e-07  0.015623 0.14974
+## 23  9.00 3.176e-07  0.012345 0.11016
+## 24 10.00 1.892e-07  0.009999 0.08102</code></pre></figure>
+
+<h3>2D Anisotropy Function</h3>
+
+<p>The next and final calculation is of the <strong>2D anisotropy function</strong>.  The formula for the 2D anisotropy function is:</p>
+
+<p><img src="/figs/BrachyReproducible/aniso.png" alt="ani"></p>
+
+<p>For this function, the data is stored across several different output files in the folder <code>AnisoOutFiles</code>.  There exists one output file every \(10^{\circ}\) for a total of 10 files (for publication quality it is recommended that every \(5^{\circ}\) be sampled.)</p>
+
+<p>Based on our detector cell definitions, the detectors along \(\theta = 0\) go from 7 to 30, \(\theta = 10\) from 31 to 54 and so on (\(\theta = 90\) from 223 to 246, as in the radial dose function calculation).</p>
+
+<p>The first step is to create a function to extract the tally values and build a data frame based on them:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r"><span class="c1">#Build dataframe of tally results by angle. Output files *MUST* be in order from 00 to 90 degrees</span>
+<span class="c1">#radii are the distances of detector cells from seed,  </span>
+buildTallyDF <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(</span>file.dir <span class="o">=</span> <span class="s">&quot;AnisoOutFiles&quot;</span><span class="p">,</span> first.cell<span class="o">=</span><span class="m">7</span><span class="p">,</span> radii<span class="o">=</span><span class="kt">c</span><span class="p">(</span><span class="m">0.25</span><span class="p">,</span><span class="m">0.3</span><span class="p">,</span><span class="m">0.4</span><span class="p">,</span><span class="m">0.5</span><span class="p">,</span><span class="m">0.6</span><span class="p">,</span><span class="m">0.7</span><span class="p">,</span><span class="m">0.8</span><span class="p">,</span><span class="m">0.9</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="m">1.25</span><span class="p">,</span><span class="m">1.5</span><span class="p">,</span><span class="m">1.75</span><span class="p">,</span><span class="m">2</span><span class="p">,</span><span class="m">2.5</span><span class="p">,</span><span class="m">3</span><span class="p">,</span><span class="m">3.5</span><span class="p">,</span><span class="m">4</span><span class="p">,</span><span class="m">4.5</span><span class="p">,</span><span class="m">5</span><span class="p">,</span><span class="m">6</span><span class="p">,</span><span class="m">7</span><span class="p">,</span><span class="m">8</span><span class="p">,</span><span class="m">9</span><span class="p">,</span><span class="m">10</span><span class="p">)){</span>
+  <span class="c1">#Add radii column</span>
+  TallyDF <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="o">=</span>radii<span class="p">)</span>
+  <span class="c1">#For each file in the directory create vector of appropriate cell values, append to DF</span>
+  <span class="kr">for</span><span class="p">(</span>file.name <span class="kr">in</span> <span class="kp">list.files</span><span class="p">(</span>file.dir<span class="p">)){</span>
+    file <span class="o">&lt;-</span> <span class="kp">scan</span><span class="p">(</span><span class="kp">paste0</span><span class="p">(</span>file.dir<span class="p">,</span><span class="s">&quot;/&quot;</span><span class="p">,</span>file.name<span class="p">),</span> <span class="kt">character</span><span class="p">(</span><span class="m">0</span><span class="p">),</span> sep <span class="o">=</span> <span class="s">&quot;\n&quot;</span><span class="p">)</span>
+    f6vals <span class="o">&lt;-</span> <span class="kt">c</span><span class="p">()</span>
+    
+    <span class="kr">for</span><span class="p">(</span>i <span class="kr">in</span> <span class="kp">seq</span><span class="p">(</span>first.cell<span class="p">,</span> first.cell<span class="o">+</span><span class="kp">length</span><span class="p">(</span>radii<span class="p">)</span><span class="m">-1</span><span class="p">)){</span>
+      cellval <span class="o">&lt;-</span> <span class="kp">which</span><span class="p">(</span><span class="kp">is.na</span><span class="p">(</span>str_extract<span class="p">(</span><span class="kp">file</span><span class="p">,</span><span class="kp">paste0</span><span class="p">(</span><span class="s">&quot;cell  &quot;</span><span class="p">,</span>i<span class="p">)))</span><span class="o">==</span><span class="kc">FALSE</span><span class="p">)</span>
+      cellval <span class="o">&lt;-</span> <span class="kp">file</span><span class="p">[</span>cellval <span class="o">+</span> <span class="m">1</span><span class="p">]</span>
+      cellval <span class="o">&lt;-</span> <span class="kp">as.numeric</span><span class="p">(</span><span class="kp">unlist</span><span class="p">(</span>str_split<span class="p">(</span>str_trim<span class="p">(</span>cellval<span class="p">),</span> <span class="s">&quot; &quot;</span><span class="p">))[</span><span class="m">1</span><span class="p">])</span>
+      f6vals <span class="o">&lt;-</span> <span class="kp">append</span><span class="p">(</span>f6vals<span class="p">,</span> cellval<span class="p">)</span>
+    <span class="p">}</span>
+    
+    first.cell <span class="o">&lt;-</span> first.cell <span class="o">+</span> <span class="kp">length</span><span class="p">(</span>radii<span class="p">)</span>
+    TallyDF <span class="o">&lt;-</span> <span class="kt">data.frame</span><span class="p">(</span>TallyDF<span class="p">,</span> file.name <span class="o">=</span> f6vals<span class="p">)</span>
+    
+  <span class="p">}</span>
+  <span class="c1">#rename columns using their respective angles</span>
+  <span class="kp">colnames</span><span class="p">(</span>TallyDF<span class="p">)</span><span class="o">&lt;-</span> <span class="kt">c</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="p">,</span> <span class="kp">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">90</span><span class="p">,</span> by<span class="o">=</span><span class="m">10</span><span class="p">))</span>
+  <span class="kr">return</span><span class="p">(</span>TallyDF<span class="p">)</span>
+<span class="p">}</span>
+<span class="c1">#buildTallyDF()</span></code></pre></figure>
+
+<p>Next, we use the newly created dataframe, <code>buildAnisoDF()</code>, to calculate the 2D anisotropy function using the above formula:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r">Aniso <span class="o">&lt;-</span> <span class="kr">function</span><span class="p">(){</span>
+  TallyDF <span class="o">&lt;-</span> buildTallyDF<span class="p">()</span>
+  <span class="c1">#Divide all tally values by the tally value of that radius at 90 degrees</span>
+  AnisoDF <span class="o">&lt;-</span> TallyDF<span class="p">[,</span><span class="m">-1</span><span class="p">]</span><span class="o">/</span>TallyDF<span class="p">[,</span><span class="s">&quot;90&quot;</span><span class="p">]</span>
+  AnisoDF <span class="o">&lt;-</span> <span class="kp">cbind</span><span class="p">(</span><span class="s">&quot;r&quot;</span><span class="o">=</span>TallyDF<span class="p">[,</span><span class="m">1</span><span class="p">],</span> AnisoDF<span class="p">)</span>
+  
+  <span class="c1">#At each position of the Aniso dataframe, multiply the aniso value by the geometry function at that point</span>
+  <span class="kr">for</span><span class="p">(</span>angle <span class="kr">in</span> <span class="kp">colnames</span><span class="p">(</span>AnisoDF<span class="p">[,</span><span class="m">-1</span><span class="p">])){</span>
+    
+    <span class="kr">for</span><span class="p">(</span>radius <span class="kr">in</span> AnisoDF<span class="p">[,</span><span class="s">&quot;r&quot;</span><span class="p">]){</span>
+      
+     AnisoDF<span class="p">[</span>AnisoDF<span class="o">$</span>r<span class="o">==</span>radius<span class="p">,</span> angle<span class="p">]</span> <span class="o">&lt;-</span> AnisoDF<span class="p">[</span>AnisoDF<span class="o">$</span>r<span class="o">==</span>radius<span class="p">,</span> angle<span class="p">]</span> <span class="o">*</span> GeomFunction<span class="p">(</span><span class="kc">pi</span><span class="o">/</span><span class="m">2</span><span class="p">,</span> radius<span class="p">)</span> <span class="o">/</span> GeomFunction<span class="p">(</span><span class="kp">as.numeric</span><span class="p">(</span>angle<span class="p">)</span><span class="o">*</span><span class="kc">pi</span><span class="o">/</span><span class="m">180</span><span class="p">,</span> radius<span class="p">)</span>
+  <span class="p">}}</span>
+      
+  
+  <span class="kr">return</span><span class="p">(</span>AnisoDF<span class="p">)</span> 
+  <span class="p">}</span>
+  Aniso<span class="p">()</span></code></pre></figure>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text">##        r    0   10   20   30   40   50   60   70   80 90
+## 1   0.25 0.20 0.49 0.94 1.05 1.08 1.07 0.97 0.99 1.00  1
+## 2   0.30 0.19 0.46 0.82 1.00 1.05 1.07 1.01 0.99 1.00  1
+## 3   0.40 0.21 0.47 0.75 0.94 1.02 1.05 1.07 0.99 1.00  1
+## 4   0.50 0.22 0.48 0.73 0.91 1.00 1.04 1.06 1.06 1.00  1
+## 5   0.60 0.24 0.51 0.73 0.89 0.99 1.04 1.06 1.07 1.00  1
+## 6   0.70 0.26 0.52 0.74 0.89 0.99 1.03 1.06 1.06 1.00  1
+## 7   0.80 0.28 0.54 0.74 0.88 0.98 1.03 1.05 1.06 1.00  1
+## 8   0.90 0.29 0.55 0.75 0.88 0.98 1.03 1.05 1.06 1.05  1
+## 9   1.00 0.31 0.56 0.75 0.88 0.97 1.02 1.05 1.06 1.06  1
+## 10  1.25 0.35 0.59 0.76 0.88 0.97 1.02 1.04 1.06 1.06  1
+## 11  1.50 0.38 0.61 0.77 0.88 0.96 1.02 1.04 1.05 1.05  1
+## 12  1.75 0.41 0.63 0.78 0.89 0.96 1.01 1.04 1.05 1.05  1
+## 13  2.00 0.42 0.64 0.79 0.89 0.96 1.01 1.03 1.05 1.05  1
+## 14  2.50 0.46 0.66 0.80 0.89 0.96 1.01 1.03 1.04 1.05  1
+## 15  3.00 0.49 0.68 0.81 0.90 0.96 1.00 1.03 1.04 1.04  1
+## 16  3.50 0.53 0.70 0.81 0.90 0.96 1.00 1.02 1.04 1.04  1
+## 17  4.00 0.57 0.71 0.82 0.90 0.96 1.00 1.02 1.03 1.04  1
+## 18  4.50 0.59 0.72 0.83 0.90 0.96 1.00 1.02 1.03 1.03  1
+## 19  5.00 0.63 0.73 0.83 0.90 0.95 0.99 1.02 1.03 1.03  1
+## 20  6.00 0.65 0.74 0.84 0.90 0.95 0.99 1.01 1.02 1.03  1
+## 21  7.00 0.68 0.76 0.84 0.90 0.95 0.99 1.01 1.02 1.02  1
+## 22  8.00 0.69 0.76 0.85 0.91 0.95 0.99 1.01 1.02 1.02  1
+## 23  9.00 0.72 0.77 0.85 0.91 0.95 0.99 1.01 1.02 1.02  1
+## 24 10.00 0.74 0.78 0.85 0.91 0.95 0.98 1.00 1.01 1.02  1</code></pre></figure>
+
+<h2>Plots</h2>
+
+<h3>Radial Dose Function</h3>
+
+<p>Here is the radial dose function plotted against several other published seed results (other seed data from external .csv):</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r">radialPlot<span class="p">()</span></code></pre></figure>
+
+<p><img src="/figs/BrachyReproducible/unnamed-chunk-7.png" alt="center"> </p>
+
+<p>And a zoom in of the area of interest from r = 0 to r = 2:</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r">radialPlotZoom<span class="p">()</span></code></pre></figure>
+
+<p><img src="/figs/BrachyReproducible/unnamed-chunk-9.png" alt="center"> </p>
+
+<h3>2D Anisotropy</h3>
+
+<p>Inspiration for the following plot was taken from <a href="http://scitation.aip.org/content/aapm/journal/medphys/36/2/10.1118/1.3056463">Rivard 2008</a>.  In this plot the dotted lines are the KAERI seed, and the solid lines the IAI-125 seed.</p>
+
+<figure class="highlight"><pre><code class="language-r" data-lang="r">plotAniso<span class="p">()</span>  </code></pre></figure>
+
+<p><img src="/figs/BrachyReproducible/unnamed-chunk-11.png" alt="center"> </p>
+
+<h2>Conclusion</h2>
+
+<p>Calculations for TG-43 parameters of a novel brachytherapy seed were presented. The functions should be generalizable, perhaps with some slight modifications.</p>
+
+</div>
+
+      </div>
+    </div>
+    
+  
+  
+  </body>
+</html>
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en-us">
+
+  <head>
+  <link href="http://gmpg.org/xfn/11" rel="profile">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+
+  <!-- Enable responsiveness on mobile devices-->
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1">
+
+  <title>
+    
+      The Dangers(?) of Improperly Centering and Scaling Your Data &middot; Joel Carlson
+    
+  </title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/public/css/poole.css">
+  <link rel="stylesheet" href="/public/css/syntax.css">
+  <link rel="stylesheet" href="/public/css/lanyon.css">
+  <link rel="stylesheet" href="http://fonts.googleapis.com/css?family=PT+Serif:400,400italic,700|PT+Sans:400">
+
+  <!-- Icons -->
+  <link rel="apple-touch-icon-precomposed" sizes="144x144" href="/public/apple-touch-icon-144-precomposed.png">
+  <link rel="shortcut icon" href="/public/favicon.ico">
+
+  <!-- RSS -->
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="/atom.xml">
+  
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-56125968-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+</head>
+
+
+  <body class="sidebar-overlay">
+
+    <!-- Target for toggling the sidebar `.sidebar-checkbox` is for regular
+     styles, `#sidebar-checkbox` for behavior. -->
+<input type="checkbox" class="sidebar-checkbox" id="sidebar-checkbox">
+
+<!-- Toggleable sidebar -->
+<div class="sidebar" id="sidebar">
+  <div class="sidebar-item">
+    <p>A place for thoughts and projects</p>
+  </div>
+
+<!--  <nav class="sidebar-nav">
+    <a class="sidebar-nav-item" href="/">Home</a>
+
+    
+
+    
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/cv/">Curriculum Vitae</a>
+        
+      
+    
+      
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/publications/">Publications</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/about/">About</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/blog/">Projects and Posts</a>
+        
+      
+    
+      
+    
+      
+        
+          <a class="sidebar-nav-item" href="/research/">Research</a>
+        
+      
+     -->
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/about/">About</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/research/">Research</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/publications/">Publications</a>    
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/cv/">Curriculum Vitae</a>
+    <a class="sidebar-nav-item" href="http://joelcarlson.github.io/blog/">Blog</a>
+    
+   <!-- <a class="sidebar-nav-item" href="https://github.com/joelcarlson/archive/v2.0.0.zip">Download</a>  
+    <span class="sidebar-nav-item"></span> -->
+  </nav>
+
+  <div class="sidebar-item">
+    <p>
+      &copy; 2015. All rights reserved.
+    </p>
+  </div>
+</div>
+
+
+    <!-- Wrap is the content to shift when toggling the sidebar. We wrap the
+         content to avoid any CSS collisions with our real content. -->
+    <div class="wrap">
+      <div class="masthead">
+        <div class="container">
+          <label for="sidebar-checkbox" class="sidebar-toggle"></label>
+
+          <h3 class="masthead-title">
+            <a href="/" title="Home">Joel Carlson</a>
+            <small>MSc student, Seoul National University</small>
+          </h3>
+        </div>
+      </div>
+
+      <div class="container content">
+        <div class="page">
+  <h1 class="page-title">The Dangers(?) of Improperly Centering and Scaling Your Data</h1>
+  <p>Recently I was at a conference where many of the presentations involved some sort of machine learning. One thing that I noticed was that often times the speakers would make no mention of being careful to not contaminate their test set with information from their training set.</p>
+
+<p>For example, for certain machine learning algorithms, such as support vector machines, centering and scaling your data is essential for the algorithm to perform. Centering and scaling the data is a process by which you transform each feature such that its mean becomes 0, and variance becomes 1. If you center and scale your data before splitting it into training and test sets, then you have used information from your training set to make calculations on your test set. This is a problem. Or could be, at least.</p>
+
+<p>This was concerning me at the conference, but I didn&#39;t speak up about it because although I had been instructed to avoid this mistake, and it made intuitive sense to me, I had never actually tested to see if there was a significant difference between the two methods. </p>
+
+<p>In this post, I am going to explore this by assessing the accuracy of support vector machine models on three datasets: </p>
+
+<ul>
+<li>Not centered or scaled</li>
+<li>Training and testing centered and scaled together</li>
+<li>Training and testing centered separately</li>
+</ul>
+
+<p>Datawise, we will use a set from the <a href="http://archive.ics.uci.edu/ml/datasets/Wine">UCI machine learning repository</a>. The dataset is a series of wine measurements, quantifying things like &quot;Alcohol Content&quot;, &quot;Color Intensity&quot;, and &quot;Hue&quot; for 178 wines. The goal is to predict the region the wine came from based on the measurements. </p>
+
+<h2>Summarizing the data</h2>
+
+<p>Let&#39;s take a quick look at the mean and standard deviation of each column in the data (sorted by SD):</p>
+
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;"> Variable </th>
+   <th style="text-align:right;"> Mean </th>
+   <th style="text-align:right;"> SD </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Proline </td>
+   <td style="text-align:right;"> 746.89 </td>
+   <td style="text-align:right;"> 314.91 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Magnesium </td>
+   <td style="text-align:right;"> 99.74 </td>
+   <td style="text-align:right;"> 14.28 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcalinity </td>
+   <td style="text-align:right;"> 19.49 </td>
+   <td style="text-align:right;"> 3.34 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> ColorIntensity </td>
+   <td style="text-align:right;"> 5.06 </td>
+   <td style="text-align:right;"> 2.32 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Acid </td>
+   <td style="text-align:right;"> 2.34 </td>
+   <td style="text-align:right;"> 1.12 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Flavanoids </td>
+   <td style="text-align:right;"> 2.03 </td>
+   <td style="text-align:right;"> 1.00 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Alcohol </td>
+   <td style="text-align:right;"> 13.00 </td>
+   <td style="text-align:right;"> 0.81 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> OpticalDensity </td>
+   <td style="text-align:right;"> 2.61 </td>
+   <td style="text-align:right;"> 0.71 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Phenols </td>
+   <td style="text-align:right;"> 2.30 </td>
+   <td style="text-align:right;"> 0.63 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Proanthocyanins </td>
+   <td style="text-align:right;"> 1.59 </td>
+   <td style="text-align:right;"> 0.57 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Ash </td>
+   <td style="text-align:right;"> 2.37 </td>
+   <td style="text-align:right;"> 0.27 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Hue </td>
+   <td style="text-align:right;"> 0.96 </td>
+   <td style="text-align:right;"> 0.23 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> NonFlavanoidPhenols </td>
+   <td style="text-align:right;"> 0.36 </td>
+   <td style="text-align:right;"> 0.12 </td>
+  </tr>
+</tbody>
+</table>
+
+<p>There are 13 variables in the data, but we are going to use only the 5 with the highest standard deviation, since this is for demonstration purposes, not pure predictive accuracy. Although Alcohol is not in the top 5, we are going to use it as well (because hey, we&#39;re talking about wine!)</p>
+
+<h2>A bit of intuition</h2>
+
+<p>Just so that we have a feel for the data, let&#39;s plot a variable or two:
+We might be able to guess that there is some relationship between alcohol content and region:</p>
+
+<p><img src="/figs/CentreScale/plot1.png" width=60%/></p>
+
+<p>And indeed there is, not a big surprise there.</p>
+
+<p>Wikipedia tells me that, during brewing, <a href="https://en.wikipedia.org/wiki/Proline">Proline</a> may produce haze, so perhaps it would be related to Color Intensity?</p>
+
+<p><img src="/figs/CentreScale/plot2.png" width=60%/></p>
+
+<p>As expected. It looks like these variables are going to be able to feed a pretty accurate model. Based on the way the second plot is organized into clusters I imagine even a simple approach like KNN would do well.</p>
+
+<h2>Building the models</h2>
+
+<p>The features of this data vary wildly in scale, for example, the range of the <code>Proline</code> column is from 278 to 1680, whereas the <code>Acid</code> column goes from 0.74 to 5.80. This is an issue for support vector machines (and some other algorithms), so we need to center and scale the data.</p>
+
+<p>For each situation described above, I trained 1000 svm models from the <code>e1071</code> R package (with default parameters) and recorded the accuracy. Each model was trained on a random subset of 50% of the data, and tested on the remaining 50%. The test set acccuracy distributions in each situation are presented as histograms.</p>
+
+<h3>No centering and scaling</h3>
+
+<p>To demonstrate the importance of centering and scaling for support vector machines, the accuracy was first assessed without centering and scaling:</p>
+
+<p><img src="/figs/CentreScale/plot3.png" width=60%/></p>
+
+<p>As we can see, the accuracy is pretty abysmal. There are three categories, so the mean of 0.415 is better than guessing, but not by much. Of course, this was expected, centering and scaling are a necessary step for svms.</p>
+
+<h3>Scaling Training and Test together</h3>
+
+<p>This time we scale the training and test together, and then split them apart for training of the model. This means that there is some information from the test set leaking into the training set, and vice versa.</p>
+
+<p><img src="/figs/CentreScale/plot4.png" width=60%/></p>
+
+<p>Clearly that made the difference, accuracy is nearly perfect. </p>
+
+<h3>Scaling separately (the right way)</h3>
+
+<p>Well, this is the right way. </p>
+
+<p><img src="/figs/CentreScale/plot5.png" width=60%/></p>
+
+<p>So, it appears that there is just the teeensiest increase in accuracy if we do it the right way. Is it statistically significant, though?</p>
+
+<h3>Statistical Significance</h3>
+
+<p>We can assess whether or not there is a difference in the mean accuracy between scaling together and scaling separately by using a t-test. From the histograms we can see that the accuracy scores are very roughly normal, so t-tests are appropriate here.</p>
+
+<figure class="highlight"><pre><code class="language-text" data-lang="text"> 
+    Welch Two Sample t-test
+ 
+ data: Separate and Together
+ t = 3.8542, df = 1996.389, p-value = 0.0001198
+ alternative hypothesis: true difference in means is not equal to 0
+ 95 percent confidence interval:
+      0.00179 0.00552
+ sample estimates:
+ mean of x mean of y 
+      0.939 0.936</code></pre></figure>
+
+<p><img src="/figs/CentreScale/plot6.png" width=60%/></p>
+
+<p>The difference is extremely small (around 0.4%), but it exists and is statistically significant.  </p>
+
+<h2>Conclusion</h2>
+
+<p>As we saw, centering and scaling the data the proper way actually, for this dataset, leads to a tiny but statistically significant <strong>increase</strong> in the mean accuracy of the svm models. 
+I have to admit to being surpised, I expected the opposite result! It would be interesting to see how the size of the dataset, and number of variables in the model impact this difference.</p>
+
+<p>Of course, this was no fully rigorous test, but I do think it adds to the evidence that you should always center and scale your training and test data separately (not least because it&#39;s the correct way!).</p>
+
+<p>This post has a small discussion on reddit <a href="https://www.reddit.com/r/statistics/comments/3heml4/the_dangers_of_improperly_centering_and_scaling/">here</a> and a reproducible version with code can be found <a href="https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/CentreScale.Rmd">here</a></p>
+
+</div>
+
+      </div>
+    </div>
+    
+  
+  
+  </body>
+</html>
+<script type="text/javascript"
+    src="http://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML">
+</script>

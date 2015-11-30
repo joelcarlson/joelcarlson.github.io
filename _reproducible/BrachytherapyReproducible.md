@@ -1,8 +1,9 @@
 ---
 layout: page
 title: "Brachytherapy Reproducible Research"
-permalink: /brachytherapyRepro/
+permalink: /reproducible/brachytherapyRepro/
 ---
+
 ##Introduction
 
 In this document I will explain the calculations required to obtain TG-43 parameters for a new brachytherapy seed. The document contains  R functions capable of calculating all required quantities of interest in a reproducible fashion.

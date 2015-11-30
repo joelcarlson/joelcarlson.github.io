@@ -1,0 +1,46 @@
+***Always run jekyll with: bundle exec jekyll serve --watch
+
+This way it will emulate the github production server**
+
+How to make a new blog post:
+
+
+
+paste function into R:
+
+KnitPost <- function(input, base.url = "/") {
+    require(knitr)
+    opts_knit$set(base.url = base.url)
+    fig.path <- paste0("figs/", sub(".Rmd$", "", basename(input)), "/")
+    opts_chunk$set(fig.path = fig.path)
+    opts_chunk$set(fig.cap = "center")
+    render_jekyll()
+    knit(input, envir = parent.frame())
+}
+
+Run your .Rmd through the function
+
+Rename file to conform to jekyll date convention and put it in _posts folder of website
+
+Add .yaml frontmatter (ie. add (layout: post)) to the top, remove everything else but the title.
+In the frontmatter add an excerpt: _____ call
+
+If there are images in the .md:
+Go to the figs directory, make a new folder identical to the post name 
+(look in the .md file for the location it looks for images)
+and add the images in the folder that knitr creates.
+
+
+Latex is a bit broken still, so check out this blog post:
+
+http://gastonsanchez.com/blog/opinion/2014/02/16/Mathjax-with-jekyll.html
+
+It amounts to replacing all instance of $..$ with \\(...\\) for inline or \\[...\\] for equations
+
+If SSL certificates are getting weird:
+https://gist.github.com/fnichol/867550
+
+If you want to include highcharts!
+<script src="http://code.highcharts.com/highcharts.js"></script>
+
+<div id="container" style="height: 400px"></div>
