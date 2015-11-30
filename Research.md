@@ -23,6 +23,13 @@ Click [here](https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0)
 Click [here](http://joelcarlson.me/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
 
 
+###A Radiomics Approach to Classifying Low Grade Gliomas
+
+<a href="http://joelcarlson.github.io/thesis"><img src="/figs/ResearchImages/Oligodendro.png" width=70%/></a>
+
+Click [here](https://www.slideshare.net/slideshow/embed_code/key/Ixlq8OxRVIIIUY) to view the presentation I gave at MICCAI 2015 related to this material.
+
+
 ###Brachytherapy TG43 Parameters
 
 <a href="http://joelcarlson.github.io/brachytherapy"><img src="/figs/ResearchImages/brachySeed.png" width=70%/></a>
