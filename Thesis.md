@@ -70,7 +70,7 @@ each point is given by
 
 ![Gamma formula](/figs/Thesis/gammanalysis.png) 
 
-<div class="box"><img src="/figs/Thesis/gammanalysis.png" alt="image" /></div>
+<div class="box"><img src="/figs/Thesis/gammanalysis.png" alt="image" /></div><br>
 
 The delta terms are the DTA and dose difference criteria. The other 
 terms: 
