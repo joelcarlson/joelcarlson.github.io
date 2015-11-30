@@ -413,7 +413,7 @@ a.pagination-item:hover {
 .box{
   float:center;
   padding:5px;
-  background:#F9F9F9;
+  background:#E0E0E0;
   margin:20px;
   box-shadow: 0 5px 10px #334;
   -webkit-transition:0.3s;
@@ -423,7 +423,7 @@ a.pagination-item:hover {
 
 .box.toggled {
    box-shadow: 0 2px 5px #334;
-   background:#F9F9F9;
+   background:#E0E0E0;
    -webkit-transform: scale(2);
    transform: scale(2);
    opacity:1;
