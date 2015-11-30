@@ -421,9 +421,7 @@ a.pagination-item:hover {
   -webkit-transition:0.3s;
   transition:0.3s;
 }
-.box img{
-  width:150px;
-}
+
 
 .box.toggled {
    box-shadow: 0 2px 5px #334;
