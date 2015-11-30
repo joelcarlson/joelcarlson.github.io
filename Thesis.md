@@ -71,9 +71,9 @@ each point is given by
 ![Gamma formula](/figs/Thesis/gammanalysis.png) 
 
 <div class="box" style=50%><img src="/figs/Thesis/gammanalysis.png" alt="image" /></div><br>
-<br>
 
-The delta terms are the DTA and dose difference criteria. The other 
+
+<br>The delta terms are the DTA and dose difference criteria. The other 
 terms: 
 
 ![Gamma formula terms](/figs/Thesis/gammanalysisterms.png) 
