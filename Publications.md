@@ -19,7 +19,7 @@ Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and 
 
 ###Submitted:
 
-*"A machine learning approach to the accurate prediction of MLC positional errors during radiotherapy"*  (Physics in Medicine and Biology, **under revision**)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
+*"A machine learning approach to the accurate prediction of MLC positional errors during radiotherapy"*  (Physics in Medicine and Biology, *under revision*)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
 
 *"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
 Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
