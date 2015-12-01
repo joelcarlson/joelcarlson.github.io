@@ -51,7 +51,7 @@ As stated above, the MLC is the final component between the linear accelerator a
 patient. It is used to shape the beam into the complex shapes required. The MLC used in this
 study is known as the Varian Millennium 120 MLC, as shown here:
 
-<a href="http://i.imgur.com/onD7Z1R.jpg" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC" style="float:right; margin:20px"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
+<a href="http://i.imgur.com/onD7Z1R.jpg" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC" style="float:right; margin:10%"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
 The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). During delivery of a plan, 
@@ -158,8 +158,8 @@ The mean absolute error magnitude between planned and delivered MLC positions wa
 Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
 <br>
-<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="align:left"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="align:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
+<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left; width:50%"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
 <br>
 Clearly the predicted positions are closer to the delivered positions than are the planned positions. This is the ideal outcome. 
 
@@ -174,8 +174,8 @@ predicted positions are a better representation of reality than are the planned 
 dose calculation in the treatment planning system.
 
 
-<a href="/figs/mlradiotherapy/hngamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 41)." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/hngamma.png" /></a>
-<a href="/figs/mlradiotherapy/prosgamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 33)." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/prosgamma.png" /></a> <br> 
+<a href="/figs/mlradiotherapy/hngamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 41)." style="float:left; width:50%"><img src="/figs/mlradiotherapy/thumbnails/hngamma.png" /></a>
+<a href="/figs/mlradiotherapy/prosgamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 33)." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/prosgamma.png" /></a> <br> 
 <br>
 ###Impact on Patient Dosimetry
 
@@ -186,8 +186,9 @@ By calculating the planned dose, and predicted dose to actual CT scans of head a
 This calculation was completed with only 5 patients, however the trends are clear. Particularly for organs at risk at the periphery of treatment plans, there are significant differences. Notably,
 the parotid gland, where the difference between planned and predicted volumes receiving 50% of the dose was, on average, near 10%.
 
-<a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:20px"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
+<a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:10%"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
 <br>
+
 #Conclusions
 
 In this study, it was shown that MLC leaf position errors can be predicted to a high degree of accuracy by
