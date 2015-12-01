@@ -51,7 +51,7 @@ As stated above, the MLC is the final component between the linear accelerator a
 patient. It is used to shape the beam into the complex shapes required. The MLC used in this
 study is known as the Varian Millennium 120 MLC, and is shown here:
 
-<a href="/figs/mlradiotheray/millenniumMLC.PNG" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC"><img src="/figs/mlradiotheray/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
+<a href="/figs/mlradiotherapy/millenniumMLC.PNG" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
 The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). It has been hypothesized 
@@ -74,12 +74,12 @@ Dempsey (2003). Consider two dose
 distributions, a reference and an evaluated distribution. The Gamma at 
 each point is given by 
 
-<a href="/figs/mlradiotheray/gammanalysis.png" data-lightbox="Gamma" data-title="Gamma formula"><img src="/figs/mlradiotheray/gammanalysis.png" /></a>
+<a href="/figs/mlradiotherapy/gammanalysis.png" data-lightbox="Gamma" data-title="Gamma formula"><img src="/figs/mlradiotherapy/gammanalysis.png" /></a>
 
 <br>The delta terms are the DTA and dose difference criteria. The other 
 terms: 
 
-<a href="/figs/mlradiotheray/gammanalysisterms.png" data-lightbox="Gamma" data-title="Gamma formula terms"><img src="/figs/mlradiotheray/gammanalysisterms.png" /></a>
+<a href="/figs/mlradiotherapy/gammanalysisterms.png" data-lightbox="Gamma" data-title="Gamma formula terms"><img src="/figs/mlradiotherapy/gammanalysisterms.png" /></a>
 
 Are the distance and dose difference between the reference and evaluated 
 points. D<sub>r</sub>(r<sub>r</sub>) and D<sub>e</sub>(r<sub>e</sub>) 
