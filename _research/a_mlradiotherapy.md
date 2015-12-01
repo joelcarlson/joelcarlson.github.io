@@ -140,6 +140,23 @@ The training process is shown below:
 <a href="/figs/mlradiotherapy/trainingflow.png" data-lightbox="features" data-title="Training, validation, and testing"><img src="/figs/mlradiotherapy/trainingflow.png" /></a>
 
 
+#Results
 
+###Predictive Features
 
+It was found that several of the features extracted were closely related to errors. Leaf velocity 
+is known to be related to errors, as previously published. However, several other features also
+offered significant predictive ability that had not previously been discovered. Notably,
+whether the leaf was moving towards or away from the center of the MLC had a statistically significant
+effect on the error magnitude. 
 
+<a href="/figs/mlradiotherapy/predictivefeatures.png" data-lightbox="features" data-title="A: Relationship between velocity and error magnitude. B: Effect of leaf movement direction."><img src="/figs/mlradiotherapy/trainingflow.png" /></a>
+
+###Predictive Accuracy
+
+The mean absolute error magnitude between planned and delivered MLC positions was greater than 1 mm for moving MLC leaves. 
+Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
+a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
+
+<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves."><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves."><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a>
