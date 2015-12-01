@@ -74,12 +74,12 @@ Dempsey (2003). Consider two dose
 distributions, a reference and an evaluated distribution. The Gamma at 
 each point is given by 
 
-<a href="/figs/Thesis/gammanalysis.png" data-lightbox="Gamma" data-title="Gamma"><img src="/figs/Thesis/gammanalysis.png" /></a>
+<a href="/figs/mlradiotheray/gammanalysis.png" data-lightbox="Gamma" data-title="Gamma formula"><img src="/figs/mlradiotheray/gammanalysis.png" /></a>
 
 <br>The delta terms are the DTA and dose difference criteria. The other 
 terms: 
 
-![Gamma formula terms](/figs/Thesis/gammanalysisterms.png) 
+<a href="/figs/mlradiotheray/gammanalysisterms.png" data-lightbox="Gamma" data-title="Gamma formula terms"><img src="/figs/mlradiotheray/gammanalysisterms.png" /></a>
 
 Are the distance and dose difference between the reference and evaluated 
 points. D<sub>r</sub>(r<sub>r</sub>) and D<sub>e</sub>(r<sub>e</sub>) 
