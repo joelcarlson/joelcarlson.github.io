@@ -51,7 +51,7 @@ As stated above, the MLC is the final component between the linear accelerator a
 patient. It is used to shape the beam into the complex shapes required. The MLC used in this
 study is known as the Varian Millennium 120 MLC, as shown here:
 
-<a href="http://i.imgur.com/onD7Z1R.jpg" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC" style="float:right; margin:10%"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
+<a href="http://i.imgur.com/onD7Z1R.jpg" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC" style="float:right; margin:3%"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
 The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). During delivery of a plan, 
@@ -158,9 +158,9 @@ The mean absolute error magnitude between planned and delivered MLC positions wa
 Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
 
-<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left; width:50%"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
+<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left; width:33%"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
 
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> 
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right; width:66%"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> 
 
 
 Clearly the predicted positions are closer to the delivered positions than are the planned positions. This is the ideal outcome. 
@@ -181,7 +181,7 @@ dose calculation in the treatment planning system.
 
 ###Impact on Patient Dosimetry
 
-<a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:10%"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
+<a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:3%"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
 
 Clearly the predicted positions offer better calculation accuracy than do planned positions. But, does this increase in accuracy impact dose to the patient? That is, is the treatment planned being provided with
 inaccurate calculation of how much dose is being delivered to critical organs? 
