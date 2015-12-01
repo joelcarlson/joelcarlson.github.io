@@ -150,7 +150,7 @@ offered significant predictive ability that had not previously been discovered. 
 whether the leaf was moving towards or away from the center of the MLC had a statistically significant
 effect on the error magnitude. 
 
-<a href="/figs/mlradiotherapy/predictivefeatures.png" data-lightbox="features" data-title="A: Relationship between velocity and error magnitude. B: Effect of leaf movement direction."><img src="/figs/mlradiotherapy/trainingflow.png" /></a>
+<a href="/figs/mlradiotherapy/predictivefeatures.png" data-lightbox="acc" data-title="A: Relationship between velocity and error magnitude. B: Effect of leaf movement direction."><img src="/figs/mlradiotherapy/predictivefeatures.png" /></a>
 
 ###Predictive Accuracy
 
@@ -159,4 +159,20 @@ Between *predicted* and delivered positions, the difference was significantly lo
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
 
 <a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a>
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
+
+Clearly the predicted positions are closer to the delivered positions than are the planned positions. This is the ideal outcome. 
+
+###Impact on Gamma Passing Rates
+
+The important question is whether or not these errors can be shown to impact dosimetry. We can explore this by comparing the delivered dose distribution to the distributions calculated by
+the treatment planning system for both the planned and predicted positions. If correcting for the errors increases the accuracy of the calculated dose distribution,
+we would expect the gamma passing rate for the predicted dose distribution to be higher than that of the planned distribution. 
+
+This is precisely what we see, for all gamma criteria, the predicted positions have a higher passing rate than do the planned positions. Put in other words, the
+predicted positions are a better representation of reality than are the planned positions. Using the predicted positions increases the accuracy of
+dose calculation in the treatment planning system.
+
+
+<a href="/figs/mlradiotherapy/hngamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 41)." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/hngamma.png" /></a>
+<a href="/figs/mlradiotherapy/prosgamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 33)." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/prosgamma.png" /></a> <br> 
