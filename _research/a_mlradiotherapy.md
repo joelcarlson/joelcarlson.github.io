@@ -157,10 +157,10 @@ effect on the error magnitude.
 The mean absolute error magnitude between planned and delivered MLC positions was greater than 1 mm for moving MLC leaves. 
 Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
-
-<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
-
+<br>
+<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="align:left"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="align:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
+<br>
 Clearly the predicted positions are closer to the delivered positions than are the planned positions. This is the ideal outcome. 
 
 ###Impact on Gamma Passing Rates
@@ -176,3 +176,27 @@ dose calculation in the treatment planning system.
 
 <a href="/figs/mlradiotherapy/hngamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 41)." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/hngamma.png" /></a>
 <a href="/figs/mlradiotherapy/prosgamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 33)." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/prosgamma.png" /></a> <br> 
+<br>
+###Impact on Patient Dosimetry
+
+Clearly the predicted positions offer better calculation accuracy than do planned positions. But, does this increase in accuracy impact dose to the patient? That is, is the treatment planned being provided with
+inaccurate calculation of how much dose is being delivered to critical organs? 
+
+By calculating the planned dose, and predicted dose to actual CT scans of head and neck cancer patients, we find that this is the case. Although the differences are not large, many are statistically significant.
+This calculation was completed with only 5 patients, however the trends are clear. Particularly for organs at risk at the periphery of treatment plans, there are significant differences. Notably,
+the parotid gland, where the difference between planned and predicted volumes receiving 50% of the dose was, on average, near 10%.
+
+<a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:20px"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
+<br>
+#Conclusions
+
+In this study, it was shown that MLC leaf position errors can be predicted to a high degree of accuracy by
+ utilizing statistical learning techniques. All models took only a single plan as an input, the models are simple
+ to implement, and take approximately one second to train. By utilizing the predicted positions to recalculate
+ dose distributions it was shown that gamma passing rates can be increased, and that errors in MLC positions
+ that impact dose volumetric parameters can be reduced. The methodology developed in this study was shown
+ to be generalizable to other institutions by assessing multi-institutional data. 
+ 
+ By incorporating and correcting for the predicted errors in MLC positions,
+ optimization routines for encoding MLC leaf positions may be improved, and would allow for more realistic calculation
+ of the dose distributions as truly delivered to the patient.
