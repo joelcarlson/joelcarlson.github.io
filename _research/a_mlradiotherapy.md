@@ -158,10 +158,9 @@ The mean absolute error magnitude between planned and delivered MLC positions wa
 Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
 
-<br>
 <a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left; width:50%"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> <br>
-<br>
+
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a> 
 
 
 Clearly the predicted positions are closer to the delivered positions than are the planned positions. This is the ideal outcome. 
@@ -179,12 +178,10 @@ dose calculation in the treatment planning system.
 
 <a href="/figs/mlradiotherapy/hngamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 41)." style="float:left; width:50%"><img src="/figs/mlradiotherapy/thumbnails/hngamma.png" /></a>
 <a href="/figs/mlradiotherapy/prosgamma.png" data-lightbox="gam" data-title="Increase in gamma passing rates due to error prediction for H&N plans (N = 33)." style="float:right; width:50%"><img src="/figs/mlradiotherapy/thumbnails/prosgamma.png" /></a> <br> 
-<br>
 
 ###Impact on Patient Dosimetry
 
 <a href="/figs/mlradiotherapy/dvparams.png" data-lightbox="dvs" data-title="Average percent differences in dose volumetric parameters for planned vs delivered positions, and predicted vs delivered positions." style="float:right; margin:10%"><img src="/figs/mlradiotherapy/thumbnails/dvparams.png" /></a>
-<br>
 
 Clearly the predicted positions offer better calculation accuracy than do planned positions. But, does this increase in accuracy impact dose to the patient? That is, is the treatment planned being provided with
 inaccurate calculation of how much dose is being delivered to critical organs? 
