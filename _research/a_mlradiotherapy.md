@@ -158,5 +158,5 @@ The mean absolute error magnitude between planned and delivered MLC positions wa
 Between *predicted* and delivered positions, the difference was significantly lower, dropping to around 0.25 mm. This is shown below, along with 
 a visualization of planned, delivered, and predicted leaf positions (click for larger versions):
 
-<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves."><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
-<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves."><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a>
+<a href="/figs/mlradiotherapy/errors.png" data-lightbox="acc" data-title="Mean absolute errors for moving and resting MLC leaves." style="float:left"><img src="/figs/mlradiotherapy/thumbnails/errors.png" /></a>
+<a href="/figs/mlradiotherapy/accuracy.png" data-lightbox="acc" data-title="Differences between planned, delivered, and predicted MLC positions." style="float:right"><img src="/figs/mlradiotherapy/thumbnails/accuracy.png" /></a>
