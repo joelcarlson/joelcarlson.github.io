@@ -55,7 +55,7 @@ study is known as the Varian Millennium 120 MLC, as shown here:
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
 The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). During delivery of a plan, 
-the MLC reports it's real time position in the form of "motor counts", which can be converted to millimeters using a manufacturer
+the MLC reports it's real time position in the form of "motor counts", which can be converted to millimetres using a manufacturer
 specified and medical physicist verified constant of proportionality.
 
 It has been hypothesized that the MLC is the main contributor of errors which cause plans to fail the verification comparison.
@@ -105,13 +105,40 @@ All plans in this study were volumetric modulated arc therapy (VMAT) plans. Duri
 the head of the linac rotates around the patient, constantly delivering radiation. Internally, the 
 plan consist of a number of "control points", or angles, at which the positions for each leaf of the MLC are defined. 
 Since there are 120 MLC leaves, and a conventional VMAT plan has 356 control points, we have 
-42,720 leaf positions to work with. We also know the time between control points, as the head of the linac
+42,720 leaf positions per plan to work with. We also know the time between control points, as the head of the linac
 rotates at a constant speed. Finally, we know the angular separation of the control points is 2.0341 degrees.
 
 ###Feature extraction
 
-With the above information, we can extract a number of features which may offer predictive ability. For each leaf we can 
-extract the velocity at each control point of each lea
+With the above information, I extracted a number of features which may offer predictive ability. 
+
+These features were both quantitative, and qualitative. Quantitative features for each leaf included position,
+velocity, and acceleration at each control point, and the previous and subsequent control points. Qualitative features
+included whether the leaf was starting or stopping at a given control point, moving or resting, and whether the leaf was
+moving towards or away from the center of the MLC. These values were also calculated for the leaves directly adjacent to the
+leaf of interest, under the hypothesis that friction from adjacent leaves may contribute to errors.
+
+This process is outlined in this flowchart:
+
+<a href="/figs/mlradiotherapy/featureflow.png" data-lightbox="features" data-title="Feature Extraction"><img src="/figs/mlradiotherapy/featureflow.png" /></a>
+
+###Training Models
+
+In machine learning, it is good practice to create training, validation, and testing sets of data. The training
+set is like a sandbox, where you test many tools. The validation set is used to choose the best tool. Finally, 
+the test set is used only after you have chosen the best tool on the validation set. It is on this set which you report
+the accuracy of your model. In this way, you can be assured that your model is generalizable, and the statistics
+that you report represent "out-of-box" accuracy. 
+
+Since this is a regression task (the errors between planned and delivered positions is a continuous value), the
+mean absolute error (MAE), and root mean squared error (RMSE) were used to assess model fit. RMSE is used here in place
+of standard deviation, as the distribution of errors does not follow a normal distribution (the equations are identical, 
+the difference is in interpretation).
+
+The training process is shown below:
+
+<a href="/figs/mlradiotherapy/trainingflow.png" data-lightbox="features" data-title="Training, validation, and testing"><img src="/figs/mlradiotherapy/trainingflow.png" /></a>
+
 
 
 
