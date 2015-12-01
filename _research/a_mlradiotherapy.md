@@ -27,7 +27,7 @@ In this project, I used decision-tree regression techniques to predict MLC error
 
 Click [here](http://joelcarlson.me/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
 
-##Introduction
+#Introduction
 
 Before a radiotherapy plan is delivered to a patient, the ability of a treatment unit
 to deliver to treatment as intended must be verified. To test this, a treatment planning system is
@@ -40,7 +40,7 @@ for the treatment planning system to calculate the dose distribution as accurate
  in this project I used machine learning techniques to improve the calculation accuracy
  by taking into account the uncertainty in MLC positions.
 
-##Background
+#Background
 
 It is important to understand some of the important components and quantities within the
 treatment verification process.
@@ -49,20 +49,22 @@ treatment verification process.
 
 As stated above, the MLC is the final component between the linear accelerator and the 
 patient. It is used to shape the beam into the complex shapes required. The MLC used in this
-study is known as the Varian Millennium 120 MLC, and is shown here:
+study is known as the Varian Millennium 120 MLC, as shown here:
 
 <a href="/figs/mlradiotherapy/millenniumMLC.PNG" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
-The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). It has been hypothesized 
-that the MLC is the main contributor of errors which cause plans to fail the verification comparison.
+The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). During delivery of a plan, 
+the MLC reports it's real time position in the form of "motor counts", which can be converted to millimeters using a manufacturer
+specified and medical physicist verified constant of proportionality.
 
-Accounting for differences in planned and delivered MLC positions, then, is likely to be important for increasing the accuracy
-of dose calculation. To 
+It has been hypothesized that the MLC is the main contributor of errors which cause plans to fail the verification comparison.
 
-The question remains, however, as to how the comparison between planned and delivered distributions
- should be compared. One method is known as gamma analysis. 
- 
+Accounting for differences in planned and delivered MLC positions is likely to be important for increasing the accuracy
+of dose calculation. The goal, then, is to use any information we can extract from the MLC during delivery to predict
+errors in positions, and then feed these back to the treatment planning system, so that it may calculate the 
+distributions with knowledge of how the MLC behaves in the real world.
+
 ###Gamma Analysis
 
 Gamma analysis is one way of interpreting the results of the comparison between planned 
@@ -90,9 +92,26 @@ reference point, this is repeated for each reference point.
 
 A point is said to pass gamma if the gamma value at that point is less 
 than one. For gamma analysis a plan for which passing rate remains above 
-\\(90\%\\) with strict tolerance, such as \\((2/2)\\) can be considered 
+\\(90\%\\) with strict tolerance, such as \\(2\%/2 mm\\) can be considered 
 dosimetrically robust. 
 
+#Methods
+
+The goal is to predict errors in MLC positions before the plan is delivered for verification.
+Thus, we need to extract features from the MLC which may lead to said errors, and are available
+ before the plan is first delivered. 
+
+All plans in this study were volumetric modulated arc therapy (VMAT) plans. During a VMAT plan,
+the head of the linac rotates around the patient, constantly delivering radiation. Internally, the 
+plan consist of a number of "control points", or angles, at which the positions for each leaf of the MLC are defined. 
+Since there are 120 MLC leaves, and a conventional VMAT plan has 356 control points, we have 
+42,720 leaf positions to work with. We also know the time between control points, as the head of the linac
+rotates at a constant speed. Finally, we know the angular separation of the control points is 2.0341 degrees.
+
+###Feature extraction
+
+With the above information, we can extract a number of features which may offer predictive ability. For each leaf we can 
+extract the velocity at each control point of each lea
 
 
 
