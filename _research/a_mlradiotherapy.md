@@ -51,7 +51,7 @@ As stated above, the MLC is the final component between the linear accelerator a
 patient. It is used to shape the beam into the complex shapes required. The MLC used in this
 study is known as the Varian Millennium 120 MLC, and is shown here:
 
-<a href="/figs/mlradiotheray/millenniumMLC.png" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC"><img src="/figs/mlradiotheray/millenniumMLC.png" alt="Millennium 120 MLC" /></a>
+<a href="/figs/mlradiotheray/millenniumMLC.PNG" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC"><img src="/figs/mlradiotheray/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves. 
 The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). It has been hypothesized 
