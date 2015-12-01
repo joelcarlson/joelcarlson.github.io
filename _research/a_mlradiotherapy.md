@@ -71,29 +71,19 @@ Gamma analysis is one way of interpreting the results of the comparison between 
 and delivered dose distributions. It is widely used within radiotherapy, but this comparison is
 an active area of research. 
 
-This method was put forth in 1998 by Low et al (1998) and further described in Low and 
-Dempsey (2003). Consider two dose 
-distributions, a reference and an evaluated distribution. The Gamma at 
-each point is given by 
+A detailed description of the method is out of the scope of this article, however the interested
+reader is referred to [Low et al (1998)](http://www.ncbi.nlm.nih.gov/pubmed/9608475) and [Low and 
+Dempsey (2003)](http://www.ncbi.nlm.nih.gov/pubmed/14528967).
 
-<a href="/figs/mlradiotherapy/gammanalysis.png" data-lightbox="Gamma" data-title="Gamma formula"><img src="/figs/mlradiotherapy/gammanalysis.png" /></a>
+Briefly, there are two numbers to look at, a percent and a distance. The larger the
+values, the less strict the criteria. That is, \\(3\%/3 mm\\) is a very loose criteria, and most plans
+will pass, whereas \\(1\%/2 mm\\) is quite strict, and many plans fail. Furthermore, the criteria can
+be calculated with regards to local, or global normalization - with local being the stricter of the two.
 
-<br>The delta terms are the DTA and dose difference criteria. The other 
-terms: 
+A plan will be given a "passing rate" at each criteria, this is a percentage value, and 100% would
+mean the plan passes perfectly. Practically, anything under 90% passing is getting into questionable territory.
 
-<a href="/figs/mlradiotherapy/gammanalysisterms.png" data-lightbox="Gamma" data-title="Gamma formula terms"><img src="/figs/mlradiotherapy/gammanalysisterms.png" /></a>
-
-Are the distance and dose difference between the reference and evaluated 
-points. D<sub>r</sub>(r<sub>r</sub>) and D<sub>e</sub>(r<sub>e</sub>) 
-are the reference and evaluated doses at points r<sub>r</sub> and 
-r<sub>e</sub>. Gamma is found for each point in the evaluated 
-distribution, and the smallest of these values becomes the gamma at that 
-reference point, this is repeated for each reference point. 
-
-A point is said to pass gamma if the gamma value at that point is less 
-than one. For gamma analysis a plan for which passing rate remains above 
-\\(90\%\\) with strict tolerance, such as \\(2\%/2 mm\\) can be considered 
-dosimetrically robust. 
+In all cases, a higher passing rate is desirable.
 
 #Methods
 
