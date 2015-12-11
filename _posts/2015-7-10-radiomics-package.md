@@ -294,63 +294,18 @@ From the texture matrices it is possible to calculate many different features. T
 
 Further information and mathematical definitions of these quantities can be found [here.](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5)
 
-In the `radiomics` package, each feature associated with a given matrix can be calculated by appending the matrix name with the feature name, separated by an underscore. For example:
+In the `radiomics` package, each feature associated with a given matrix can be calculated using the `calc_features()` function. For example:
 
 First order features are calculated on the image, and are prefixed with 'calc':
-{% highlight r %}
-calc_energy(hallbey)
-{% endhighlight %}
-
-{% highlight text %}
-## [1] 42
-{% endhighlight %}
-
-GLCM features are calculated on a glcm, and take 'glcm' as a prefix:
-{% highlight r %}
-hbGLCM <- glcm(hallbey)
-glcm_contrast(hbGLCM)
-{% endhighlight %}
-
-{% highlight text %}
-## [1] 0.5833333
-{% endhighlight %}
-
-GLRLM features are calculated on a glrlm, and take 'glrlm' as a prefix:
-{% highlight r %}
-hbGLRLM <- glrlm(hallbey)
-glrlm_GLN(hbGLRLM)
-{% endhighlight %}
-
-
-{% highlight text %}
-## [1] 2.25
-{% endhighlight %}
-
-
-GLSZM features are calculated on a glszm, and take 'glszm' as a prefix:
-{% highlight r %}
-hbGLSZM <- glszm(hallbey)
-glszm_LILAE(hbGLSZM)
-{% endhighlight %}
-
-
-
-{% highlight text %}
-## [1] 8.006944
-{% endhighlight %}
-
-
-##Calculating features en-masse
-
-It is not practical to type out the exact features you wish to calculate for each image matrix you create. To remedy this situation, there is a `calc_features()` function. This function, given an image matrix and the types of features you wish to calculate (any or all of "first order", "glcm", "glrlm", "glszm", "mglszm") will create the appropriate texture matrices and calculate all the features relevent to the matrix type, outputting all of the features as an observation of a data frame. 
-
-To note: The `calc_features()` function calculates all angles ("0", "45", "90", "135") for the GLCM and GLRLM, and then averages them together. This is to ensure rotation invariance.
-
 {% highlight r %}
 calc_features(hallbey)
 {% endhighlight %}
 
-{% highlight text %}
-##  image_name n_grey glcm_d  glszm_SAE   glszm_LAE   glszm_IV  ...
-## hallbey     32     1       0.0981      17.541      0.999     ...
+GLCM features are calculated if `calc_features()` is passed a GLCM:
+{% highlight r %}
+hbGLCM <- glcm(hallbey)
+calc_features(hbGLCM)
 {% endhighlight %}
+
+And so on for the other texture matrix types.
+
