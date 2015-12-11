@@ -7,11 +7,13 @@ excerpt: Texture analysis matrices and features
 
 The `radiomics` package is a set of tools for computing texture matrices from images, and features derived from the matrices. 
 
-You can install the package using:
+You can install the package either from CRAN, or the development version from github (recommended) using:
 
 
 {% highlight r %}
-devtools::install_github("joelcarlson/radiomics")
+install.packages("radiomics")
+
+devtools::install_github("joelcarlson/radiomics", ref="develop")
 {% endhighlight %}
 
 #Texture Matrices
