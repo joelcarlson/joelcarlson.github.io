@@ -18,9 +18,6 @@ author:
 gems:
   - jekyll-feed
 
-feed:
-  path: atom.xml
-
 # Custom vars
 version:          2.0.0
 
