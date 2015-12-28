@@ -1,7 +1,6 @@
 ---
 title: "Introducing radiomics for R"
 author: "Joel Carlson"
-categories: R
 tags: 'R'
 layout: page
 excerpt: Texture analysis matrices and features
