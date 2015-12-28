@@ -11,4 +11,5 @@ I live in Seoul with my lovely girlfriend Rhia! We used to foster the puppy in t
 
 Hiking, exploring, and programming make me happy!
 
+When I write about topics related to the R programming language, I contribute them to <a href="http://www.r-bloggers.com/">R-bloggers</a>, click <a href="http://www.r-bloggers.com/">here</a> to have a look.
 
