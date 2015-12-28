@@ -8,14 +8,17 @@ layout: null
 		<description>Posts categorized as 'R'</description>
 		<link>{{ site.url }}</link>
 		<atom:link href="{{ site.url }}/feed-R.xml" rel="self" type="application/rss+xml" />
-		{% for post in site.categories.R limit:10 %}
+		{% for post in site.tags.R limit:10 %}
+                    
 			<item>
 				<title>{{ post.title | xml_escape }}</title>
 					<description>{{ post.content | xml_escape }}</description>
+                                        <description>{{ post.categories }}</description>
 				<pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
 				<link>{{ site.url }}{{ post.url }}</link>
 				<guid isPermaLink="true">{{ site.url }}{{ post.url }}</guid>
 			</item>
+                  
 		{% endfor %}
 	</channel>
 </rss>
