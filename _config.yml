@@ -1,6 +1,6 @@
 # Dependencies
 markdown:         redcarpet
-pygments:         true
+highlighter:      pygments
 
 # Permalinks
 permalink:        pretty
@@ -9,13 +9,12 @@ permalink:        pretty
 title:            Joel Carlson
 tagline:          'MSc student, Seoul National University'
 description:      'A place for thoughts and projects'
-url:              http://joelcarlson.github.io
+url:              http://joelcarlson.me
 
 author:
   name:           'Joel Carlson'
   url:            http://joelcarlson.github.io
 
-paginate:         5
 
 # Custom vars
 version:          2.0.0
