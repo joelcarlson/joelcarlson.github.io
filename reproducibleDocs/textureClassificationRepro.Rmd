@@ -1,10 +1,8 @@
 ---
-title: "How Good is Texture Analysis at Classification?"
+title: "How good is texture analysis at classification?"
 author: "Joel Carlson"
-date: "January 7, 2016"
-tags: R
-layout: page
-excerpt: Let's use the radiomics package to tell a cushion from a couch!
+date: "Wednesday, January 06, 2016"
+output: html_document
 ---
 
 Texture analysis is one method of understanding and classifying images. The goal is to quantify relationships between the pixels of a given image. This can be achieved using so called "texture matrices" (described in detail [here](http://joelcarlson.me/2015/07/10/radiomics-package/)). 
@@ -13,16 +11,15 @@ The [`radiomics`](https://github.com/joelcarlson/radiomics) package for R provid
 
 In this post, I will test the efficacy of predictions made using textures features of a sample of images from the [Kylberg Texture Dataset V.1.0](http://www.cb.uu.se/~gustaf/texture/). The data we will classify contains 40 images from each of the "Canvas", "Cushion", "Linseeds", "Sand", "Seat", and "Stone" categories. A representative sample is shown below:
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/KylbergSample_crop.jpg" width="100%" />
+<img src="./figs/KylbergSample_crop.jpg" width="100%" />
 
 ###Load Appropriate Packages
 
-
-{% highlight r %}
+```{r, message=FALSE}
 library(radiomics); library(ggplot2); library(ggthemes);
 library(stringr); library(dplyr); library(caret);
 library(png); library(gridExtra); library(viridis)
-{% endhighlight %}
+```
 
 ###Calculate Features
 
@@ -30,8 +27,7 @@ Here we calculate the *gray level co-occurrence*, *gray level run-length*, and *
 
 For reference, the file structure is such that each of the different image classes has its own folder, and the filename are structured as "class-a-ID" (e.g. "canvas1-a-p017").
 
-
-{% highlight r %}
+```{r, eval=FALSE}
 dir <- "~/path/to/the/images/"
 lst <- list()
 
@@ -62,16 +58,13 @@ dat <- do.call(rbind, lst)
 #Create category label
 cat_names <- "canvas|cushion|linseeds|sand|seat|stone"
 dat <- dat %>% mutate("Class" = str_match(rownames(dat), pattern = cat_names))
-{% endhighlight %}
-
-
+```
 
 ###A Quick Peek at the Data
 
 We can gain an understanding of the data by looking at the first two principle components of the data. By splitting the analysis by feature type (i.e. first order, glcm, glrlm, and glszm), we can get some intuition as to which feature type will best separate the classes:
 
-
-{% highlight r %}
+```{r, eval=FALSE}
 #Function to extract first two principal components given a feature type
 get_prcomps <- function(data=dat, feature){
   princomps <- princomp(data[,which(str_detect(colnames(data), feature))])
@@ -94,11 +87,8 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
   geom_point(alpha=0.75) + 
   facet_wrap(~Feature, scale="free") +
   theme_pander() + scale_color_viridis(discrete=TRUE)
-{% endhighlight %}
 
-
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" />
-
+```
 
 
 From the plots it is clear that the data is separable; qualitatively moreso by the texture features than by the first order features.
@@ -107,8 +97,7 @@ From the plots it is clear that the data is separable; qualitatively moreso by t
 
 We now turn our attention to building a classification model. We will make some use of the wonderful `caret` package to take care of splitting the data into training (one third) and testing (two thirds), and also to take care of some very basic model tuning. 
 
-
-{% highlight r %}
+```{r, eval=FALSE,message=FALSE}
 set.seed(101)
 #Separate into training and test sets
 inTrain <- createDataPartition(y=dat$Class, p=0.33, list=FALSE)
@@ -122,19 +111,25 @@ rf_mod <- train(Class ~ . , data=training, method="rf",
                                          repeats=20,
                                          number=5))
 
-rf_plot <- ggplot(rf_mod) +theme_pander() 
+
 varImp_plot <- ggplot(varImp(rf_mod), top=15) + 
   theme_pander() + 
   geom_bar(stat = "identity",fill="#3291D4") + 
   coord_flip()
 
+#Assuming a normal dist, CI = qnorm(0.975)*SD/sqrt(N)
+#For 20 repeats, at 16 samples each, N=16*20
+CI=qnorm(0.975)*rf_mod$results$AccuracySD/sqrt(16*20)
 
-#see reproducible doc for confidence interval code
-grid.arrange(rf_plot, varImp_plot, ncol=2)
-{% endhighlight %}
+rf_plot <- ggplot(rf_mod) +
+  theme_pander()  + 
+  scale_x_continuous(breaks=c(seq(1,15,2)) , labels=c(seq(1,15,2))) +
+  geom_errorbar(aes(ymin=rf_mod$results$Accuracy - CI, ymax=rf_mod$results$Accuracy + CI), width=0.1, alpha=0.85, color="#3291D4") 
 
+g <- grid.arrange(rf_plot, varImp_plot, ncol=2)
 
-<img src=https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg />
+```
+
 
 For definitions of the feature suffixes, see [here](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5).
 
@@ -142,28 +137,13 @@ Cross validation accuracy is extremely high, hovering in the high 90s. From the 
 
 Of course, the more important metric is the test set accuracy:
 
-
-
-{% highlight r %}
+```{r, eval=FALSE,message=FALSE}
 rf_preds <- predict(rf_mod, testing)
 
 # summarize results
 results <- confusionMatrix(rf_preds, testing$Class)
 results$table
-{% endhighlight %}
-
-
-
-{% highlight text %}
-##           Reference
-## Prediction canvas cushion linseeds sand seat stone
-##   canvas       26       0        0    0    1     0
-##   cushion       0      26        0    0    0     0
-##   linseeds      0       0       26    0    0     0
-##   sand          0       0        0   26    0     1
-##   seat          0       0        0    0   25     0
-##   stone         0       0        0    0    0    25
-{% endhighlight %}
+```
 
 Only 2 were incorrectly classified, for accruacy of 98.7%! 
 
@@ -171,7 +151,7 @@ Only 2 were incorrectly classified, for accruacy of 98.7%!
 
 Texture analysis features make excellent input into models for classifying images. Furthermore, the `radiomics` package makes it simple to calculate them, and get results quickly!
 
-A reproducible document (provided you download the data, and set the correct path, can be found [here](https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/textureClassificationRepro.Rmd).
+
 
 
 
