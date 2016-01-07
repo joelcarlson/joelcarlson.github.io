@@ -96,7 +96,10 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
   theme_pander() + scale_color_viridis(discrete=TRUE)
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" width="75%" />
+<iframe src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg">
+    <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/KylbergSample_crop.jp" alt="Triangle with three unequal sides" />
+</iframe>
+
 
 From the plots it is clear that the data is separable; qualitatively moreso by the texture features than by the first order features.
 
@@ -131,8 +134,7 @@ grid.arrange(rf_plot, varImp_plot, ncol=2)
 {% endhighlight %}
 
 
-
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg" width="75%" />
+<embed type="image/svg+xml" src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg" />
 
 For definitions of the feature suffixes, see [here](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5).
 
