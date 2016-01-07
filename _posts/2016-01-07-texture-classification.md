@@ -96,9 +96,9 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
   theme_pander() + scale_color_viridis(discrete=TRUE)
 {% endhighlight %}
 
-<iframe src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg">
-    <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/KylbergSample_crop.jp" alt="Triangle with three unequal sides" />
-</iframe>
+<img src="http://potherca.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg">
+<img src="http://joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" />
+
 
 
 From the plots it is clear that the data is separable; qualitatively moreso by the texture features than by the first order features.
