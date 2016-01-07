@@ -43,4 +43,7 @@ https://gist.github.com/fnichol/867550
 If you want to include highcharts!
 <script src="http://code.highcharts.com/highcharts.js"></script>
 
+Wanting to use SVG graphics? paste the raw.githubusercontent.whatever link here: https://rawgit.com/
+and use their link inside and <img src="" /> tag
+ (see here: http://stackoverflow.com/questions/13808020/include-an-svg-hosted-on-github-in-markdown)
 <div id="container" style="height: 400px"></div>
