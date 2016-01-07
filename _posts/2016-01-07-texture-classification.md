@@ -13,7 +13,7 @@ The [`radiomics`](https://github.com/joelcarlson/radiomics) package for R provid
 
 In this post, I will test the efficacy of predictions made using textures features of a sample of images from the [Kylberg Texture Dataset V.1.0](http://www.cb.uu.se/~gustaf/texture/). The data we will classify contains 40 images from each of the "Canvas", "Cushion", "Linseeds", "Sand", "Seat", and "Stone" categories. A representative sample is shown below:
 
-<img src="./figs/KylbergSample_crop.jpg" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/KylbergSample_crop.jpg" width="100%" />
 
 ###Load Appropriate Packages
 
@@ -96,7 +96,7 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
   theme_pander() + scale_color_viridis(discrete=TRUE)
 {% endhighlight %}
 
-<img src="./figs/pca_plot.svg" width="75%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" width="75%" />
 
 From the plots it is clear that the data is separable; qualitatively moreso by the texture features than by the first order features.
 
@@ -132,7 +132,7 @@ grid.arrange(rf_plot, varImp_plot, ncol=2)
 
 
 
-<img src="./figs/rf_plot.svg" width="75%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg" width="75%" />
 
 For definitions of the feature suffixes, see [here](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5).
 
