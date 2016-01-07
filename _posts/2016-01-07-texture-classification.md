@@ -96,8 +96,8 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
   theme_pander() + scale_color_viridis(discrete=TRUE)
 {% endhighlight %}
 
-<img src="http://potherca.github.io/StackOverflow/question.13808020.include-an-svg-hosted-on-github-in-markdown/controllers_brief.svg">
-<img src="http://joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" />
+
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/pca_plot.svg" />
 
 
 
@@ -134,7 +134,7 @@ grid.arrange(rf_plot, varImp_plot, ncol=2)
 {% endhighlight %}
 
 
-<embed type="image/svg+xml" src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg" />
+<img src=https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg />
 
 For definitions of the feature suffixes, see [here](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5).
 
