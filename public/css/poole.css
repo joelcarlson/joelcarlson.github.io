@@ -427,3 +427,20 @@ a.pagination-item:hover {
    transform: scale(2);
    opacity:1;
 }
+
+/* Stuff for median cut tables and images */
+
+#DivContainer
+{
+    width:100%;
+    position:absolute;
+    height:100%;
+}
+
+#DivTableImg1
+{
+
+height:26%;
+width:100%;
+
+}

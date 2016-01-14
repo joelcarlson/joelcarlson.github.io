@@ -329,12 +329,11 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
 ####Iteration 3
 
-
-<div>
-<a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png"  style="float:right; margin:1%" width="40%"/></a>
-
-<table style="float:left; margin:1%; width:52%"/>
- <thead>
+<div id="DivContainer">
+    <div id="DivTableImg1">
+       <a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png" style="float:right; width:40%; height:100%"/></a>
+      <table style="width:50%">
+  <thead>
   <tr>
    <th style="text-align:left;">   </th>
    <th style="text-align:left;"> Red </th>
@@ -369,15 +368,14 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
-</div>
-
-
+    
+    </div>
+    
 ####Iteration 4
-
-<div>
-<a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png"  style="float:right; margin:1%" width="40%"/></a>
-
-<table style="float:left; margin:1%; width:52%"/>
+    
+    <div id="DivTableImg1">
+      <a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png" style="float:right; width:40%; height:100%"/></a>
+            <table style="width:50%">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -419,16 +417,14 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
-</div>
-
-
+    </div>
+    
 ####Iteration 5
-
-<div>
-<a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"  style="float:right; margin:1%" width="40%"/></a>
-
-<table style="float:left; margin:1%; width:52%"/>
- <thead>
+   
+   <div id="DivTableImg1">
+      <a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"  style="float:right; width:40%; height:100%"/></a>
+      <table style="width:50%">
+  <thead>
   <tr>
    <th style="text-align:left;">   </th>
    <th style="text-align:left;"> Red </th>
@@ -475,6 +471,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
+    
+    </div>
+    
 </div>
 
 
