@@ -55,11 +55,12 @@ ggplot(data=component_distribution, aes(x=value, fill=Color)) +
      strip.text.x = element_blank())
 {% endhighlight %}
 
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/color_distribution_pct.svg" />
+
 
 We note several things:
   
   1. The distributions of each color each have a unique shape
+  
   2. Certain color values are more present in the image than other colors
   
 It will be our task to extract those colors which are most highly represented in the image. This is where the median cut algorithm comes in.
