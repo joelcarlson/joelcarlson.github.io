@@ -430,14 +430,14 @@ a.pagination-item:hover {
 
 /* Stuff for median cut tables and images */
 
-#DivContainer
+.container-DivContainer
 {
     width:100%;
     position:absolute;
     height:100%;
 }
 
-#DivTableImg1
+.DivTableImg1
 {
 
 height:26%;
