@@ -57,7 +57,7 @@ ggplot(data=component_distribution, aes(x=value, fill=Color)) +
      strip.text.x = element_blank())
 {% endhighlight %}
 
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/color_distribution_pct.svg" width="100%" />
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/color_distribution_pct.svg" />
 
 We note several things:
   
@@ -122,7 +122,7 @@ color_plot <- function(img_list, n_points, main=""){
 color_plot(img_list, 2500, "Original")
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot1.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot1.png" style="float:right; margin:3%" />
 
 In the image we can get an idea of the most common colors present in the image. The blue in the upper are from the plate, the orange in the bottom from the carrots, etc.
 
@@ -147,10 +147,24 @@ range_table(list("Original"=img_list))
 {% endhighlight %}
 
 
-
-|         |Red     |Green   |Blue    |
-|:--------|:-------|:-------|:-------|
-|Original |0 - 255 |0 - 255 |0 - 255 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Original </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+</tbody>
+</table>
 
 ###Step 1B - Median of the Component with the Largest Range
 
@@ -204,7 +218,7 @@ color_plot(img_list[["Cube 1"]], 1250, "Cube 1")
 color_plot(img_list[["Cube 2"]] ,1250, "Cube 2")
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot2.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot2.png" />
 
 ###Step 1D and Step 1E - Calculate Range of Each New Cube
 
@@ -216,11 +230,30 @@ range_table(img_list)
 {% endhighlight %}
 
 
-
-|       |Red       |Green   |Blue    |
-|:------|:---------|:-------|:-------|
-|Cube 1 |118 - 255 |0 - 255 |0 - 255 |
-|Cube 2 |0 - 117   |0 - 243 |0 - 255 |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cube 1 </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2 </td>
+   <td style="text-align:left;"> 0 - 117 </td>
+   <td style="text-align:left;"> 0 - 243 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+</tbody>
+</table>
 
 The maximum range out of any of the components is still 255, and both cubes have at least one axis that covers the full range. Again, we arbitrarily choose, randomly selecting Cube 2.
 
@@ -251,7 +284,7 @@ img_list <- c(list("Cube 1" = img_list[["Cube 1"]]),
 {% endhighlight %}
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot3.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot3.png"  />
 
 
 {% highlight r %}
@@ -259,12 +292,36 @@ range_table(img_list)
 {% endhighlight %}
 
 
-
-|        |Red       |Green    |Blue      |
-|:-------|:---------|:--------|:---------|
-|Cube 1  |118 - 255 |0 - 255  |0 - 255   |
-|Cube 2a |15 - 117  |53 - 243 |132 - 255 |
-|Cube 2b |0 - 117   |0 - 217  |0 - 131   |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cube 1 </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2a </td>
+   <td style="text-align:left;"> 15 - 117 </td>
+   <td style="text-align:left;"> 53 - 243 </td>
+   <td style="text-align:left;"> 132 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2b </td>
+   <td style="text-align:left;"> 0 - 117 </td>
+   <td style="text-align:left;"> 0 - 217 </td>
+   <td style="text-align:left;"> 0 - 131 </td>
+  </tr>
+</tbody>
+</table>
 
 We are left with three cubes now, still not the desired 6, so we need to repeat the algorithm 3 more times. I will spare you the code (although you can see it in the reproducible document), and present the plots. The next cut will be along the Green axis of Cube 1, which has a maximum range of 255.
 
@@ -273,51 +330,151 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 3
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png"  />
 
 
 
-
-|        |Red       |Green     |Blue      |
-|:-------|:---------|:---------|:---------|
-|Cube 1a |118 - 255 |186 - 255 |0 - 255   |
-|Cube 1b |118 - 255 |0 - 185   |0 - 255   |
-|Cube 2a |15 - 117  |53 - 243  |132 - 255 |
-|Cube 2b |0 - 117   |0 - 217   |0 - 131   |
-
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cube 1a </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 186 - 255 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1b </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 0 - 185 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2a </td>
+   <td style="text-align:left;"> 15 - 117 </td>
+   <td style="text-align:left;"> 53 - 243 </td>
+   <td style="text-align:left;"> 132 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2b </td>
+   <td style="text-align:left;"> 0 - 117 </td>
+   <td style="text-align:left;"> 0 - 217 </td>
+   <td style="text-align:left;"> 0 - 131 </td>
+  </tr>
+</tbody>
+</table>
 
 
 ####Iteration 4
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" />
 
 
-|        |Red       |Green     |Blue      |
-|:-------|:---------|:---------|:---------|
-|Cube 1b |118 - 255 |0 - 185   |0 - 255   |
-|Cube 1c |118 - 255 |186 - 255 |212 - 255 |
-|Cube 1d |118 - 255 |186 - 255 |0 - 211   |
-|Cube 2a |15 - 117  |53 - 243  |132 - 255 |
-|Cube 2b |0 - 117   |0 - 217   |0 - 131   |
-
-
-
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cube 1b </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 0 - 185 </td>
+   <td style="text-align:left;"> 0 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1c </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 186 - 255 </td>
+   <td style="text-align:left;"> 212 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1d </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 186 - 255 </td>
+   <td style="text-align:left;"> 0 - 211 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2a </td>
+   <td style="text-align:left;"> 15 - 117 </td>
+   <td style="text-align:left;"> 53 - 243 </td>
+   <td style="text-align:left;"> 132 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2b </td>
+   <td style="text-align:left;"> 0 - 117 </td>
+   <td style="text-align:left;"> 0 - 217 </td>
+   <td style="text-align:left;"> 0 - 131 </td>
+  </tr>
+</tbody>
+</table>
 
 ####Iteration 5
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" width="100%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" />
 
 
-|        |Red       |Green     |Blue      |
-|:-------|:---------|:---------|:---------|
-|Cube 1c |118 - 255 |186 - 255 |212 - 255 |
-|Cube 1d |118 - 255 |186 - 255 |0 - 211   |
-|Cube 1e |118 - 255 |69 - 185  |96 - 255  |
-|Cube 1f |118 - 255 |0 - 185   |0 - 95    |
-|Cube 2a |15 - 117  |53 - 243  |132 - 255 |
-|Cube 2b |0 - 117   |0 - 217   |0 - 131   |
+<table>
+ <thead>
+  <tr>
+   <th style="text-align:left;">   </th>
+   <th style="text-align:left;"> Red </th>
+   <th style="text-align:left;"> Green </th>
+   <th style="text-align:left;"> Blue </th>
+  </tr>
+ </thead>
+<tbody>
+  <tr>
+   <td style="text-align:left;"> Cube 1c </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 186 - 255 </td>
+   <td style="text-align:left;"> 212 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1d </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 186 - 255 </td>
+   <td style="text-align:left;"> 0 - 211 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1e </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 69 - 185 </td>
+   <td style="text-align:left;"> 96 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 1f </td>
+   <td style="text-align:left;"> 118 - 255 </td>
+   <td style="text-align:left;"> 0 - 185 </td>
+   <td style="text-align:left;"> 0 - 95 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2a </td>
+   <td style="text-align:left;"> 15 - 117 </td>
+   <td style="text-align:left;"> 53 - 243 </td>
+   <td style="text-align:left;"> 132 - 255 </td>
+  </tr>
+  <tr>
+   <td style="text-align:left;"> Cube 2b </td>
+   <td style="text-align:left;"> 0 - 117 </td>
+   <td style="text-align:left;"> 0 - 217 </td>
+   <td style="text-align:left;"> 0 - 131 </td>
+  </tr>
+</tbody>
+</table>
 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
 
@@ -349,7 +506,7 @@ choice=Mode
 show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice(x$Green), choice(x$Blue)) ))), labels=TRUE)
 {% endhighlight %}
 
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette.svg" width="100%" />
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette.svg" style="float:right; margin:3%" />
 
 ##Conclusion
 
@@ -362,6 +519,6 @@ set.seed(1)
 show_colors(image_palette(img, 9, Mode))
 {% endhighlight %}
 
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg" width="100%" />
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"   />
 
 Happy extracting!
