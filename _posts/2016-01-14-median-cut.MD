@@ -327,10 +327,10 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
 ####Iteration 3
 
-
+<div>
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png" style="float:right; margin:3%" widht="44%/>
 
-<table style="float:left; margin:3%" width="44%/>
+<table style="float:left; margin:3%" width="44%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -366,14 +366,14 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
-
+</div>
 
 ####Iteration 4
 
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" style="float:right; margin:3%" widht="44%/>
 
-<table style="float:left; margin:3%" width="44%/>
+<table style="float:left; margin:3%" width="44%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -421,7 +421,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" style="float:right; margin:3%" widht="44%/>
 
-<table style="float:left; margin:3%" width="44%/>
+<table style="float:left; margin:3%" width="44%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
