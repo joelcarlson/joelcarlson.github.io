@@ -4,7 +4,7 @@ author: "Joel Carlson"
 date: "January 14, 2016"
 excerpt: A look at how the median cut algorithm can extract the dominant colors from an image
 tags: R
-layout: page
+layout: pagewithjs
 ---
 
 The median cut algorithm is a method for discretizing a continuous color space. That is, taking an image that consists of many colors, and reducing it into fewer colors. Broadly, the idea is to take the red, green, and blue components of an image, visualize each of them as an axis in 3-dimensional space, and then partitioniong that space into chunks, each consisting of as few distinct colors as possible. Here, we will explore and implement the median cut algorithm in R. 
@@ -25,7 +25,7 @@ img <- jpeg::readJPEG("celery.jpg")
 grid::grid.raster(img)
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg width="50%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="50%" />
 
 It's going to be convenient to work with the image as a list of three 2D matrices, rather than a single 3D matrix, so we will split it and name each matrix appropriately:
 
@@ -122,7 +122,7 @@ color_plot <- function(img_list, n_points, main=""){
 color_plot(img_list, 2500, "Original")
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot1.png" style="float:right; margin:3%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot1.png"/>
 
 In the image we can get an idea of the most common colors present in the image. The blue in the upper are from the plate, the orange in the bottom from the carrots, etc.
 
@@ -283,9 +283,7 @@ img_list <- c(list("Cube 1" = img_list[["Cube 1"]]),
              median_cut(img_list[["Cube 2"]], "Blue", c("Cube 2a", "Cube 2b")))
 {% endhighlight %}
 
-
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot3.png"  />
-
+<a href="/figs/MedianCut/3dplot3.png" data-lightbox="fig3"><img src="/figs/MedianCut/3dplot3.png" /></a>
 
 {% highlight r %}
 range_table(img_list)
@@ -330,11 +328,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 3
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png"  />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png" style="float:right; margin:3%" widht="44%/>
 
-
-
-<table>
+<table style="float:left; margin:3%" width="44%/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -375,10 +371,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 4
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" style="float:right; margin:3%" widht="44%/>
 
-
-<table>
+<table style="float:left; margin:3%" width="44%/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -424,10 +419,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 5
 
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" style="float:right; margin:3%" widht="44%/>
 
-
-<table>
+<table style="float:left; margin:3%" width="44%/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
