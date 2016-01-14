@@ -325,15 +325,15 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
 ####Iteration 3
 
-<a href="/figs/MedianCut/3dplot4.png"><img src="/figs/MedianCut/3dplot4.png" style="width:67%"/></a>
+<a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png" style="width:67%"/></a>
 
 ####Iteration 4
 
-<a href="/figs/MedianCut/3dplot5.png"><img src="/figs/MedianCut/3dplot5.png"/></a>
+<a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png"/></a>
 
 ####Iteration 5
 
-<a href="/figs/MedianCut/3dplot6.png"><img src="/figs/MedianCut/3dplot6.png"/></a>
+<a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"/></a>
 
 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
@@ -367,7 +367,7 @@ show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice
 {% endhighlight %}
 
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette_long.svg"  />
-
+https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette_long.svg
 ##Conclusion
 
 The extracted palette represents the dominant colors in the image quite well. We can see the sauce, the plate, the background, celery, and carrot colors are all present in the final palette. To note, I have implemented the median cut algorithm in an R package, [RImagePalette](https://github.com/joelcarlson/RImagePalette). Using the package to produce palettes from images is super easy!
