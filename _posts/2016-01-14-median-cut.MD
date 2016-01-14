@@ -25,7 +25,7 @@ img <- jpeg::readJPEG("celery.jpg")
 grid::grid.raster(img)
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="50%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="40%" align="middle" />
 
 It's going to be convenient to work with the image as a list of three 2D matrices, rather than a single 3D matrix, so we will split it and name each matrix appropriately:
 
@@ -331,9 +331,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
 
 <div>
-<a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs" style="float:right; margin:1%" width="42%"><img src="/figs/MedianCut/3dplot4.png" /></a>
+<a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png"  style="float:right; margin:1%" width="40%"/></a>
 
-<table style="float:left; margin:1%; width:55%"/>
+<table style="float:left; margin:1%; width:52%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -375,9 +375,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 4
 
 <div>
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" style="float:right; margin:1%" width="42%"/>
+<a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png"  style="float:right; margin:1%" width="40%"/></a>
 
-<table style="float:left; margin:1%; width:55%"/>
+<table style="float:left; margin:1%; width:52%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -425,9 +425,9 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 ####Iteration 5
 
 <div>
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" style="float:right; margin:1%" width="42%"/>
+<a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"  style="float:right; margin:1%" width="40%"/></a>
 
-<table style="float:left; margin:1%; width:55%"/>
+<table style="float:left; margin:1%; width:52%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
