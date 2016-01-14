@@ -87,7 +87,7 @@ Let's walk through this for our chosen image.
 ##Walking Through the Median Cut
 
 
-###Step 1:
+##Step 1:
 
 We first create a cube of the RGB components. A sample of 2500 pixels from the image along the R, G, and B axes is visualized using the code below:
 
@@ -126,7 +126,7 @@ color_plot(img_list, 2500, "Original")
 
 In the image we can get an idea of the most common colors present in the image. The blue in the upper are from the plate, the orange in the bottom from the carrots, etc.
 
-###Step 1A - Calculate the Range of Each Component
+##Step 1A - Calculate the Range of Each Component
 
 To choose how to split this cube up, we require the range of each component. Since we will be doing this a number of times, we will write a convenience function:
 
@@ -166,7 +166,7 @@ range_table(list("Original"=img_list))
 </tbody>
 </table>
 
-###Step 1B - Median of the Component with the Largest Range
+##Step 1B - Median of the Component with the Largest Range
 
 In this case, each axis extends from 0 to 255. Since there is no single component with the largest range, me must make a choice. There are a number of different methods for making this choice, however for simplicity we will choose randomly. Let's arbitrarily choose the red axis. 
 
@@ -182,9 +182,9 @@ median(img_list[[cut_color]])*255
 ## [1] 118
 {% endhighlight %}
 
-###Step 1C - Split the Cube Along the Median
+##Step 1C - Split the Cube Along the Median
 
-####Iteration 1
+###Iteration 1
 
 Using the median we calculated in Step 1B, we will extract all of the pixels from the original image above, and below that value:
 
@@ -220,7 +220,7 @@ color_plot(img_list[["Cube 2"]] ,1250, "Cube 2")
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot2.png" />
 
-###Step 1D and Step 1E - Calculate Range of Each New Cube
+##Step 1D and Step 1E - Calculate Range of Each New Cube
 
 We now have two cubes, each with their own distribution of colors, and each with a different dominant color. We will go on in this post to extract 6 colors from the image, so we need to repeat the process. To choose the next cube to cut, we calculate the ranges of pixels in each cube:
 
@@ -257,9 +257,9 @@ range_table(img_list)
 
 The maximum range out of any of the components is still 255, and both cubes have at least one axis that covers the full range. Again, we arbitrarily choose, randomly selecting Cube 2.
 
-###Loop Back
+##Loop Back
 
-####Iteration 2
+###Iteration 2
 
 In Cube 2, we select the component with the largest range to cut across, in this case, the Blue axis:
 
@@ -324,10 +324,10 @@ range_table(img_list)
 We are left with three cubes now, still not the desired 6, so we need to repeat the algorithm 3 more times. I will spare you the code (although you can see it in the reproducible document), and present the plots. The next cut will be along the Green axis of Cube 1, which has a maximum range of 255.
 
 
-###Repeat
+##Repeat
 
 
-####Iteration 3
+###Iteration 3
 
 <div class="DivContainer">
     <div class="DivTableImg1">
@@ -368,14 +368,13 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
+ </div>
     
-    </div>
+###Iteration 4
     
-####Iteration 4
-    
-    <div class="DivTableImg1">
-      <a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png" style="float:right; width:40%; height:100%"/></a>
-            <table style="width:50%">
+ <div class="DivTableImg1">
+   <a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png" style="float:right; width:40%; height:100%"/></a>
+   <table style="width:50%">
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -417,11 +416,11 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
-    </div>
+</div>
     
-####Iteration 5
+###Iteration 5
    
-   <div class="DivTableImg1">
+<div class="DivTableImg1">
       <a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"  style="float:right; width:40%; height:100%"/></a>
       <table style="width:50%">
   <thead>
@@ -472,14 +471,14 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 </tbody>
 </table>
     
-    </div>
+</div>
     
 </div>
 
 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
 
-###Step 2 - Extracting the Colors
+##Step 2 - Extracting the Colors
 
 Finally, we have the desired number of colors, and can exit the loop!
 
