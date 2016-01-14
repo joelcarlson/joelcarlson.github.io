@@ -25,7 +25,7 @@ img <- jpeg::readJPEG("celery.jpg")
 grid::grid.raster(img)
 {% endhighlight %}
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="40%" align="middle" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="40%" />
 
 It's going to be convenient to work with the image as a list of three 2D matrices, rather than a single 3D matrix, so we will split it and name each matrix appropriately:
 
