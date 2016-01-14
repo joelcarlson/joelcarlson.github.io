@@ -55,7 +55,7 @@ ggplot(data=component_distribution, aes(x=value, fill=Color)) +
      strip.text.x = element_blank())
 {% endhighlight %}
 
-
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/color_distribution_pct.svg"   />
 
 We note several things:
   
@@ -65,7 +65,7 @@ We note several things:
 It will be our task to extract those colors which are most highly represented in the image. This is where the median cut algorithm comes in.
 
   
-##The Median Cut Algorithm
+## The Median Cut Algorithm
 
 
 The median cut algorithm can be stated as follows:
@@ -127,7 +127,7 @@ color_plot(img_list, 2500, "Original")
 In the image we can get an idea of the most common colors present in the image. The blue in the upper are from the plate, the orange in the bottom from the carrots, etc.
 
 
-##Step 1A - Calculate the Range of Each Component
+## Step 1A - Calculate the Range of Each Component
 
 
 
@@ -170,7 +170,7 @@ range_table(list("Original"=img_list))
 </table>
 
 
-##Step 1B - Median of the Component with the Largest Range
+## Step 1B - Median of the Component with the Largest Range
 
 
 
@@ -189,10 +189,10 @@ median(img_list[[cut_color]])*255
 {% endhighlight %}
 
 
-##Step 1C - Split the Cube Along the Median
+## Step 1C - Split the Cube Along the Median
 
 
-###Iteration 1
+### Iteration 1
 
 
 Using the median we calculated in Step 1B, we will extract all of the pixels from the original image above, and below that value:
@@ -230,7 +230,7 @@ color_plot(img_list[["Cube 2"]] ,1250, "Cube 2")
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot2.png" />
 
 
-##Step 1D and Step 1E - Calculate Range of Each New Cube
+## Step 1D and Step 1E - Calculate Range of Each New Cube
 
 
 
@@ -270,11 +270,11 @@ range_table(img_list)
 The maximum range out of any of the components is still 255, and both cubes have at least one axis that covers the full range. Again, we arbitrarily choose, randomly selecting Cube 2.
 
 
-##Loop Back
+## Loop Back
 
 
 
-###Iteration 2
+### Iteration 2
 
 
 In Cube 2, we select the component with the largest range to cut across, in this case, the Blue axis:
@@ -341,11 +341,11 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
  
  
-##Repeat
+## Repeat
  
  
 
-###Iteration 3
+### Iteration 3
 
  
 <div class="DivContainer">
@@ -390,7 +390,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
  </div>
    
    
-###Iteration 4
+### Iteration 4
 
      
  <div class="DivTableImg1">
@@ -440,7 +440,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 </div>
     
     
-###Iteration 5
+### Iteration 5
    
    
 <div class="DivTableImg1">
@@ -503,7 +503,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
 
 
-##Step 2 - Extracting the Colors
+## Step 2 - Extracting the Colors
 
 
 Finally, we have the desired number of colors, and can exit the loop!
