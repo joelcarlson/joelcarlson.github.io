@@ -283,7 +283,7 @@ img_list <- c(list("Cube 1" = img_list[["Cube 1"]]),
              median_cut(img_list[["Cube 2"]], "Blue", c("Cube 2a", "Cube 2b")))
 {% endhighlight %}
 
-<a href="/figs/MedianCut/3dplot3.png" data-lightbox="fig3"><img src="/figs/MedianCut/3dplot3.png" /></a>
+<a href="/figs/MedianCut/3dplot3.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot3.png" /></a>
 
 {% highlight r %}
 range_table(img_list)
@@ -323,14 +323,17 @@ range_table(img_list)
 
 We are left with three cubes now, still not the desired 6, so we need to repeat the algorithm 3 more times. I will spare you the code (although you can see it in the reproducible document), and present the plots. The next cut will be along the Green axis of Cube 1, which has a maximum range of 255.
 
+
 ###Repeat
+
 
 ####Iteration 3
 
-<div>
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot4.png" style="float:right; margin:3%" width="44%"/>
 
-<table style="float:left; margin:3%" width="44%"/>
+<div>
+<a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs" style="float:right; margin:1%" width="42%"><img src="/figs/MedianCut/3dplot4.png" /></a>
+
+<table style="float:left; margin:1%; width:55%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -368,12 +371,13 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 </table>
 </div>
 
+
 ####Iteration 4
 
+<div>
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" style="float:right; margin:1%" width="42%"/>
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot5.png" style="float:right; margin:3%" width="44%"/>
-
-<table style="float:left; margin:3%" width="44%"/>
+<table style="float:left; margin:1%; width:55%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -415,13 +419,15 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
+</div>
+
 
 ####Iteration 5
 
+<div>
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" style="float:right; margin:1%" width="42%"/>
 
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot6.png" style="float:right; margin:3%" width="44%"/>
-
-<table style="float:left; margin:3%" width="44%"/>
+<table style="float:left; margin:1%; width:55%"/>
  <thead>
   <tr>
    <th style="text-align:left;">   </th>
@@ -469,6 +475,8 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
   </tr>
 </tbody>
 </table>
+</div>
+
 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
 
