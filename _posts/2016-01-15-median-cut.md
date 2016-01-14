@@ -366,7 +366,7 @@ choice=Mode
 show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice(x$Green), choice(x$Blue)) ))), labels=TRUE)
 {% endhighlight %}
 
-<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette.svg" style="float:right; margin:3%" />
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette.svg"  />
 
 ##Conclusion
 
