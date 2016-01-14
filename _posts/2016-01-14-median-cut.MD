@@ -59,9 +59,8 @@ ggplot(data=component_distribution, aes(x=value, fill=Color)) +
 
 We note several things:
   
-  1. The distributions of each color each have a unique shape
-  
-  2. Certain color values are more present in the image than other colors
+1. The distributions of each color each have a unique shape
+2. Certain color values are more present in the image than other colors
   
 It will be our task to extract those colors which are most highly represented in the image. This is where the median cut algorithm comes in.
 
@@ -73,23 +72,19 @@ The median cut algorithm can be stated as follows:
 
 
 1. Create a "cube" of the colors in the pixels of an image by using each color component (R, G, and B) as an axis (e.g. x,y,z)
-  -  A: Calculate the range of each color component (R, G, and B)
-  -  B: For the component with the largest range, **C**, calculate the median value, **M**
-  -  C: Split the "cube" of colors:
-    + one cube containing the RGB values of all pixels where the **C** component is greater than **M**
-    + one cube containing the RGB values of all pixels where the **C** component is less than **M**
-  -  D: If the number of cubes is equal to our chosen number of desired colors, exit the loop
-  -  E: For each color cube, calculate the range of each component, choose the cube which containts the largest range, and repeat
-    
+A: Calculate the range of each color component (R, G, and B)
+B: For the component with the largest range, **C**, calculate the median value, **M**
+C: Split the "cube" of colors:
+one cube containing the RGB values of all pixels where the **C** component is greater than **M**
+one cube containing the RGB values of all pixels where the **C** component is less than **M**
+D: If the number of cubes is equal to our chosen number of desired colors, exit the loop
+E: For each color cube, calculate the range of each component, choose the cube which containts the largest range, and repeat
 2. For each cube, apply some function (mean, median, mode, etc) to the value of each component, and combine into a new RGB value
 
 Let's walk through this for our chosen image.
 
 
 ##Walking Through the Median Cut
-
-
-
 
 ##Step 1:
 
