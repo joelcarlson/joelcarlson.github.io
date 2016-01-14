@@ -4,7 +4,7 @@ author: "Joel Carlson"
 date: "January 14, 2016"
 excerpt: A look at how the median cut algorithm can extract the dominant colors from an image
 tags: R
-layout: pagewithjs
+layout: page
 ---
 
 The median cut algorithm is a method for discretizing a continuous color space. That is, taking an image that consists of many colors, and reducing it into fewer colors. Broadly, the idea is to take the red, green, and blue components of an image, visualize each of them as an axis in 3-dimensional space, and then partitioniong that space into chunks, each consisting of as few distinct colors as possible. Here, we will explore and implement the median cut algorithm in R. 
@@ -84,9 +84,9 @@ E: For each color cube, calculate the range of each component, choose the cube w
 Let's walk through this for our chosen image.
 
 
-##Walking Through the Median Cut
+## Walking Through the Median Cut
 
-##Step 1:
+## Step 1:
 
 
 We first create a cube of the RGB components. A sample of 2500 pixels from the image along the R, G, and B axes is visualized using the code below:
@@ -299,7 +299,7 @@ img_list <- c(list("Cube 1" = img_list[["Cube 1"]]),
              median_cut(img_list[["Cube 2"]], "Blue", c("Cube 2a", "Cube 2b")))
 {% endhighlight %}
 
-<a href="/figs/MedianCut/3dplot3.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot3.png" /></a>
+<a href="/figs/MedianCut/3dplot3.png" ><img src="/figs/MedianCut/3dplot3.png" /></a>
 
 {% highlight r %}
 range_table(img_list)
@@ -350,7 +350,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
  
 <div class="DivContainer">
     <div class="DivTableImg1">
-       <a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png" style="float:right; width:40%; height:100%"/></a>
+       <a href="/figs/MedianCut/3dplot4.png"><img src="/figs/MedianCut/3dplot4.png" style="float:right; width:40%; height:100%"/></a>
       <table style="width:50%">
   <thead>
   <tr>
@@ -394,7 +394,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
 
      
  <div class="DivTableImg1">
-   <a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png" style="float:right; width:40%; height:100%"/></a>
+   <a href="/figs/MedianCut/3dplot5.png"><img src="/figs/MedianCut/3dplot5.png" style="float:right; width:40%; height:100%"/></a>
    <table style="width:50%">
  <thead>
   <tr>
@@ -444,7 +444,7 @@ We are left with three cubes now, still not the desired 6, so we need to repeat 
    
    
 <div class="DivTableImg1">
-      <a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"  style="float:right; width:40%; height:100%"/></a>
+      <a href="/figs/MedianCut/3dplot6.png" ><img src="/figs/MedianCut/3dplot6.png"  style="float:right; width:40%; height:100%"/></a>
       <table style="width:50%">
   <thead>
   <tr>
@@ -536,7 +536,7 @@ show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette.svg" style="float:right; margin:3%" />
 
 
-##Conclusion
+## Conclusion
 
 
 The extracted palette represents the dominant colors in the image quite well. We can see the sauce, the plate, the background, celery, and carrot colors are all present in the final palette. To note, I have implemented the median cut algorithm in an R package, [RImagePalette](https://github.com/joelcarlson/RImagePalette). Using the package to produce palettes from images is super easy!
