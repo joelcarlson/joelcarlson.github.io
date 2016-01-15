@@ -379,9 +379,9 @@ set.seed(1)
 show_colors(image_palette(img, 9, Mode))
 {% endhighlight %}
 
-<div style="width=100%">
+<div style="width:100%">
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"   />
-<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="40%" />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" style="width:40%;float:left" />
 </div>
 
 Happy extracting!
