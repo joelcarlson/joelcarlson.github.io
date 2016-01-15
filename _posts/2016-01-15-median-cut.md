@@ -367,7 +367,7 @@ show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice
 {% endhighlight %}
 
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette_long.svg"  />
-https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette_long.svg
+
 ##Conclusion
 
 The extracted palette represents the dominant colors in the image quite well. We can see the sauce, the plate, the background, celery, and carrot colors are all present in the final palette. To note, I have implemented the median cut algorithm in an R package, [RImagePalette](https://github.com/joelcarlson/RImagePalette). Using the package to produce palettes from images is super easy!
@@ -379,6 +379,9 @@ set.seed(1)
 show_colors(image_palette(img, 9, Mode))
 {% endhighlight %}
 
+<div style="width=100%">
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"   />
+<img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" width="40%" />
+</div>
 
 Happy extracting!
