@@ -382,7 +382,7 @@ show_colors(image_palette(img, 9, Mode))
 <table>
 <tr>
 <th><img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"/></th>
-<th><img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" /></th>
+<th><img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" style="width:64%"/></th>
 </tr>  
 </table>
 
