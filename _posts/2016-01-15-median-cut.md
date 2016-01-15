@@ -379,10 +379,10 @@ set.seed(1)
 show_colors(image_palette(img, 9, Mode))
 {% endhighlight %}
 
-<table>
+<table style="border:1px solid #fff; background-color: #fff">
 <tr>
-<th><img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"/></th>
-<th><img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" style="width:64%"/></th>
+<th style="border:1px solid #fff"><img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/RImagePalette.svg"/></th>
+<th style="border:1px solid #fff"><img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/celery.jpg" style="width:64%"/></th>
 </tr>  
 </table>
 
