@@ -7,7 +7,7 @@ permalink:        pretty
 
 # Setup
 title:            Joel Carlson
-tagline:          'MSc student, Seoul National University'
+tagline:          'Data Science Fellow at Galvanize'
 description:      'A place for thoughts and projects'
 url:              http://joelcarlson.me
 
@@ -31,6 +31,3 @@ collections:
   reproducible:
     output: true
     permalink: /reproducible/:path/
-
-
-
