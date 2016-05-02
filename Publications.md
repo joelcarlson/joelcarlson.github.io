@@ -4,7 +4,9 @@ title: Publications
 permalink: /publications/
 ---
 
-###Accepted:
+
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/26948678">*"A Machine Learning Approach to the Accurate Prediction of MLC Positional Errors during Radiotherapy"*</a><br>  (Physics in Medicine and Biology, *under revision*)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
+
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25734490">*"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*</a><br>
 Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
 
@@ -16,13 +18,6 @@ Jong Min Park, So-Yeon Park, Sung-Joon Ye, Jin Ho Kim, **Joel Carlson**, and Hon
 
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25383976">*"Modulation indices for volumetric modulated arc therapy"*</a> (Physics in Medicine and Biology)<br>
 Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and Sung-Joon Ye
-
-###Submitted:
-
-*"A machine learning approach to the accurate prediction of MLC positional errors during radiotherapy"*  (Physics in Medicine and Biology, *under revision*)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
-
-*"Sensitivity of gamma-index method to plan deliverability of volumetric modulated arc therapy"*<br>
-Jong In Park, So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
 #Conference Presentations
 
