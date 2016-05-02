@@ -5,7 +5,7 @@ permalink: /publications/
 ---
 
 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/26948678">*"A Machine Learning Approach to the Accurate Prediction of MLC Positional Errors during Radiotherapy"*</a><br>  (Physics in Medicine and Biology, *under revision*)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/26948678">*"A Machine Learning Approach to the Accurate Prediction of MLC Positional Errors during Radiotherapy"*</a> (Physics in Medicine and Biology)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
 
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25734490">*"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*</a><br>
 Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
