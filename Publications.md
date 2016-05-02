@@ -7,16 +7,16 @@ permalink: /publications/
 
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/26948678">*"A Machine Learning Approach to the Accurate Prediction of MLC Positional Errors during Radiotherapy"*</a> (Physics in Medicine and Biology)<br> **Joel Carlson**, Jong Min Park, So-Yeon Park, and Sung-Joon Ye
 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/25734490">*"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*</a><br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/25734490">*"The Effect of MLC Speed and Acceleration on the Plan Deliverability of VMAT"*</a> (British Journal of Radiology)<br>
 Jong Min Park, Hong-Gyun Wu, Jin Ho Kim, **Joel Carlson**, and Kyubo Kim
 
 <a href="http://scitation.aip.org/content/aapm/journal/medphys/41/11/10.1118/1.4897388">*"Texture Analysis on the Fluence Map to Evaluate the Degree of Modulation for Volumetric Modulated Arc Therapy"*</a> (Medical Physics)<br>
 So-Yeon Park, Sung-Joon Ye, **Joel Carlson**, and Jong Min Park
 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/25225915">*"New conformity indices based on the calculation of distances between the target volume and the volume of reference isodose"*</a>(British Journal of Radiology)<br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/25225915">*"New Conformity Indices based on the Calculation of Distances between the Target Volume and the Volume of Reference Isodose"*</a>(British Journal of Radiology)<br>
 Jong Min Park, So-Yeon Park, Sung-Joon Ye, Jin Ho Kim, **Joel Carlson**, and Hong-Gyun Wu
 
-<a href="http://www.ncbi.nlm.nih.gov/pubmed/25383976">*"Modulation indices for volumetric modulated arc therapy"*</a> (Physics in Medicine and Biology)<br>
+<a href="http://www.ncbi.nlm.nih.gov/pubmed/25383976">*"Modulation Indices for Volumetric Modulated Arc Therapy"*</a> (Physics in Medicine and Biology)<br>
 Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and Sung-Joon Ye
 
 #Conference Presentations
