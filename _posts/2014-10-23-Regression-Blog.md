@@ -32,7 +32,7 @@ There is also the question of how the independent variables are related to each 
 One way to capture this potential correlation is to look at the relationship between \\(x\\) and \\(z\\).  In this case again assumed to be linear:
 
 \\[
-z = \delta + \theta x + \nu 
+z = \delta + \theta x + \nu
 \\]
 
 If the covariance of \\(x\\) and \\(z\\) is not equal to \\(0\\) then there is evidence that they are related to each other in some way.
@@ -47,7 +47,7 @@ Rearranging and substituting the covariance equation into the regression model r
 y = a + \beta x + \gamma (\delta + \theta x + \nu) + \mu  
 \\]
 
-Rearranging and collecting like terms gives: 
+Rearranging and collecting like terms gives:
 
 \\[
 y = a + \gamma \delta + (\beta + \gamma \theta)x + \gamma \nu +  \mu
@@ -63,17 +63,17 @@ In this case, GPA affects earnings directly, and also indirectly by increasing t
 
 This leads us to a set of equations describing the causal relationships:
 
- 
+
  1. The DIRECT *causal* effect of \\(x\\) controlled for \\(z\\) is \\(\beta\\)
  2. The INDIRECT effect of \\(x\\) on \\(y\\) is \\(b - \beta = \gamma \theta\\)
  3. The TOTAL *causal* effect, DIRECT (\\(\beta\\)) + INDIRECT (\\(\gamma \theta\\)), of \\(x\\) on \\(y\\) is \\(b\\)
- 
+
 These relationships are represented visually in the following figure:
 
 ![causal](/figs/Regression Blog/causal.png)
 
 ### Confounders
- 
+
  In the above we have made the assumption that GPA and time spent studying are the only things that affect earnings.  This is clearly not realistic. Without context our results are not guaranteed to be legitimate, which is to say, correlation is not causation.  
 
 To illustrate, would anyone ever imagine there being a causal relationship between *avalanches* and the *number of internships at banks*?
@@ -95,7 +95,7 @@ Where the new constant term, or intercept, is \\(a + \gamma \delta\\), the slope
 
 So there is some relationship between the variables, and even if \\(\beta\\) is zero, IQ has an effect on GPA and earnings. If we therefore do not include IQ we may erroneously conclude that better GPA causes higher earnings, because \\(\theta\\) and \\(\gamma\\) are non-zero. When the causal effect runs from \\(z\\) to \\(x\\) in the diagram we call \\(z\\) a confounder. By this definition, innate IQ is a confounder.
 
-##Controlling for Confounders
+## Controlling for Confounders
 
 We want to control for the effect of the confounder to find the true causal effect of our independent variable on the dependent variable. If the confounder is not present in our data we cannot easily control for it.  You don't know what you don't know!
 
@@ -116,5 +116,3 @@ If the true model is linear, and the error term is uncorrelated with \\(x\\), th
 
 \\[\frac{cov(x,y)}{var(x)} = \frac{cov(x, a+ bx + e)}{var(x)} = \frac{cov(x, bx) + cov(x,e)}{var(x)} \\]
 \\[= \frac{b*var(x) + cov(x,e)}{var(x)} = b + \frac{cov(x,e)}{var(x)}\\]
-
-

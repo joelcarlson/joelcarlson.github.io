@@ -6,7 +6,7 @@ layout: pagewithjs
 excerpt: A look at how the median cut algorithm can extract the dominant colors from an image
 ---
 
-The median cut algorithm is a method for discretizing a continuous color space. That is, taking an image that consists of many colors, and reducing it into fewer colors. Broadly, the idea is to take the red, green, and blue components of an image, visualize each of them as an axis in 3-dimensional space, and then partitioniong that space into chunks, each consisting of as few distinct colors as possible. Here, we will explore and implement the median cut algorithm in R. 
+The median cut algorithm is a method for discretizing a continuous color space. That is, taking an image that consists of many colors, and reducing it into fewer colors. Broadly, the idea is to take the red, green, and blue components of an image, visualize each of them as an axis in 3-dimensional space, and then partitioniong that space into chunks, each consisting of as few distinct colors as possible. Here, we will explore and implement the median cut algorithm in R.
 
 The implementation here, with some modification, is available in the [RImagePalette](https://github.com/joelcarlson/RImagePalette) package, and can be explored interactively [here!](https://jnkcarlson.shinyapps.io/RImagePaletteShiny)
 
@@ -37,7 +37,7 @@ Let's look at how the values in each of the R, G, and B components are distribut
 
 
 {% highlight r %}
-#Create a tall dataframe 
+# Create a tall dataframe
 component_distribution <- data.frame("value"=255*c(c(img_list$Red),
                                                    c(img_list$Green),
                                                    c(img_list$Blue)),
@@ -45,10 +45,10 @@ component_distribution <- data.frame("value"=255*c(c(img_list$Red),
                                        each=length(img_list$Red)),
                                        levels=c("Red","Green","Blue")))
 
-ggplot(data=component_distribution, aes(x=value, fill=Color)) + 
-    geom_histogram(binwidth=10, aes(y=100*(..count..)/sum(..count..))) + 
+ggplot(data=component_distribution, aes(x=value, fill=Color)) +
+    geom_histogram(binwidth=10, aes(y=100*(..count..)/sum(..count..))) +
     facet_wrap(~Color) +
-    theme_pander() + 
+    theme_pander() +
     guides(fill=FALSE) +
     labs(x="RGB Value (0 - 255)", y="Percent (%)") + #hist labs
     scale_x_continuous(breaks=c(0,50,100,150,200,255)) +
@@ -59,13 +59,13 @@ ggplot(data=component_distribution, aes(x=value, fill=Color)) +
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/color_distribution_pct.svg"   />
 
 We note several things:
-  
+
   1. The distributions of each color each have a unique shape
   2. Certain color values are more present in the image than other colors
-  
+
 It will be our task to extract those colors which are most highly represented in the image. This is where the median cut algorithm comes in.
-  
-##The Median Cut Algorithm
+
+## The Median Cut Algorithm
 
 The median cut algorithm can be stated as follows:
 
@@ -78,15 +78,15 @@ The median cut algorithm can be stated as follows:
     + one cube containing the RGB values of all pixels where the **C** component is less than **M**
   -  D: If the number of cubes is equal to our chosen number of desired colors, exit the loop
   -  E: For each color cube, calculate the range of each component, choose the cube which containts the largest range, and repeat
-    
+
 2. For each cube, apply some function (mean, median, mode, etc) to the value of each component, and combine into a new RGB value
 
 Let's walk through this for our chosen image.
 
-##Walking Through the Median Cut
+## Walking Through the Median Cut
 
 
-###Step 1:
+### Step 1:
 
 We first create a cube of the RGB components. A sample of 2500 pixels from the image along the R, G, and B axes is visualized using the code below:
 
@@ -125,7 +125,7 @@ color_plot(img_list, 2500, "Original")
 
 In the image we can get an idea of the most common colors present in the image. The blue in the upper are from the plate, the orange in the bottom from the carrots, etc.
 
-###Step 1A - Calculate the Range of Each Component
+### Step 1A - Calculate the Range of Each Component
 
 To choose how to split this cube up, we require the range of each component. Since we will be doing this a number of times, we will write a convenience function:
 
@@ -141,7 +141,7 @@ range_table <- function(images){
   kable(do.call(rbind.data.frame, ranges), format="html")
 }
 
-#Check ranges of original image
+# Check ranges of original image
 range_table(list("Original"=img_list))
 {% endhighlight %}
 
@@ -164,14 +164,14 @@ range_table(list("Original"=img_list))
 </tbody>
 </table>
 
-###Step 1B - Median of the Component with the Largest Range
+### Step 1B - Median of the Component with the Largest Range
 
-In this case, each axis extends from 0 to 255. Since there is no single component with the largest range, me must make a choice. There are a number of different methods for making this choice, however for simplicity we will choose randomly. Let's arbitrarily choose the red axis. 
+In this case, each axis extends from 0 to 255. Since there is no single component with the largest range, me must make a choice. There are a number of different methods for making this choice, however for simplicity we will choose randomly. Let's arbitrarily choose the red axis.
 
 
 {% highlight r %}
 cut_color <- "Red"
-median(img_list[[cut_color]])*255 
+median(img_list[[cut_color]]) * 255
 {% endhighlight %}
 
 
@@ -180,18 +180,18 @@ median(img_list[[cut_color]])*255
 ## [1] 118
 {% endhighlight %}
 
-###Step 1C - Split the Cube Along the Median
+### Step 1C - Split the Cube Along the Median
 
-####Iteration 1
+#### Iteration 1
 
 Using the median we calculated in Step 1B, we will extract all of the pixels from the original image above, and below that value:
 
 
 {% highlight r %}
-#Define the median cut algorithm
+# Define the median cut algorithm
 median_cut <- function(img_list, cut_color, cube_names){
   lst <- list()
-  
+
   #Extract from each component:
   #all pixels where cut_color is above the median value
   lst[[cube_names[1]]]  <- lapply(img_list, function(color_channel){
@@ -202,11 +202,11 @@ median_cut <- function(img_list, cut_color, cube_names){
   lst[[cube_names[2]]]  <- lapply(img_list, function(color_channel){
     color_channel[which(img_list[[cut_color]] < median(img_list[[cut_color]]))]
   })
-  
+
   return(lst)
 }
 
-#Perform the median cut on the image
+# Perform the median cut on the image
 img_list <- median_cut(img_list, "Red", cube_names=c("Cube 1","Cube 2"))
 {% endhighlight %}
 
@@ -218,7 +218,7 @@ color_plot(img_list[["Cube 2"]] ,1250, "Cube 2")
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/3dplot2.png" />
 
-###Step 1D and Step 1E - Calculate Range of Each New Cube
+### Step 1D and Step 1E - Calculate Range of Each New Cube
 
 We now have two cubes, each with their own distribution of colors, and each with a different dominant color. We will go on in this post to extract 6 colors from the image, so we need to repeat the process. To choose the next cube to cut, we calculate the ranges of pixels in each cube:
 
@@ -254,16 +254,16 @@ range_table(img_list)
 
 The maximum range out of any of the components is still 255, and both cubes have at least one axis that covers the full range. Again, we arbitrarily choose, randomly selecting Cube 2.
 
-###Loop Back
+### Loop Back
 
-####Iteration 2
+#### Iteration 2
 
 In Cube 2, we select the component with the largest range to cut across, in this case, the Blue axis:
 
 
 {% highlight r %}
 cut_color <- "Blue"
-median(img_list[["Cube 2"]][[cut_color]])*255 
+median(img_list[["Cube 2"]][[cut_color]]) * 255
 {% endhighlight %}
 
 
@@ -275,7 +275,7 @@ median(img_list[["Cube 2"]][[cut_color]])*255
 
 
 {% highlight r %}
-#Keep uncut cube (Cube 1), perform median cut on Cube 2
+# Keep uncut cube (Cube 1), perform median cut on Cube 2
 img_list <- c(list("Cube 1" = img_list[["Cube 1"]]),
              median_cut(img_list[["Cube 2"]], "Blue", c("Cube 2a", "Cube 2b")))
 {% endhighlight %}
@@ -321,24 +321,24 @@ range_table(img_list)
 
 We are left with three cubes now, still not the desired 6, so we need to repeat the algorithm 3 more times. I will spare you the code (although you can see it in the reproducible document), and present the plots. The next cut will be along the Green axis of Cube 1, which has a maximum range of 255.
 
-###Repeat
+### Repeat
 
-####Iteration 3
+#### Iteration 3
 
 <a href="/figs/MedianCut/3dplot4.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot4.png" style="width:67%"/></a>
 
-####Iteration 4
+#### Iteration 4
 
 <a href="/figs/MedianCut/3dplot5.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot5.png"/></a>
 
-####Iteration 5
+#### Iteration 5
 
 <a href="/figs/MedianCut/3dplot6.png" data-lightbox="figs"><img src="/figs/MedianCut/3dplot6.png"/></a>
 
 
 And we are now left with 6 cubes, each of which we wish to extract the dominant color from.
 
-###Step 2 - Extracting the Colors
+### Step 2 - Extracting the Colors
 
 Finally, we have the desired number of colors, and can exit the loop!
 
@@ -348,13 +348,13 @@ We have 6 color cubes now, each representing a different set of colors. Ideally,
   - Extract the median R, G, and B value from each cube, and combine them into a single RGB value
   - Extract the most common R, G, and B value from each cube, and combine them into a single RGB value
   - Convert each R, G, B set into a hex value, and extract the most common value (this ensures that the extracted colors are present in the image)
-  
+
 Below, the final option is demonstrated, and the extracted palette visualized:
 
 
 
 {% highlight r %}
-#Who could believe there isn't a mode function in R?
+# Who could believe there isn't a mode function in R?
 Mode <- function(x) {
   ux <- unique(x)
   ux[which.max(tabulate(match(x, ux)))]
@@ -362,13 +362,13 @@ Mode <- function(x) {
 
 choice=Mode
 
-#see reproducible doc for show_colors() code
+# see reproducible doc for show_colors() code
 show_colors(unname(unlist(lapply(img_list, function(x) rgb(choice(x$Red), choice(x$Green), choice(x$Blue)) ))), labels=TRUE)
 {% endhighlight %}
 
 <img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/MedianCut/palette_long.svg"  />
 
-##Conclusion
+## Conclusion
 
 The extracted palette represents the dominant colors in the image quite well. We can see the sauce, the plate, the background, celery, and carrot colors are all present in the final palette. To note, I have implemented the median cut algorithm in an R package, [RImagePalette](https://github.com/joelcarlson/RImagePalette). Using the package to produce palettes from images is super easy!
 

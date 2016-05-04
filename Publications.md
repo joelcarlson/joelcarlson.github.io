@@ -19,7 +19,7 @@ Jong Min Park, So-Yeon Park, Sung-Joon Ye, Jin Ho Kim, **Joel Carlson**, and Hon
 <a href="http://www.ncbi.nlm.nih.gov/pubmed/25383976">*"Modulation Indices for Volumetric Modulated Arc Therapy"*</a> (Physics in Medicine and Biology)<br>
 Jong Min Park, So-Yeon Park, Hyoungnyoun Kim, Jin Ho Kim, **Joel Carlson**, and Sung-Joon Ye
 
-#Conference Presentations
+# Conference Presentations
 
 *"A Radiomics Approach to the Classification of Astrocytoma and Oligodendroglioma"* (MICCAI 2015, "Computational Brain Tumor Cluster of Events" session, [Slides](http://www.slideshare.net/JoelCarlson2/miccai-2015))<br>
 **Joel Carlson**, Sung-Joon Ye

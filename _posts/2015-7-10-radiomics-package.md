@@ -6,7 +6,7 @@ layout: page
 excerpt: Texture analysis matrices and features
 ---
 
-The `radiomics` package is a set of tools for computing texture matrices from images, and features derived from the matrices. 
+The `radiomics` package is a set of tools for computing texture matrices from images, and features derived from the matrices.
 
 You can install the package either from CRAN, or the development version from github (recommended) using:
 
@@ -17,13 +17,13 @@ install.packages("radiomics")
 devtools::install_github("joelcarlson/radiomics", ref="develop")
 {% endhighlight %}
 
-#Texture Matrices
+# Texture Matrices
 
 In the package are functions for calculating several different types of matrices used to quantify the texture of an image in the form of a matrix.
 
-##Gray Level Co-occurrence Matrix
+## Gray Level Co-occurrence Matrix
 
-The first texture matrix is the gray level co-occurence matrix (GLCM). GLCMs take an image (as a matrix), an angle ("0", "45", "90", or "135"), and an integer distance, d. The axes of the GLCM are defined by the grey levels present in the image. Each pixel of the image is scanned and stored as a "reference pixel". The reference pixel is then compared to the pixel that is distance d at angle theta (where "0" degrees is the pixel to the right, "90" is the pixel above) away from the reference pixel, known as the neighbor pixel. Each time a reference value and neighbor value pair is found, the corresponding row and column of the GLCM is incremented by 1. 
+The first texture matrix is the gray level co-occurence matrix (GLCM). GLCMs take an image (as a matrix), an angle ("0", "45", "90", or "135"), and an integer distance, d. The axes of the GLCM are defined by the grey levels present in the image. Each pixel of the image is scanned and stored as a "reference pixel". The reference pixel is then compared to the pixel that is distance d at angle theta (where "0" degrees is the pixel to the right, "90" is the pixel above) away from the reference pixel, known as the neighbor pixel. Each time a reference value and neighbor value pair is found, the corresponding row and column of the GLCM is incremented by 1.
 
 A visual example shows this process. Pixels in the image are colored and labelled by grey value. The GLCM is set up such that each pixel value is represented on each axis.
 
@@ -66,7 +66,7 @@ Normally, GLCMs are normalized before features are calculated, this is the defau
 
 More information about the GLCM can be found [here.](http://www.fp.ucalgary.ca/mhallbey/tutorial.htm)
 
-##Gray Level Run Length Matrix
+## Gray Level Run Length Matrix
 
 The GLRLM is a matrix which attempts to quantify runs of the same grey level in the image. The GLRLM is set up slightly differently than the GLCM; instead of having grey levels along the abscissa of the table the GLRLM has run lengths.
 
@@ -118,7 +118,7 @@ glrlm(image, max_run_length=3)
 {% endhighlight %}
 
 
-##Gray Level Size Zone Matrix
+## Gray Level Size Zone Matrix
 
 The goal of the GLSZM is to quantify regions of contiguous pixels in the image. The GLSZM is set up in the same way as the GLRLM, except along the abscissa are size zones rather than run lengths. A size zone is defined as a collection of 9-connected pixels (ie. connected on their edges and corners) of the same grey level.
 
@@ -151,7 +151,7 @@ glszm(image)
 For more information on the GLSZM see [here.](http://thibault.biz/Research/ThibaultMatrices/GLSZM/GLSZM.html)
 
 
-#Calculating Features
+# Calculating Features
 
 From the texture matrices it is possible to calculate many different features. These are summarized in the following table:
 
@@ -311,4 +311,3 @@ calc_features(hbGLCM)
 {% endhighlight %}
 
 And so on for the other texture matrix types.
-

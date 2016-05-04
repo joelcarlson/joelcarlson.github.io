@@ -7,7 +7,7 @@ layout: page
 excerpt: Let's use the radiomics package to tell a cushion from a couch!
 ---
 
-Texture analysis is one method of understanding and classifying images. The goal is to quantify relationships between the pixels of a given image. This can be achieved using so called "texture matrices" (described in detail [here](http://joelcarlson.me/2015/07/10/radiomics-package/)). 
+Texture analysis is one method of understanding and classifying images. The goal is to quantify relationships between the pixels of a given image. This can be achieved using so called "texture matrices" (described in detail [here](http://joelcarlson.me/2015/07/10/radiomics-package/)).
 
 The [`radiomics`](https://github.com/joelcarlson/radiomics) package for R provides tools for calculating image texture, and also for calculating first order image features, such as *kurtosis*, *skewness*, and *mean deviation*. We will compare the predictive ability of the first order features to the texture features.
 
@@ -15,7 +15,7 @@ In this post, I will test the efficacy of predictions made using textures featur
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/KylbergSample_crop.jpg" width="100%" />
 
-###Load Appropriate Packages
+### Load Appropriate Packages
 
 
 {% highlight r %}
@@ -24,7 +24,7 @@ library(stringr); library(dplyr); library(caret);
 library(png); library(gridExtra); library(viridis)
 {% endhighlight %}
 
-###Calculate Features
+### Calculate Features
 
 Here we calculate the *gray level co-occurrence*, *gray level run-length*, and *grey level size-zone* matrices using the commands `glcm()`, `glrlm()`, and `glszm()`. We then calculate the features of each matrix using the `calc_features()` command on each matrix, and the image itself (giving the first order features).
 
@@ -35,10 +35,10 @@ For reference, the file structure is such that each of the different image class
 dir <- "~/path/to/the/images/"
 lst <- list()
 
-#For each image calculate texture features and add them to a list
+# For each image calculate texture features and add them to a list
 for(folder in list.files(dir)){
   for(filename in list.files(paste0(dir,folder))){
-    
+
     #Load image
     im <- readPNG(paste0(dir,folder,'/',filename))
 
@@ -46,7 +46,7 @@ for(folder in list.files(dir)){
     im_glcm <- glcm(im)
     im_glrlm <- glrlm(im)
     im_glszm <- glszm(im)
-    
+
     #Append to lst
     lst[[filename]] <- cbind(calc_features(im),
                              calc_features(im_glcm),
@@ -56,23 +56,23 @@ for(folder in list.files(dir)){
     }
 }
 
-#Convert to data frame
+# Convert to data frame
 dat <- do.call(rbind, lst)
 
-#Create category label
+# Create category label
 cat_names <- "canvas|cushion|linseeds|sand|seat|stone"
 dat <- dat %>% mutate("Class" = str_match(rownames(dat), pattern = cat_names))
 {% endhighlight %}
 
 
 
-###A Quick Peek at the Data
+### A Quick Peek at the Data
 
 We can gain an understanding of the data by looking at the first two principle components of the data. By splitting the analysis by feature type (i.e. first order, glcm, glrlm, and glszm), we can get some intuition as to which feature type will best separate the classes:
 
 
 {% highlight r %}
-#Function to extract first two principal components given a feature type
+# Function to extract first two principal components given a feature type
 get_prcomps <- function(data=dat, feature){
   princomps <- princomp(data[,which(str_detect(colnames(data), feature))])
   data.frame(PC1 = princomps$score[,1],
@@ -81,17 +81,17 @@ get_prcomps <- function(data=dat, feature){
              Feature=feature)
 }
 
-#calculate principal components for each feature type
+# calculate principal components for each feature type
 features <- list("calc", "glcm", "glrlm", "glszm")
 dat_pca <-do.call(rbind, lapply(features, function(x) get_prcomps(feature=x)))
 
-#There are several extreme outliers in the "calc" principal components,
-#here they are removed:
+# There are several extreme outliers in the "calc" principal components,
+# here they are removed:
 calc_outliers <- which(dat_pca$Feature == "calc" & (dat_pca$PC2 < -1 | dat_pca$PC1 > 100))
 
-#plot PCA analysis
-ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) + 
-  geom_point(alpha=0.75) + 
+# plot PCA analysis
+ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
+  geom_point(alpha=0.75) +
   facet_wrap(~Feature, scale="free") +
   theme_pander() + scale_color_viridis(discrete=TRUE)
 {% endhighlight %}
@@ -103,33 +103,33 @@ ggplot(data=dat_pca[-calc_outliers,], aes(x=PC1, y=PC2, color=Class)) +
 
 From the plots it is clear that the data is separable; qualitatively moreso by the texture features than by the first order features.
 
-###Simple Random Forest Classification
+### Simple Random Forest Classification
 
-We now turn our attention to building a classification model. We will make some use of the wonderful `caret` package to take care of splitting the data into training (one third) and testing (two thirds), and also to take care of some very basic model tuning. 
+We now turn our attention to building a classification model. We will make some use of the wonderful `caret` package to take care of splitting the data into training (one third) and testing (two thirds), and also to take care of some very basic model tuning.
 
 
 {% highlight r %}
 set.seed(101)
-#Separate into training and test sets
+# Separate into training and test sets
 inTrain <- createDataPartition(y=dat$Class, p=0.33, list=FALSE)
 training <- dat[inTrain,]
-testing <- dat[-inTrain,] 
+testing <- dat[-inTrain,]
 
-#Train random forest using 5 fold CV
+# Train random forest using 5 fold CV
 rf_mod <- train(Class ~ . , data=training, method="rf",
                 tuneGrid = expand.grid(mtry = 3:15),
                 trControl = trainControl(method="repeatedcv",
                                          repeats=20,
                                          number=5))
 
-rf_plot <- ggplot(rf_mod) +theme_pander() 
-varImp_plot <- ggplot(varImp(rf_mod), top=15) + 
-  theme_pander() + 
-  geom_bar(stat = "identity",fill="#3291D4") + 
+rf_plot <- ggplot(rf_mod) +theme_pander()
+varImp_plot <- ggplot(varImp(rf_mod), top=15) +
+  theme_pander() +
+  geom_bar(stat = "identity",fill="#3291D4") +
   coord_flip()
 
 
-#see reproducible doc for confidence interval code
+# see reproducible doc for confidence interval code
 grid.arrange(rf_plot, varImp_plot, ncol=2)
 {% endhighlight %}
 
@@ -165,13 +165,10 @@ results$table
 ##   stone         0       0        0    0    0    25
 {% endhighlight %}
 
-Only 2 were incorrectly classified, for accruacy of 98.7%! 
+Only 2 were incorrectly classified, for accruacy of 98.7%!
 
-###Conclusions
+### Conclusions
 
 Texture analysis features make excellent input into models for classifying images. Furthermore, the `radiomics` package makes it simple to calculate them, and get results quickly!
 
 A reproducible document (provided you download the data, and set the correct path, can be found [here](https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/textureClassificationRepro.Rmd).
-
-
-
