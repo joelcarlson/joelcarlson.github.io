@@ -134,7 +134,7 @@ grid.arrange(rf_plot, varImp_plot, ncol=2)
 {% endhighlight %}
 
 
-<img src=https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg />
+<img src="https://cdn.rawgit.com/joelcarlson/joelcarlson.github.io/master/figs/textureClassification/rf_plot.svg" />
 
 For definitions of the feature suffixes, see [here](http://journals.plos.org/plosone/article?id=10.1371/journal.pone.0102107#s5).
 
