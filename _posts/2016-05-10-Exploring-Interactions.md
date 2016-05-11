@@ -130,10 +130,7 @@ mtcars.head() #take a quick look
 
 
 
-Our goal is to explore how the weight of a car affects the relationship between the number of cylinders and it's mileage. First, let's plot the data to get a sense of how it looks:
-
-Suppose we are interested in how automobile weight affects the relationship between of the number of engine cylinders on mileage and how the number of cylinders affects the relationship between the car’s weight and its mileage. Such conditional effects are modeled using a two-way multiplicative interaction term:
-
+Our goal is to explore how the weight of a car and the number of cylinders are related to the mileage of the car. Additionally, we are interested to know how the weight affects the relationship between the number of cylinders and the mileage. We will answer both of these questions below, but first let's plot the data to get a sense of how it looks:
 
 ```python
 sns.lmplot(x='wt', y='mpg', hue='cyl', data=mtcars, fit_reg=False, palette='viridis', size=5, aspect=2.5)
