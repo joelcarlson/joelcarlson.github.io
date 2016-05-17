@@ -17,7 +17,7 @@ Both languages (R and Python) have well-crafted and thoughtfully designed packag
 
 The data we will be playing with is the same ol' mtcars dataset, but the specifics of data aren't the focus today.  
 
-{% highlight r %}
+```R
 #Load the required packages
 library(caret); library(ggplot2)
 library(ggthemes); library(viridis)
@@ -31,13 +31,13 @@ dat[colnames(dat) != 'am'] <- scale(dat[colnames(dat) != 'am'])
 
 #The response column, 'am', must be factor for the SVC
 dat$am <- as.factor(dat$am)
-{% endhighlight %}
+```
 
 ### Building the Model
 
-With the housekeeping over and done with, we can go ahead and set our model parameters. As stated above, we will perform 5 fold cross validation using the entire dataset for all parameter combinations. The two tunable parameters, `C` and `gamma`, will be tuned over \\[10^{-1}\\] to \\[10^3\\], and \\[10^{-3}\\] to \\[10^1\\], respectively (determined empirically to yield interesting results).
+With the housekeeping over and done with, we can go ahead and set our model parameters. As stated above, we will perform 5 fold cross validation using the entire dataset for all parameter combinations. The two tunable parameters, `C` and `gamma`, will be tuned over $10^{-1}$ to $10^3$, and $10^{-3}$ to $10^1$, respectively (determined empirically to yield interesting results).
 
-{% highlight r %}
+```r
 # Set up the 5-fold CV
 fitControl <- caret::trainControl(method = "cv",
                                   number = 5)
@@ -49,7 +49,7 @@ sigma_range = sapply(seq(-3,1,0.0125), function(x) 10^x)
 # Create the grid of parameters
 fitGrid <- expand.grid(C     = C_range,
                        sigma = sigma_range)
-{% endhighlight %}
+```
 
 And that's it for setting up the parameters. Now we use caret's extremely convenient `train` function, which provides a unified api to a [huge list](http://topepo.github.io/caret/modelList.html) of machine learning algorithms:
 
@@ -225,4 +225,4 @@ svmGS.best_params_
 
 ### Conclusion
 
-We have seen that both languages have fairly simple interfaces to some very powerful techniques. There were differences in both the implementations, which was most obvious in the contrast between the functional caret style, and the more explicitly object-oriented approach taken by sklearn. There were also differences in the final parameters chosen by the two implementations, although we did not explore the reasons here. 
+We have seen that both languages have fairly simple interfaces to some very powerful techniques. There were differences in both the implementations, which was most obvious in the contrast between the functional caret style, and the more explicitly object-oriented approach taken by sklearn. There were also differences in the final parameters chosen by the two implementations, although we did not explore the reasons here.
