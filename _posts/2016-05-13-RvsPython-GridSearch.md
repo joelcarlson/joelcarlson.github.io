@@ -35,7 +35,7 @@ dat$am <- as.factor(dat$am)
 
 ### Building the Model
 
-With the housekeeping over and done with, we can go ahead and set our model parameters. As stated above, we will perform 5 fold cross validation using the entire dataset for all parameter combinations. The two tunable parameters, `C` and `gamma`, will be tuned over $10^{-1}$ to $10^3$, and $10^{-3}$ to $10^1$, respectively (determined empirically to yield interesting results).
+With the housekeeping over and done with, we can go ahead and set our model parameters. As stated above, we will perform 5 fold cross validation using the entire dataset for all parameter combinations. The two tunable parameters, `C` and `gamma`, will be tuned over \(10^{-1}\) to \(10^3\), and \(10^{-3}\) to \(10^1\), respectively (determined empirically to yield interesting results).
 
 ```r
 # Set up the 5-fold CV
