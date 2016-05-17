@@ -48,26 +48,26 @@ Today was a very different day than most - rather than having lectures and sprin
 The dataset given to us was one from a previous kaggle competition which describes a number of attributes of farm vehicles sold at auction, with the goal of predicting sale price. There were many features, and essentially all of the features in the data were categorical. Most of them had huge amounts of missing data (many were greater than 90% NAs), so dealing with that was a top priority. Our strategy went something like:
 
   1. Determine which feature to add to our model
-    - We ran a simple for loop to create bar plots of mean sale price by category in each feature
-    - Print out the proportion of the column that was NA
-    - Choose a column based on the criteria that it contained few NA values, and the categories appeared to have significantly different mean sale prices
+      - We ran a simple for loop to create bar plots of mean sale price by category in each feature
+      - Print out the proportion of the column that was NA
+      - Choose a column based on the criteria that it contained few NA values, and the categories appeared to have significantly different mean sale prices
   2. Clean the feature
-    - If the feature was ordinal (such as "size" of vehicle), we encoded it as such
-    - If the feature was categorical, we made sure to combine redundant categories
-    - If the feature was binary, we converted it to booleans
-    - Our method for handling NA values was unique to each column, but heavily subjective
+      - If the feature was ordinal (such as "size" of vehicle), we encoded it as such
+      - If the feature was categorical, we made sure to combine redundant categories
+      - If the feature was binary, we converted it to booleans
+      - Our method for handling NA values was unique to each column, but heavily subjective
   3. Add to a model
     - We had 3 models that we were adding features into:
       - A random forest model
       - A gradient boosted tree model
       - A linear regression model
   4. Tune the model parameters
-    - We used grid search over the parameter space, at larger intervals than we would have liked due to computational constraints
-    - We used only a subset of the data to tune to save time
+      - We used grid search over the parameter space, at larger intervals than we would have liked due to computational constraints
+      - We used only a subset of the data to tune to save time
   5. Make predictions
-    - We ensembled the best performing models using a simple average of the predictions
+      - We ensembled the best performing models using a simple average of the predictions
   6. Repeat!
-    - After we were confident that a feature was contributing to our model, we iterated by hunting a new feature, cleaning it, and adding it to the model
+      - After we were confident that a feature was contributing to our model, we iterated by hunting a new feature, cleaning it, and adding it to the model
 
 It was a very enjoyable day, and a great way to get our hands dirty and really apply some of the toolset we have been working on understanding. Iterating quickly seemed to be the most effective for increasing model accuracy - each time we pulled in a new feature we were doing better and better. Next time around there are some things I wish to improve on, including:
   - Thinking about a more objective/methodical approach for choosing candidate features for the model
