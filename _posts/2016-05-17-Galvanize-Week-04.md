@@ -14,7 +14,7 @@ This week was our first real introduction to a perspective on machine learning i
 
 ## Day 1
 
-K-nearest neighbors and decision trees were the focus, along with a discussion on the curse of dimensionality. One of the instructors had a very intuitive way to describe the issue - given two points on a line, we know that their distance is just (\\(x_2 - x_1\\)), now as soon as we add an extra axis on which each of them may vary even slightly, their distance jumps to (\\(\sqrt{(x_2 -  x_1)^2 + (y_2 - y_1)^2}\\)). We can imagine how quickly this distance blows up as we continue adding dimensions. The more dimensions, the further away each of our 'neighbors', and the less meaningful the concept of a neighbor becomes. Short and sweet!
+K-nearest neighbors and decision trees were the focus, along with a discussion on the curse of dimensionality. One of the instructors had a very intuitive way to describe the issue - given two points on a line, we know that their distance is just (\\(x_2 - x_1)\\), now as soon as we add an extra axis on which each of them may vary even slightly, their distance jumps to \\(\sqrt{(x_2 -  x_1)^2 + (y_2 - y_1)^2}\\). We can imagine how quickly this distance blows up as we continue adding dimensions. The more dimensions, the further away each of our 'neighbors', and the less meaningful the concept of a neighbor becomes. Short and sweet!
 
 Decision trees were enjoyable and relatively simple to implement. Despite their simplicity, they have a number of favorable features, including that they're able to handle irrelevant features, they're computationally cheap, able to model non-linear relationships, and can perform both classification and regression. Unfortunately, they are very weak in terms of accuracy - perhaps now the only real reason to learn about decision trees is to form a base of knowledge on which to build a firmer understanding of random forests.  
 
@@ -70,6 +70,7 @@ The dataset given to us was one from a previous kaggle competition which describ
       - After we were confident that a feature was contributing to our model, we iterated by hunting a new feature, cleaning it, and adding it to the model
 
 It was a very enjoyable day, and a great way to get our hands dirty and really apply some of the toolset we have been working on understanding. Iterating quickly seemed to be the most effective for increasing model accuracy - each time we pulled in a new feature we were doing better and better. Next time around there are some things I wish to improve on, including:
+
     - Thinking about a more objective/methodical approach for choosing candidate features for the model
     - Using less data to tune the parameters (this was a large time-suck)
     - Grid search over a randomized space, rather than intervals (again, to speed up processing)
