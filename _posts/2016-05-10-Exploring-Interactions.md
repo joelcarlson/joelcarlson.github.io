@@ -287,9 +287,13 @@ mpg = 54.31 - 8.66\cdot{wt} - 3.80\cdot{cyl} + 0.81\cdot{wt}\cdot{cyl}
 \\]
 
 But how do we interpret these new coefficients? We say:
+
   - For every 1 unit increase in weight, mpg decreases by \\(8.66\\) (holding cylinders at 0)
+
   - For every 1 unit increase in weight, mpg changes by \\(-8.66 + cyl\cdot{0.81}\\))
+
   - For every 1 unit increase in cylinders, mpg decreases by \\(3.80\\) (holding weight at 0)
+  
   - For every 1 unit increase in cylinders, mpg changes by \\(-3.80 + wt\cdot{0.81}\\))
 
   - At 0 weight and 0 cylinders, we expect mpg to be 54.31
