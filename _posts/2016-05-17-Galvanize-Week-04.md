@@ -70,7 +70,7 @@ The dataset given to us was one from a previous kaggle competition which describ
       - After we were confident that a feature was contributing to our model, we iterated by hunting a new feature, cleaning it, and adding it to the model
 
 It was a very enjoyable day, and a great way to get our hands dirty and really apply some of the toolset we have been working on understanding. Iterating quickly seemed to be the most effective for increasing model accuracy - each time we pulled in a new feature we were doing better and better. Next time around there are some things I wish to improve on, including:
-  - Thinking about a more objective/methodical approach for choosing candidate features for the model
-  - Using less data to tune the parameters (this was a large time-suck)
-  - Grid search over a randomized space, rather than intervals (again, to speed up processing)
-  - Iterate faster!
+    - Thinking about a more objective/methodical approach for choosing candidate features for the model
+    - Using less data to tune the parameters (this was a large time-suck)
+    - Grid search over a randomized space, rather than intervals (again, to speed up processing)
+    - Iterate faster!
