@@ -17,7 +17,7 @@ My research goals involve creating methods for improving treatment outcomes, pre
 			</a>
 		</h2>
 		<a href="{{ post.url }}">
-			<img src="{{ post.thumbnail }}">
+			<img src="{{ post.thumbnail }}"></a>
 		</a>
 
 		{{ post.excerpt }}
