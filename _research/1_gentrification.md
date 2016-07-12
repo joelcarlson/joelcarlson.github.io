@@ -11,7 +11,7 @@ The code and a README for this project is available [here](https://github.com/jo
 
 Here is a modified version of the presentation I gave at [Galvanize](http://galvanize.com) related to this work:
 
-<iframe src="//www.slideshare.net/slideshow/embed_code/key/1jnFGT0kzRoZXr" width="595" height="330" frameborder="0" marginwidth="0" marginheight="0" scrolling="no" style="float:right"> </iframe> 
+<iframe src="//www.slideshare.net/slideshow/embed_code/key/1jnFGT0kzRoZXr" width="100%" frameborder="0" marginwidth="0" marginheight="0" scrolling="no"> </iframe> 
 
 
 The goal of this project was to test two hypotheses:
