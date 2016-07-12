@@ -10,7 +10,7 @@ excerpt: Week 6 of the Galvanize Data Science Immersive - Capstone Ideation
 
 This week we explored some clustering techniques, some dimensionality reduction techniques, and then looked at creating recommender systems. We also had our first brain storm session with instructors about capstone project ideas.
 
-I coded up a proof of concept for one of the ideas that I had for a captone (which I am unlikely to pursue), here is an intermediate result from it:
+I coded up a proof of concept for one of the ideas that I had for a capstone (which I am unlikely to pursue), here is an intermediate result from it:
 
 <img src="https://raw.githubusercontent.com/joelcarlson/joelcarlson.github.io/master/figs/Galvanize/GravityPOC.png"/>
 
