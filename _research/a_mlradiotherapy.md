@@ -7,6 +7,8 @@ thumbnail: "/figs/ResearchImages/MLCfilter.png"
 excerpt: "Decision tree regression techniques for predicting and correcting for errors in radiotherapy plans."
 ---
 
+This research was published in Physics in Medicine and Biology - read it [here](http://iopscience.iop.org/article/10.1088/0031-9155/61/6/2514/meta)!
+
 Here is the presentation I gave at [AAPM 2015](http://www.aapm.org/meetings/2015AM/) regarding this work:
 
 <iframe src="https://www.slideshare.net/slideshow/embed_code/key/dkzHQwmlWf5ud0" width="476" height="400" frameborder="0" marginwidth="500" marginheight="0" scrolling="no" style="float:right"></iframe>
