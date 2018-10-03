@@ -39,7 +39,7 @@ Magic! As can be seen, even very weak classifiers, if uncorrelated with each oth
 
 On days 3 and 4 we covered support vector classifiers, and gradient boosting. To cover these in the time alotted to lecture we had to do some very serious glossing over of some very serious math. I do understand the difficulty in teaching such complex topics in such a short amount of time, but also wish that we had more time to wrap our heads around some of the concepts. I suppose that is what break week is for.
 
-The assignments were all about practical skills and had us tuning model parameters via cross validation over parameter grids. For me, it was comforting to see that `sklearn` has much of the model tuning functionality that I relied on heavily while using the R package `caret` for my research. I wrote a fairly detailed explanation of the process, and also contrasted some of the differences between the python (sklearn) and R (caret) methods for tuning models [here](http://joelcarlson.me/2016/05/14/RvsPython-GridSearch/).
+The assignments were all about practical skills and had us tuning model parameters via cross validation over parameter grids. For me, it was comforting to see that `sklearn` has much of the model tuning functionality that I relied on heavily while using the R package `caret` for my research. I wrote a fairly detailed explanation of the process, and also contrasted some of the differences between the python (sklearn) and R (caret) methods for tuning models [here](http://joelcarlson.github.io/2016/05/14/RvsPython-GridSearch/).
 
 ## Day 5
 

@@ -2,4 +2,4 @@
 
 Personal website.
 
-Lives at [joelcarlson.me](http://joelcarlson.me).
+Lives at [joelcarlson.github.io](http://joelcarlson.github.io).

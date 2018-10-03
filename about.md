@@ -7,7 +7,7 @@ title: About
   <img src="/figs/RhiaDada.jpg" alt="Woohoo!" title="Very Cute" width="750px"/>
 </div>
 
-For the past three years I was living in Seoul, South Korea while completing my MSc in Medical Physics. I now live in Palo Alto, CA with my lovely partner Rhia! We used to foster the puppy in the photo, Dada,  but he has since been adopted into a new and loving home.
+For the past three years I was living in Seoul, South Korea while completing my MSc in Medical Physics. I now live in Palo Alto, CA with my lovely partner Rhia! We used to foster the puppy in the photo, Dada, but he has since been adopted into a new and loving home.
 
 Hiking, exploring, statistics and programming make me happy!
 

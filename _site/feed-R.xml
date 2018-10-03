@@ -3,8 +3,8 @@
 	<channel>
 		<title>Joel Carlson - R ramblings</title>
 		<description>Posts categorized as 'R'</description>
-		<link>http://joelcarlson.me</link>
-		<atom:link href="http://joelcarlson.me/feed-R.xml" rel="self" type="application/rss+xml" />
+		<link>http://joelcarlson.github.io</link>
+		<atom:link href="http://joelcarlson.github.io/feed-R.xml" rel="self" type="application/rss+xml" />
 		
 			<item>
 				<title>The Dangers(?) of Improperly Centering and Scaling Your Data</title>
@@ -182,8 +182,8 @@ I have to admit to being surpised, I expected the opposite result! It would be i
 &lt;p&gt;This post has a small discussion on reddit &lt;a href=&quot;https://www.reddit.com/r/statistics/comments/3heml4/the_dangers_of_improperly_centering_and_scaling/&quot;&gt;here&lt;/a&gt; and a reproducible version with code can be found &lt;a href=&quot;https://github.com/joelcarlson/joelcarlson.github.io/blob/master/reproducibleDocs/CentreScale.Rmd&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 </description>
 				<pubDate>Tue, 18 Aug 2015 00:00:00 +0900</pubDate>
-				<link>http://joelcarlson.me/r/2015/08/18/CentreScale/</link>
-				<guid isPermaLink="true">http://joelcarlson.me/r/2015/08/18/CentreScale/</guid>
+				<link>http://joelcarlson.github.io/r/2015/08/18/CentreScale/</link>
+				<guid isPermaLink="true">http://joelcarlson.github.io/r/2015/08/18/CentreScale/</guid>
 			</item>
 		
 			<item>
@@ -459,8 +459,8 @@ calc_features&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;hbGLCM&lt;span class=
 &lt;p&gt;And so on for the other texture matrix types.&lt;/p&gt;
 </description>
 				<pubDate>Fri, 10 Jul 2015 00:00:00 +0900</pubDate>
-				<link>http://joelcarlson.me/r/2015/07/10/radiomics-package/</link>
-				<guid isPermaLink="true">http://joelcarlson.me/r/2015/07/10/radiomics-package/</guid>
+				<link>http://joelcarlson.github.io/r/2015/07/10/radiomics-package/</link>
+				<guid isPermaLink="true">http://joelcarlson.github.io/r/2015/07/10/radiomics-package/</guid>
 			</item>
 		
 	</channel>

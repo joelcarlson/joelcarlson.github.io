@@ -7,7 +7,7 @@ layout: page
 excerpt: Let's use the radiomics package to tell a cushion from a couch!
 ---
 
-Texture analysis is one method of understanding and classifying images. The goal is to quantify relationships between the pixels of a given image. This can be achieved using so called "texture matrices" (described in detail [here](http://joelcarlson.me/2015/07/10/radiomics-package/)).
+Texture analysis is one method of understanding and classifying images. The goal is to quantify relationships between the pixels of a given image. This can be achieved using so called "texture matrices" (described in detail [here](http://joelcarlson.github.io/2015/07/10/radiomics-package/)).
 
 The [`radiomics`](https://github.com/joelcarlson/radiomics) package for R provides tools for calculating image texture, and also for calculating first order image features, such as *kurtosis*, *skewness*, and *mean deviation*. We will compare the predictive ability of the first order features to the texture features.
 

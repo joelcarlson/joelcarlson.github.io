@@ -42,7 +42,7 @@ We again spent the day on linear regression, but this time from a much more qual
 
 I must admit, I was glad to spend some time with coefficient interpretation. I got myself all tongue-tied last week when I was asked about how to interpret the interaction coefficient in a model my girlfriend had built - I stumbled through a technically incorrect explanation, and felt more than a little embarrassed once the dust had settled ("shouldn't you know this stuff?" - "yes, yes I should...").
 
-Inspired by the days work, I wrote a side blog post related to exploring and visualizing a simple interaction, you can see that post [here](http://joelcarlson.me/2016/05/10/Exploring-Interactions/).
+Inspired by the days work, I wrote a side blog post related to exploring and visualizing a simple interaction, you can see that post [here](http://joelcarlson.github.io/2016/05/10/Exploring-Interactions/).
 
 ## Day 3
 

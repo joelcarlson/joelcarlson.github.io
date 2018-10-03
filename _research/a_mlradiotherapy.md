@@ -27,7 +27,7 @@ In this project, I used decision-tree regression techniques to predict MLC error
  This research allows treatment planners to view a more accurate representation
  of the dose as it will truly be delivered to the patient.
 
-Click [here](http://joelcarlson.me/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
+Click [here](http://joelcarlson.github.io/2015/11/14/mlc-dashboard/) to view a web-interface which allows access to the models developed in this work.
 
 # Introduction
 
@@ -56,7 +56,7 @@ study is known as the Varian Millennium 120 MLC, as shown here:
 <a href="http://i.imgur.com/onD7Z1R.jpg" data-lightbox="MLC" data-title="The Varian Millennium 120 MLC" style="float:right; margin:3%"><img src="/figs/mlradiotherapy/millenniumMLC.PNG" alt="Millennium 120 MLC" /></a>
 
 The MLC consists of 120 individual leaves, 60 per side. Each side consists of 40 inner leaves of 5 mm width, and 20 outer (10 per side) 10 mm leaves.
-The movement of such an MLC is visualized [here](http://joelcarlson.me/2014/12/29/MLC-Movements/). During delivery of a plan,
+The movement of such an MLC is visualized [here](http://joelcarlson.github.io/2014/12/29/MLC-Movements/). During delivery of a plan,
 the MLC reports it's real time position in the form of "motor counts", which can be converted to millimetres using a manufacturer
 specified and medical physicist verified constant of proportionality.
 
